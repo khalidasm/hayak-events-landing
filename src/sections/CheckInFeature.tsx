@@ -21,16 +21,16 @@ const CheckInFeature = () => {
             initial={{ opacity: 0 }}
             animate={containerInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="bg-[#F5F0FF] w-full h-[900px] relative px-40 py-32 mt-40"
+            className="bg-[#F5F0FF] w-full md:h-[900px] relative px-4 sm:px-8 md:px-16 lg:px-40 py-16 sm:py-24 lg:py-32"
         >
             <motion.div 
                 ref={leftContentRef}
                 initial={{ opacity: 0, x: -100 }}
                 animate={leftContentInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -100 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
-                className="w-1/2 h-full flex flex-col gap-60"
+                className="w-full md:w-1/2 h-full flex flex-col gap-60"
             >
-                <Image src="/logo.png" alt="logo" width={100} height={100} />
+                <Image src="/logo.png" alt="logo" width={100} height={100} className="hidden md:block" />
                 <div className="flex flex-col gap-5">
                     <h1 className="text-5xl">
                         Check-in <span className="text-[#4F2396]">Feature</span>
@@ -49,7 +49,7 @@ const CheckInFeature = () => {
                 initial={{ opacity: 0, x: 100 }}
                 animate={rightCardInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
-                className="absolute top-8 right-0"
+                className="hidden md:block absolute md:top-8 md:right-0"
             >
                 <Image
                     src="/ch_card.svg"
@@ -67,7 +67,7 @@ const CheckInFeature = () => {
                         : { opacity: 0, x: 100 }
                 }
                 transition={{ duration: 0.8, ease: "easeOut" }}
-                className="absolute bottom-5 right-[550px]"
+                className="hidden md:block absolute bottom-5 right-[550px]"
             >
                 <motion.div
                     animate={{ y: [-5, 5, -5] }}
@@ -85,6 +85,14 @@ const CheckInFeature = () => {
                     />
                 </motion.div>
             </motion.div>
+            <div className="block md:hidden">
+                <Image
+                    src="/chr_card.svg"
+                    alt="ch_card"
+                    width={1200}
+                    height={1200}
+                />
+            </div>
         </motion.div>
     );
 };

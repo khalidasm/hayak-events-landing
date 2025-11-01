@@ -44,12 +44,14 @@ const HayakService = () => {
     const guestJourneyRightInView = useInView(guestJourneyRightRef, { once: true, margin: "-100px" });
 
     return (
-        <div className="w-full flex flex-col items-center py-20 px-60 mx-auto gap-10">
-            <h1 className="text-4xl font-bold">
+        <div className="w-full flex flex-col items-center py-16 sm:py-24 lg:py-32 px-4 sm:px-8 md:px-16 lg:px-60 mx-auto gap-6 sm:gap-10
+        bg-[url('/hollow-bg.svg')] bg-cover bg-center bg-no-repeat
+        ">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center">
                 Hayak <span className="text-[#4F2396]">Service</span>
             </h1>
-            <div className="flex flex-col items-center">
-                <div className="w-full h-full flex gap-20 items-center mt-[50px]">
+            <div className="flex flex-col items-center w-full">
+                <div className="w-full h-full flex flex-col lg:flex-row gap-8 lg:gap-20 items-center mt-8 sm:mt-[50px]">
                     <motion.div
                         ref={guestMgmtLeftRef}
                         initial={{ opacity: 0, x: -100 }}
@@ -59,13 +61,13 @@ const HayakService = () => {
                                 : { opacity: 0, x: -100 }
                         }
                         transition={{ duration: 0.8, ease: "easeOut" }}
-                        className="flex flex-col gap-5 w-full"
+                        className="flex flex-col gap-3 sm:gap-5 w-full lg:w-1/2"
                     >
-                        <h1 className="text-4xl font-bold">
+                        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center lg:text-left">
                             Guest{" "}
                             <span className="text-[#4F2396]">Management</span>
                         </h1>
-                        <p className="text-lg">
+                        <p className="text-base sm:text-lg text-center lg:text-left">
                             Effortlessly manage guest lists and guest
                             information with Hayak. Add, edit, and delete
                             guests, send invitations and tickets via email or
@@ -84,13 +86,14 @@ const HayakService = () => {
                                 : { opacity: 0, x: 100 }
                         }
                         transition={{ duration: 0.8, ease: "easeOut" }}
-                        className="relative"
+                        className="relative w-full lg:w-1/2 flex justify-center"
                     >
                         <Image
                             src="/guest_management.svg"
                             alt="guest_management"
                             width={1200}
                             height={1200}
+                            className="w-full max-w-md lg:max-w-none h-auto"
                         />
                         <motion.div
                             animate={{ y: [-5, 5, -5] }}
@@ -99,13 +102,14 @@ const HayakService = () => {
                                 repeat: Infinity,
                                 ease: "easeInOut",
                             }}
-                            className="absolute -bottom-50 -left-16"
+                            className="absolute -bottom-20 sm:-bottom-50 -left-8 sm:-left-16 hidden sm:block"
                         >
                             <Image
                                 src="/gs_card_1.svg"
                                 alt="gs_card_1"
                                 width={400}
                                 height={400}
+                                className="w-[200px] sm:w-[400px] h-auto"
                             />
                         </motion.div>
                         <motion.div
@@ -115,18 +119,19 @@ const HayakService = () => {
                                 repeat: Infinity,
                                 ease: "easeInOut",
                             }}
-                            className="absolute -bottom-30 -right-18"
+                            className="absolute -bottom-15 sm:-bottom-30 -right-9 sm:-right-18 hidden sm:block"
                         >
                             <Image
                                 src="/gs_card_2.svg"
                                 alt="gs_card_2"
                                 width={400}
                                 height={400}
+                                className="w-[200px] sm:w-[400px] h-auto"
                             />
                         </motion.div>
                     </motion.div>
                 </div>
-                <div className="w-full h-full flex items-center gap-20 mt-[200px]">
+                <div className="w-full h-full flex flex-col lg:flex-row items-center gap-8 lg:gap-20 mt-16 sm:mt-32 lg:mt-[200px]">
                     <motion.div
                         ref={ticketSystemLeftRef}
                         initial={{ opacity: 0, x: -100 }}
@@ -136,13 +141,14 @@ const HayakService = () => {
                                 : { opacity: 0, x: -100 }
                         }
                         transition={{ duration: 0.8, ease: "easeOut" }}
-                        className="relative"
+                        className="relative w-full lg:w-1/2 flex justify-center order-2 lg:order-1"
                     >
                         <Image
                             src="/ts_card.svg"
                             alt="ts_card"
                             width={1200}
                             height={1200}
+                            className="w-full max-w-md lg:max-w-none h-auto"
                         />
                         <motion.div
                             animate={{ y: [-5, 5, -5] }}
@@ -151,13 +157,14 @@ const HayakService = () => {
                                 repeat: Infinity,
                                 ease: "easeInOut",
                             }}
-                            className="absolute -bottom-30 -left-12"
+                            className="absolute -bottom-15 sm:-bottom-30 -left-6 sm:-left-12 hidden sm:block"
                         >
                             <Image
                                 src="/ts_card_2.svg"
                                 alt="ts_card_2"
                                 width={300}
                                 height={300}
+                                className="w-[150px] sm:w-[300px] h-auto"
                             />
                         </motion.div>
                         <motion.div
@@ -167,13 +174,14 @@ const HayakService = () => {
                                 repeat: Infinity,
                                 ease: "easeInOut",
                             }}
-                            className="absolute -bottom-40 -right-14"
+                            className="absolute -bottom-20 sm:-bottom-40 -right-7 sm:-right-14 hidden sm:block"
                         >
                             <Image
                                 src="/ts_card_1.svg"
                                 alt="ts_card_1"
                                 width={300}
                                 height={300}
+                                className="w-[150px] sm:w-[300px] h-auto"
                             />
                         </motion.div>
                     </motion.div>
@@ -186,13 +194,13 @@ const HayakService = () => {
                                 : { opacity: 0, x: 100 }
                         }
                         transition={{ duration: 0.8, ease: "easeOut" }}
-                        className="flex flex-col gap-5 w-full"
+                        className="flex flex-col gap-3 sm:gap-5 w-full lg:w-1/2 order-1 lg:order-2"
                     >
-                        <h1 className="text-4xl font-bold">
+                        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center lg:text-left">
                             Tickets{" "}
                             <span className="text-[#4F2396]">System</span>
                         </h1>
-                        <p className="text-lg">
+                        <p className="text-base sm:text-lg text-center lg:text-left">
                             Experience the Hayak Ticket Marketplace, where you
                             can seamlessly sell event tickets online, manage
                             ticket details, set event days, and define various
@@ -204,7 +212,7 @@ const HayakService = () => {
                         </p>
                     </motion.div>
                 </div>
-                <div className="w-full h-full flex gap-20 items-center mt-[200px]">
+                <div className="w-full h-full flex flex-col lg:flex-row gap-8 lg:gap-20 items-center mt-16 sm:mt-32 lg:mt-[200px]">
                     <motion.div
                         ref={printingStationsLeftRef}
                         initial={{ opacity: 0, x: -100 }}
@@ -214,13 +222,13 @@ const HayakService = () => {
                                 : { opacity: 0, x: -100 }
                         }
                         transition={{ duration: 0.8, ease: "easeOut" }}
-                        className="flex flex-col gap-5 w-full"
+                        className="flex flex-col gap-3 sm:gap-5 w-full lg:w-1/2"
                     >
-                        <h1 className="text-4xl font-bold">
+                        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center lg:text-left">
                             Printing{" "}
                             <span className="text-[#4F2396]">Stations</span>
                         </h1>
-                        <p className="text-lg">
+                        <p className="text-base sm:text-lg text-center lg:text-left">
                             Simplify guest check-ins with quick and efficient
                             printing stations. Instantly print guest badges,
                             invitations, or access passes with just one click.
@@ -237,13 +245,14 @@ const HayakService = () => {
                                 : { opacity: 0, x: 100 }
                         }
                         transition={{ duration: 0.8, ease: "easeOut" }}
-                        className="relative"
+                        className="relative w-full lg:w-1/2 flex justify-center"
                     >
                         <Image
                             src="/ps_card.svg"
                             alt="ps_card"
                             width={1200}
                             height={1200}
+                            className="w-full max-w-md lg:max-w-none h-auto"
                         />
                         <motion.div
                             animate={{ y: [-5, 5, -5] }}
@@ -252,18 +261,19 @@ const HayakService = () => {
                                 repeat: Infinity,
                                 ease: "easeInOut",
                             }}
-                            className="absolute -bottom-40 left-32"
+                            className="absolute -bottom-20 sm:-bottom-40 left-16 sm:left-32 hidden sm:block"
                         >
                             <Image
                                 src="/ps_card_1.svg"
                                 alt="ps_card_1"
                                 width={500}
                                 height={500}
+                                className="w-[250px] sm:w-[500px] h-auto"
                             />
                         </motion.div>
                     </motion.div>
                 </div>
-                <div className="w-full h-full flex items-center gap-20 mt-[200px]">
+                <div className="w-full h-full flex flex-col lg:flex-row items-center gap-8 lg:gap-20 mt-16 sm:mt-32 lg:mt-[200px]">
                     <motion.div
                         ref={prePrintedBadgesLeftRef}
                         initial={{ opacity: 0, x: -100 }}
@@ -273,13 +283,14 @@ const HayakService = () => {
                                 : { opacity: 0, x: -100 }
                         }
                         transition={{ duration: 0.8, ease: "easeOut" }}
-                        className="relative"
+                        className="relative w-full lg:w-1/2 flex justify-center order-2 lg:order-1"
                     >
                         <Image
                             src="/ppb_card.svg"
                             alt="ppb_card"
                             width={1200}
                             height={1200}
+                            className="w-full max-w-md lg:max-w-none h-auto"
                         />
                     </motion.div>
                     <motion.div
@@ -291,15 +302,15 @@ const HayakService = () => {
                                 : { opacity: 0, x: 100 }
                         }
                         transition={{ duration: 0.8, ease: "easeOut" }}
-                        className="flex flex-col gap-5 w-full"
+                        className="flex flex-col gap-3 sm:gap-5 w-full lg:w-1/2 order-1 lg:order-2"
                     >
-                        <h1 className="text-4xl font-bold">
+                        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center lg:text-left">
                             Pre-printed Badges, <br />
                             <span className="text-[#4F2396]">
                                 Bracelets & Lanyards
                             </span>
                         </h1>
-                        <p className="text-lg">
+                        <p className="text-base sm:text-lg text-center lg:text-left">
                             Prepare your event in advance with custom
                             pre-printed badges, bracelets, and lanyards. Save
                             time at the reception by handing guests their
@@ -310,7 +321,7 @@ const HayakService = () => {
                         </p>
                     </motion.div>
                 </div>
-                <div className="w-full h-full flex gap-20 items-center mt-[200px]">
+                <div className="w-full h-full flex flex-col lg:flex-row gap-8 lg:gap-20 items-center mt-16 sm:mt-32 lg:mt-[200px]">
                     <motion.div
                         ref={guestJourneyLeftRef}
                         initial={{ opacity: 0, x: -100 }}
@@ -320,15 +331,15 @@ const HayakService = () => {
                                 : { opacity: 0, x: -100 }
                         }
                         transition={{ duration: 0.8, ease: "easeOut" }}
-                        className="flex flex-col gap-5 w-full"
+                        className="flex flex-col gap-3 sm:gap-5 w-full lg:w-1/2"
                     >
-                        <h1 className="text-4xl font-bold">
+                        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center lg:text-left">
                             Guest{" "}
                             <span className="text-[#4F2396]">
                                 Journey Planning
                             </span>
                         </h1>
-                        <p className="text-lg">
+                        <p className="text-base sm:text-lg text-center lg:text-left">
                             Easily plan and manage your event's guest flow by
                             setting up custom access zones, pre-designed badges,
                             and smart check-in options. Give every guest a
@@ -345,13 +356,14 @@ const HayakService = () => {
                                 : { opacity: 0, x: 100 }
                         }
                         transition={{ duration: 0.8, ease: "easeOut" }}
-                        className="relative"
+                        className="relative w-full lg:w-1/2 flex justify-center"
                     >
                         <Image
                             src="/jn_card.svg"
                             alt="jn_card"
                             width={1200}
                             height={1200}
+                            className="w-full max-w-md lg:max-w-none h-auto"
                         />
                     </motion.div>
                 </div>

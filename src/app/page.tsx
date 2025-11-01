@@ -8,10 +8,18 @@ import HayakService from "@/sections/HayakService";
 import WhatsappFeature from "@/sections/WhatsappFeature";
 import CheckInFeature from "@/sections/CheckInFeature";
 import StatFeature from "@/sections/StatFeature";
+import TryHayak from "@/sections/TryHayak";
+import HayakPackages from "@/sections/HayakPackages";
+import HayakNumbers from "@/sections/HayakNumbers";
+import OurClients from "@/sections/OurClients";
+import Testimonials from "@/sections/Testimonials";
+import ContactUs from "@/sections/ContactUs";
+import FAQ from "@/sections/FAQ";
+import Footer from "@/components/Footer";
 
 const home = () => {
     return (
-        <div className="w-full h-screen bg-white">
+        <div className="w-full min-h-screen bg-white">
             <Navbar />
             <Hero />
             <FeatureCarousel />
@@ -19,6 +27,14 @@ const home = () => {
             <WhatsappFeature />
             <CheckInFeature />
             <StatFeature />
+            <TryHayak />
+            <HayakPackages />
+            <HayakNumbers />
+            <OurClients />
+            <Testimonials />
+            <ContactUs />
+            <FAQ />
+            <Footer />  
         </div>
     );
 };

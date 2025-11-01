@@ -1,0 +1,97 @@
+import React from "react";
+import Image from "next/image";
+import { Button } from "./ui/button";
+
+interface PackageItem {
+    text: string;
+}
+
+interface PackageCardProps {
+    title: string;
+    price: number;
+    items: PackageItem[];
+    buttonText?: string;
+    variant: "first" | "middle" | "last" | "single";
+    className?: string;
+    isRecommended?: boolean;
+}
+
+const PackageCard: React.FC<PackageCardProps> = ({
+    title,
+    price,
+    items,
+    buttonText = "Get Started",
+    variant,
+    className = "",
+    isRecommended = false,
+}) => {
+    const getVariantStyles = () => {
+        const baseStyles = `flex flex-col gap-10 p-5 md:w-[250px] w-full border-2 border-[#C8BBDE] rounded-[20px] ${
+            isRecommended ? "bg-[#E5DEEF]" : "bg-[#FBF6FF]"
+        }`;
+
+        switch (variant) {
+            case "first":
+                return `${baseStyles} md:border-r-0 md:rounded-tr-none md:rounded-br-none`;
+            case "middle":
+                return `${baseStyles} md:border-x-0 md:rounded-tl-none md:rounded-bl-none md:rounded-tr-none md:rounded-br-none`;
+            case "last":
+                return `${baseStyles} md:border-l-0 md:rounded-tl-none md:rounded-bl-none`;
+            case "single":
+                return baseStyles;
+            default:
+                return baseStyles;
+        }
+    };
+
+    return (
+        <div className={`${getVariantStyles()} ${className} relative`}>
+            {/* Best Deal Label */}
+            {isRecommended && (
+                <div className="absolute -top-3.5 left-1/2 transform -translate-x-1/2 bg-[#4F2396] text-white px-4 py-1 rounded-full text-sm font-medium">
+                    Best Deal
+                </div>
+            )}
+            
+            {/* Header Section */}
+            <div className="flex flex-col items-center justify-center gap-5">
+                <h1 className="text-xl font-bold text-[#241044]">{title}</h1>
+                <span className="flex items-center gap-1 text-2xl font-bold text-[#241044]">
+                    {price}{" "}
+                    <Image
+                        src="/saudi_riyal.svg"
+                        alt="saudi_riyal"
+                        width={20}
+                        height={20}
+                    />
+                </span>
+                <Button
+                    className={`${
+                        isRecommended
+                            ? "bg-[#4F2396] text-[#fff] hover:bg-[#4F2396]/70"
+                            : "bg-[#EDE9F5] text-[#4F2396] hover:bg-[#4F2396] hover:text-[#fff]"
+                    } w-full`}
+                >
+                    {buttonText}
+                </Button>
+            </div>
+
+            {/* Features List */}
+            <ul className="flex flex-col gap-5 flex-1">
+                {items.map((item, index) => (
+                    <li key={index} className="flex items-center gap-2">
+                        <Image
+                            src="/package_checkbox.svg"
+                            alt="package_checkbox"
+                            width={20}
+                            height={20}
+                        />
+                        <span className="text-sm text-[#241044]">{item.text}</span>
+                    </li>
+                ))}
+            </ul>
+        </div>
+    );
+};
+
+export default PackageCard;
