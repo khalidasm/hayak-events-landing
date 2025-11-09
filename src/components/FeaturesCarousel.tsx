@@ -23,7 +23,7 @@ const FeaturesCarousel = () => {
     }, []);
 
     return (
-        <span className="relative inline-block h-8 xl:h-12 w-[150px] xl:w-[200px] items-center justify-center mt-2 xl:mt-3">
+        <span className="relative inline-block h-8 xl:h-12 min-w-[150px] w-auto xl:w-[200px] items-center justify-center mt-2 xl:mt-3 text-center">
             <AnimatePresence mode="wait">
                 <motion.span
                     key={currentIndex}

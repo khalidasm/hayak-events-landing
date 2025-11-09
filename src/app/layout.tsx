@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Sans } from "next/font/google";
+import { IBM_Plex_Sans_Arabic } from "next/font/google";
 import "./globals.css";
+import { Toaster } from "@/components/ui/sonner";
 
-const ibmPlexSans = IBM_Plex_Sans({
+const ibmPlexSansArabic = IBM_Plex_Sans_Arabic({
   variable: "--font-ibm-plex-sans",
-  subsets: ["latin"],
+  subsets: ["arabic", "latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700"],
 });
 
@@ -21,9 +22,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${ibmPlexSans.variable} font-sans antialiased`}
+        className={`${ibmPlexSansArabic.variable} font-sans antialiased`}
       >
         {children}
+        <Toaster />
       </body>
     </html>
   );
