@@ -26,17 +26,17 @@ const PackageCard: React.FC<PackageCardProps> = ({
     isRecommended = false,
 }) => {
     const getVariantStyles = () => {
-        const baseStyles = `flex flex-col gap-10 p-5 md:w-[250px] w-full border-2 border-[#C8BBDE] rounded-[20px] ${
+        const baseStyles = `flex flex-col gap-10 p-5 xl:w-[250px] w-full border-2 border-[#C8BBDE] rounded-[20px] ${
             isRecommended ? "bg-[#E5DEEF]" : "bg-[#FBF6FF]"
         }`;
 
         switch (variant) {
             case "first":
-                return `${baseStyles} md:border-r-0 md:rounded-tr-none md:rounded-br-none`;
+                return `${baseStyles} xl:border-r-0 xl:rounded-tr-none xl:rounded-br-none`;
             case "middle":
-                return `${baseStyles} md:border-x-0 md:rounded-tl-none md:rounded-bl-none md:rounded-tr-none md:rounded-br-none`;
+                return `${baseStyles} xl:border-x-0 xl:rounded-tl-none xl:rounded-bl-none xl:rounded-tr-none xl:rounded-br-none`;
             case "last":
-                return `${baseStyles} md:border-l-0 md:rounded-tl-none md:rounded-bl-none`;
+                return `${baseStyles} xl:border-l-0 xl:rounded-tl-none xl:rounded-bl-none`;
             case "single":
                 return baseStyles;
             default:

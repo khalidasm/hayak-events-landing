@@ -7,12 +7,12 @@ const Footer = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <footer className="bg-white py-16 px-4 sm:px-8 md:px-16 lg:px-60">
+    <footer className="bg-white py-16 px-4 xl:px-60">
       <div className="max-w-7xl mx-auto">
         {/* Footer Content Container - Dark Purple Rounded Rectangle */}
         <motion.div 
           ref={ref}
-          className="bg-[#4F2396] text-white rounded-[40px] px-6 md:px-20 py-10"
+          className="bg-[#4F2396] text-white rounded-[40px] px-6 xl:px-20 py-10"
           initial={{ 
             y: 100, 
             opacity: 0,
@@ -32,16 +32,16 @@ const Footer = () => {
         >
           <div className="max-w-6xl mx-auto">
             {/* Main Footer Content */}
-            <div className="flex flex-col md:grid md:grid-cols-9 gap-8 md:gap-0 text-center md:text-left">
+            <div className="flex flex-col xl:grid xl:grid-cols-9 gap-8 xl:gap-0 text-center xl:text-left">
               {/* Logo Column */}
-              <div className="space-y-4 md:col-span-2 flex flex-col items-center md:items-start">
-                <div className="flex items-center justify-center md:justify-start">
+              <div className="space-y-4 xl:col-span-2 flex flex-col items-center xl:items-start">
+                <div className="flex items-center justify-center xl:justify-start">
                     <Image src="/logo_white.svg" alt="Logo" width={100} height={100} />
                 </div>
               </div>
 
               {/* Quick Actions Column */}
-              <div className="space-y-4 md:col-span-2 flex flex-col items-center md:items-start">
+              <div className="space-y-4 xl:col-span-2 flex flex-col items-center xl:items-start">
                 <h3 className="font-bold text-xl">Quick Actions</h3>
                 <ul className="space-y-3">
                   <li><a href="#plans" className="hover:text-[#241044] transition-colors text-lg">Plans</a></li>
@@ -52,7 +52,7 @@ const Footer = () => {
               </div>
 
               {/* Support Column */}
-              <div className="space-y-4 md:col-span-2 flex flex-col items-center md:items-start">
+              <div className="space-y-4 xl:col-span-2 flex flex-col items-center xl:items-start">
                 <h3 className="font-bold text-xl">Support</h3>
                 <ul className="space-y-3">
                   <li><a href="#faqs" className="hover:text-[#241044] transition-colors text-lg">FAQs</a></li>
@@ -62,9 +62,9 @@ const Footer = () => {
               </div>
 
               {/* Follow us Column */}
-              <div className="space-y-4 md:col-span-3 flex flex-col items-center md:items-start">
+              <div className="space-y-4 xl:col-span-3 flex flex-col items-center xl:items-start">
                 <h3 className="font-bold text-xl">Follow us</h3>
-                <div className="flex space-x-3 mb-6 justify-center md:justify-start">
+                <div className="flex space-x-3 mb-6 justify-center xl:justify-start">
                   {/* TikTok */}
                   <a href="#" className="w-12 h-12 bg-white rounded-lg flex items-center justify-center hover:bg-gray-200 transition-colors">
                     <svg className="w-6 h-6 text-[#6B46C1]" fill="currentColor" viewBox="0 0 24 24">
@@ -95,7 +95,7 @@ const Footer = () => {
                 </div>
                 
                 {/* Policy Links */}
-                <div className="flex flex-col md:flex-row items-center md:items-center gap-2 md:gap-2">
+                <div className="flex flex-col xl:flex-row items-center xl:items-center gap-2 xl:gap-2">
                   <a href="#privacy" className="hover:text-[#241044] transition-colors text-sm">Privacy policy</a>
                   <a href="#refund" className="hover:text-[#241044] transition-colors text-sm">Refund policy</a>
                   <a href="#terms" className="hover:text-[#241044] transition-colors text-sm">Terms of service</a>

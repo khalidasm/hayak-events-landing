@@ -97,7 +97,7 @@ const HayakPackages = () => {
             initial={{ opacity: 0 }}
             animate={containerInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="w-full relative px-4 sm:px-8 md:px-16 lg:px-60 py-16 sm:py-24 lg:py-32 flex flex-col gap-10"
+            className="w-full relative px-4 xl:px-60 py-16 xl:py-32 flex flex-col gap-10"
         >
             <motion.h1
                 ref={titleRef}
@@ -106,7 +106,7 @@ const HayakPackages = () => {
                     titleInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }
                 }
                 transition={{ duration: 0.8, ease: "easeOut" }}
-                className="text-2xl sm:text-3xl lg:text-4xl text-center font-bold"
+                className="text-2xl xl:text-4xl text-center font-bold"
             >
                 Hayak <span className="text-[#4F2396]">Packages</span>
             </motion.h1>
@@ -119,7 +119,7 @@ const HayakPackages = () => {
                         : { opacity: 0, y: 100 }
                 }
                 transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-                className="flex flex-col items-center justify-center gap-10 p-6 rounded-[20px] md:py-0 md:rounded-none md:gap-0 md:flex-row md:items-stretch bg-[#F9F4FF] md:bg-transparent"
+                className="flex flex-col items-center justify-center gap-10 p-6 rounded-[20px] xl:py-0 xl:rounded-none xl:gap-0 xl:flex-row xl:items-stretch bg-[#F9F4FF] xl:bg-transparent"
             >
                 <PackageCard
                     variant="first"

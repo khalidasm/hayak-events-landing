@@ -37,14 +37,14 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
                 alt="quote_icon"
                 width={100}
                 height={100}
-                className="absolute bottom-5 right-5 hidden md:block"
+                className="absolute bottom-5 right-5 hidden xl:block"
             />
             <Image
                 src="/qoute.svg"
                 alt="quote_icon"
                 width={50}
                 height={50}
-                className="absolute bottom-5 right-5 block md:hidden"
+                className="absolute bottom-5 right-5 block xl:hidden"
             />
         </div>
     );

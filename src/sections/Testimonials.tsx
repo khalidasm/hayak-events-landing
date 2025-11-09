@@ -43,7 +43,7 @@ const Testimonials = () => {
 
     useEffect(() => {
         const computeCardsToShow = () => {
-            if (window.innerWidth >= 768) {
+            if (window.innerWidth >= 1280) {
                 setCardsToShow(2);
             } else {
                 setCardsToShow(1);
@@ -56,14 +56,14 @@ const Testimonials = () => {
 
     return (
         <motion.div 
-            className="w-full relative px-4 sm:px-8 md:px-16 lg:px-60 py-16 sm:py-24 lg:py-32 flex flex-col gap-24 sm:gap-28 lg:gap-40"
+            className="w-full relative px-4 xl:px-60 py-16 xl:py-32 flex flex-col gap-24 xl:gap-40"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
         >
             <motion.h1 
-                className="text-2xl sm:text-3xl md:text-4xl font-bold text-center"
+                className="text-2xl xl:text-4xl font-bold text-center"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}

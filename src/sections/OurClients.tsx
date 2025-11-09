@@ -5,21 +5,21 @@ import { motion } from "framer-motion";
 const OurClients = () => {
     return (
         <motion.div 
-            className="w-full relative px-4 sm:px-8 md:px-16 lg:px-60 py-16 sm:py-24 lg:py-32 flex flex-col gap-10"
+            className="w-full relative px-4 xl:px-60 py-16 xl:py-32 flex flex-col gap-10"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
         >
             <motion.div 
-                className='bg-[url("/our_client_pattern.svg")] bg-cover bg-center bg-no-repeat rounded-[20px] py-10 px-6 sm:py-16 sm:px-8 lg:py-20 lg:px-10 flex flex-col items-center gap-10'
+                className='bg-[url("/our_client_pattern.svg")] bg-cover bg-center bg-no-repeat rounded-[20px] py-10 px-6 xl:py-20 xl:px-10 flex flex-col items-center gap-10'
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
             >
                 <motion.h1 
-                    className="text-2xl sm:text-3xl md:text-4xl font-bold text-center"
+                    className="text-2xl xl:text-4xl font-bold text-center"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
@@ -28,7 +28,7 @@ const OurClients = () => {
                     Our <span className="text-[#4F2396]">Clients</span>
                 </motion.h1>
                 <motion.p 
-                    className="text-base sm:text-lg md:text-xl text-center"
+                    className="text-base xl:text-xl text-center"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
@@ -39,7 +39,7 @@ const OurClients = () => {
                 </motion.p>
                 {/* Mobile: auto-playing marquee carousel */}
                 <motion.div 
-                    className="relative sm:hidden w-full overflow-hidden"
+                    className="relative xl:hidden w-full overflow-hidden"
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
@@ -131,7 +131,7 @@ const OurClients = () => {
 
                 {/* Desktop / larger screens: grid */}
                 <motion.div 
-                    className="hidden sm:grid sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 md:gap-10"
+                    className="hidden xl:grid xl:grid-cols-6 gap-10"
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}

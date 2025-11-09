@@ -23,11 +23,11 @@ const FeaturesCarousel = () => {
     }, []);
 
     return (
-        <span className="relative inline-block h-8 sm:h-10 lg:h-12 w-[150px] sm:w-[180px] lg:w-[200px] items-center justify-center mt-2 sm:mt-3">
+        <span className="relative inline-block h-8 xl:h-12 w-[150px] xl:w-[200px] items-center justify-center mt-2 xl:mt-3">
             <AnimatePresence mode="wait">
                 <motion.span
                     key={currentIndex}
-                    className="whitespace-nowrap text-lg sm:text-2xl lg:text-3xl font-bold text-[#4F2396]"
+                    className="whitespace-nowrap text-lg xl:text-3xl font-bold text-[#4F2396]"
                     initial={{ opacity: 0, y: 20, scale: 0.8 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: -20, scale: 0.8 }}

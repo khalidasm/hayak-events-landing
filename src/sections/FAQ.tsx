@@ -37,7 +37,7 @@ const FAQ = () => {
 
   return (
     <motion.div 
-      className="w-full relative px-4 sm:px-8 md:px-16 lg:px-60 py-16 sm:py-24 lg:py-32 flex flex-col gap-5"
+      className="w-full relative px-4 xl:px-60 py-16 xl:py-32 flex flex-col gap-5"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
