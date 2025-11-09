@@ -7,16 +7,12 @@ const Hero = () => {
     const scale = useTransform(scrollYProgress, [0, 0.5], [1, 1.2]);
     const cardScale = useTransform(scrollYProgress, [0.2, 0.8], [1, 1.3]);
     return (
-        <div className="w-full flex flex-col gap-3 sm:gap-5 items-center justify-center pt-16 sm:pt-24 lg:pt-32 pb-16 sm:pb-24 lg:pb-32 px-4 sm:px-0">
-            <Image 
-                src="/logo.png" 
-                alt="Logo" 
-                width={120} 
-                height={120} 
-            />
+        <div className="w-full flex flex-col gap-3 sm:gap-5 items-center justify-center pt-16 sm:pt-24 lg:pt-32 pb-16 sm:pb-24 lg:pb-32 px-4 sm:px-8 md:px-16 lg:px-60">
+            <Image src="/Logo.svg" alt="Logo" width={120} height={120} />
             <h1 className="font-semibold text-2xl sm:text-3xl md:text-4xl lg:text-[48px] text-center px-4">
-                Recruit The Right People <br /> The Smart{" "}
-                <span className="text-[#4F2396]">Way!</span>
+                Invite your special people <br />
+                <span className="text-[#4F2396]"> Seamlessly </span>
+                with Us
             </h1>
             <div className="relative mt-8 sm:mt-14 w-full max-w-4xl">
                 <motion.div
@@ -39,19 +35,19 @@ const Hero = () => {
                     className="absolute -left-20 sm:-left-55 -bottom-20 sm:-bottom-45 hidden sm:block"
                     style={{ scale: cardScale }}
                     initial={{ x: -100, opacity: 0 }}
-                    animate={{ 
-                        x: 0, 
+                    animate={{
+                        x: 0,
                         opacity: 1,
-                        y: [0, -10, 0]
+                        y: [0, -10, 0],
                     }}
-                    transition={{ 
-                        duration: 0.8, 
+                    transition={{
+                        duration: 0.8,
                         delay: 0.3,
                         y: {
                             duration: 3,
                             repeat: Infinity,
-                            ease: "easeInOut"
-                        }
+                            ease: "easeInOut",
+                        },
                     }}
                 >
                     <Image
@@ -67,19 +63,19 @@ const Hero = () => {
                     className="absolute -right-20 sm:-right-55 -bottom-20 sm:-bottom-45 hidden sm:block"
                     style={{ scale: cardScale }}
                     initial={{ x: 100, opacity: 0 }}
-                    animate={{ 
-                        x: 0, 
+                    animate={{
+                        x: 0,
                         opacity: 1,
-                        y: [0, -10, 0]
+                        y: [0, -10, 0],
                     }}
-                    transition={{ 
-                        duration: 0.8, 
+                    transition={{
+                        duration: 0.8,
                         delay: 0.5,
                         y: {
                             duration: 3,
                             repeat: Infinity,
-                            ease: "easeInOut"
-                        }
+                            ease: "easeInOut",
+                        },
                     }}
                 >
                     <Image

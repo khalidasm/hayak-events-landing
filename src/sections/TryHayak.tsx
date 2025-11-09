@@ -29,14 +29,15 @@ const TryHayak = () => {
 
     return (
         <motion.div
+            id="try"
             ref={containerRef}
             initial={{ opacity: 0 }}
             animate={containerInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="w-full px-4 sm:px-8 md:px-16 lg:px-40 py-16 sm:py-24 lg:py-32"
+            className="w-full px-4 sm:px-8 md:px-16 lg:px-60 py-16 sm:py-24 lg:py-32"
         >
-            <div className='w-full h-[250px] sm:h-[350px] lg:h-[400px] bg-[url("/try_bg.svg")] bg-contain bg-center bg-no-repeat py-5 flex flex-col items-center justify-center'>
-                <div className="flex items-center justify-center gap-5 px-4 sm:px-8 lg:px-40 w-full">
+            <div className='w-full sm:h-[350px] lg:h-[400px] bg-[url("/try_pattern_mob.svg")] md:bg-[url("/try_bg.svg")] bg-cover md:bg-contain bg-center md:bg-center bg-no-repeat py-10 md:py-5 flex flex-col items-center justify-center rounded-[20px] md:rounded-none'>
+                <div className="flex items-center justify-center gap-5 px-4 sm:px-8 md:px-16 lg:px-60 w-full">
                     <motion.div
                         ref={leftSectionRef}
                         initial={{ opacity: 0, x: -100 }}
@@ -51,7 +52,7 @@ const TryHayak = () => {
                         <div className="flex justify-center items-center gap-2 sm:gap-3">
                             <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold">Try</h1>
                             <Image
-                                src="/Logo.png"
+                                src="/Logo.svg"
                                 className="mb-2 sm:mb-5"
                                 alt="whatsapp_feature_pattern"
                                 width={60}

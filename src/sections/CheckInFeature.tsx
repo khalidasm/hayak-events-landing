@@ -21,7 +21,7 @@ const CheckInFeature = () => {
             initial={{ opacity: 0 }}
             animate={containerInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="bg-[#F5F0FF] w-full md:h-[900px] relative px-4 sm:px-8 md:px-16 lg:px-40 py-16 sm:py-24 lg:py-32"
+            className="bg-[#F5F0FF] w-full md:h-[900px] relative px-4 sm:px-8 md:px-16 lg:px-60 py-16 sm:py-24 lg:py-32"
         >
             <motion.div 
                 ref={leftContentRef}
@@ -30,16 +30,16 @@ const CheckInFeature = () => {
                 transition={{ duration: 0.8, ease: "easeOut" }}
                 className="w-full md:w-1/2 h-full flex flex-col gap-60"
             >
-                <Image src="/logo.png" alt="logo" width={100} height={100} className="hidden md:block" />
+                <Image src="/Logo.svg" alt="logo" width={100} height={100} className="hidden md:block" />
                 <div className="flex flex-col gap-5">
-                    <h1 className="text-5xl">
+                    <h1 className="text-2xl md:text-5xl text-center md:text-left font-bold">
                         Check-in <span className="text-[#4F2396]">Feature</span>
                     </h1>
-                    <p className="text-2xl">
-                        Make guest arrivals effortless with a seamless, QR-<br/>based
-                        check-in system that's fast, secure, and keeps<br/> you
-                        updated in real time, ensuring smooth entry for<br/> every
-                        guest while giving organizers full control<br/>
+                    <p className="text-base md:text-2xl text-center md:text-left w-full md:w-[90%]">
+                        Make guest arrivals effortless with a seamless, QR based
+                        check-in system that's fast, secure, and keeps you
+                        updated in real time, ensuring smooth entry for every
+                        guest while giving organizers full control and peace of mind.
                         and peace of mind.
                     </p>
                 </div>

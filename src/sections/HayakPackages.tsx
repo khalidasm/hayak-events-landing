@@ -92,11 +92,12 @@ const HayakPackages = () => {
 
     return (
         <motion.div
+            id="plans"
             ref={containerRef}
             initial={{ opacity: 0 }}
             animate={containerInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="w-full relative px-4 sm:px-8 md:px-16 lg:px-40 py-16 sm:py-24 lg:py-32 flex flex-col gap-10"
+            className="w-full relative px-4 sm:px-8 md:px-16 lg:px-60 py-16 sm:py-24 lg:py-32 flex flex-col gap-10"
         >
             <motion.h1
                 ref={titleRef}

@@ -19,7 +19,7 @@ import Footer from "@/components/Footer";
 
 const home = () => {
     return (
-        <div className="w-full min-h-screen bg-white">
+        <div className="w-full min-h-screen bg-white overflow-x-hidden">
             <Navbar />
             <Hero />
             <FeatureCarousel />

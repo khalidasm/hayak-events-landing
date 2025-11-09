@@ -52,7 +52,7 @@
                             transition={{ duration: 0.5, delay: 0.6 }}
                         >
                             <Image
-                                src="/Logo.png"
+                                src="/Logo.svg"
                                 alt="logo"
                                 width={100}
                                 height={100}

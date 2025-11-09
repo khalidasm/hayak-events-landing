@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import TestimonialCarousel from "@/components/TestimonialCarousel";
 
@@ -38,16 +39,31 @@ const Testimonials = () => {
         }
     ];
 
+    const [cardsToShow, setCardsToShow] = useState(1);
+
+    useEffect(() => {
+        const computeCardsToShow = () => {
+            if (window.innerWidth >= 768) {
+                setCardsToShow(2);
+            } else {
+                setCardsToShow(1);
+            }
+        };
+        computeCardsToShow();
+        window.addEventListener("resize", computeCardsToShow);
+        return () => window.removeEventListener("resize", computeCardsToShow);
+    }, []);
+
     return (
         <motion.div 
-            className="w-full relative px-4 sm:px-8 md:px-16 lg:px-60 py-16 sm:py-24 lg:py-32 flex flex-col gap-40"
+            className="w-full relative px-4 sm:px-8 md:px-16 lg:px-60 py-16 sm:py-24 lg:py-32 flex flex-col gap-24 sm:gap-28 lg:gap-40"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
         >
             <motion.h1 
-                className="text-4xl font-bold text-center"
+                className="text-2xl sm:text-3xl md:text-4xl font-bold text-center"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
@@ -63,7 +79,7 @@ const Testimonials = () => {
             >
                 <TestimonialCarousel 
                     testimonials={testimonialsData}
-                    cardsToShow={2}
+                    cardsToShow={cardsToShow}
                     autoRotateInterval={5000}
                 />
             </motion.div>

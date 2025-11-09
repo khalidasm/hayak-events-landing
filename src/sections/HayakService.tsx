@@ -44,7 +44,7 @@ const HayakService = () => {
     const guestJourneyRightInView = useInView(guestJourneyRightRef, { once: true, margin: "-100px" });
 
     return (
-        <div className="w-full flex flex-col items-center py-16 sm:py-24 lg:py-32 px-4 sm:px-8 md:px-16 lg:px-60 mx-auto gap-6 sm:gap-10
+        <div id="services" className="w-full flex flex-col items-center py-16 sm:py-24 lg:py-32 px-4 sm:px-8 md:px-16 lg:px-60 mx-auto gap-6 sm:gap-10
         bg-[url('/hollow-bg.svg')] bg-cover bg-center bg-no-repeat
         ">
             <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center">
