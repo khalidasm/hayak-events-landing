@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://hayaksa.com/sitemap.xml
+
+# Disallow admin and API routes if any
+Disallow: /api/
+Disallow: /_next/
+
+# Allow all locales
+Allow: /en
+Allow: /ar
+

@@ -1,372 +1,376 @@
-import React, { useRef } from "react";
+import React from "react";
 import Image from "next/image";
-import { motion, useInView } from "framer-motion";
+import HayakServiceClient from "./HayakServiceClient";
 
-const HayakService = () => {
-    // Guest Management section refs
-    const guestMgmtLeftRef = useRef(null);
-    const guestMgmtRightRef = useRef(null);
-    
-    // Ticket System section refs
-    const ticketSystemLeftRef = useRef(null);
-    const ticketSystemRightRef = useRef(null);
-    
-    // Printing Stations section refs
-    const printingStationsLeftRef = useRef(null);
-    const printingStationsRightRef = useRef(null);
-    
-    // Pre-printed Badges section refs
-    const prePrintedBadgesLeftRef = useRef(null);
-    const prePrintedBadgesRightRef = useRef(null);
-    
-    // Guest Journey Planning section refs
-    const guestJourneyLeftRef = useRef(null);
-    const guestJourneyRightRef = useRef(null);
+const translations = {
+    en: {
+        title: <><span className="text-[#4F2396]">Hayak</span> Services</>,
+        guestManagement: {
+            title: (
+                <>
+                    Guest{" "}
+                    <span className="text-[#4F2396]">Management</span>
+                </>
+            ),
+            description: (
+                <>
+                    Effortlessly manage guest lists and guest
+                    information with Hayak. Add, edit, and delete
+                    guests, send invitations and tickets via email or
+                    WhatsApp, and monitor guest statistics. Guests
+                    receive unique QR codes for entry, and automated
+                    reminders and feedback messages enhance the
+                    experience.
+                </>
+            ),
+        },
+        ticketSystem: {
+            title: (
+                <>
+                    Tickets{" "}
+                    <span className="text-[#4F2396]">System</span>
+                </>
+            ),
+            description: (
+                <>
+                    Experience the Hayak Ticket Marketplace, where you
+                    can seamlessly sell event tickets online, manage
+                    ticket details, set event days, and define various
+                    ticket types (VIP, General, etc.) with specified
+                    capacities and allowed zones for each ticket type.
+                    Easily manage ticket prices, discounts, and
+                    availability, with tickets automatically delivered
+                    via email or WhatsApp for convenience.
+                </>
+            ),
+        },
+        printingStations: {
+            title: (
+                <>
+                    Printing{" "}
+                    <span className="text-[#4F2396]">Stations</span>
+                </>
+            ),
+            description: (
+                <>
+                    Simplify guest check-ins with quick and efficient
+                    printing stations. Instantly print guest badges,
+                    invitations, or access passes with just one click.
+                    Ensure smooth entry at your event by reducing wait
+                    times and keeping the reception organized.
+                </>
+            ),
+        },
+        prePrintedBadges: {
+            title: (
+                <>
+                    Pre-printed Badges, <br />
+                    <span className="text-[#4F2396]">
+                        Bracelets & Lanyards
+                    </span>
+                </>
+            ),
+            description: (
+                <>
+                    Prepare your event in advance with custom
+                    pre-printed badges, bracelets, and lanyards. Save
+                    time at the reception by handing guests their
+                    ready-to-use passes, designed with your branding and
+                    tailored access levels. Ensure a professional,
+                    seamless, and hassle-free entry experience for
+                    everyone.
+                </>
+            ),
+        },
+        guestJourneyPlanning: {
+            title: (
+                <>
+                    Guest{" "}
+                    <span className="text-[#4F2396]">
+                        Journey Planning
+                    </span>
+                </>
+            ),
+            description: (
+                <>
+                    Easily plan and manage your event's guest flow by
+                    setting up custom access zones, pre-designed badges,
+                    and smart check-in options. Give every guest a
+                    smooth, professional entry experience from the
+                    moment they arrive.
+                </>
+            ),
+        },
+    },
+    ar: {
+        title: <>خدمات <span className="text-[#4F2396]">حيّاك</span></>,
+        guestManagement: {
+            title: (
+                <>
+                    إدارة <span className="text-[#4F2396]">الضيوف</span> 
+                </>
+            ),
+            description: (
+                <>
+                    قم بإدارة قوائم الضيوف ومعلوماتهم بسهولة تامة مع حياك.
+                    أضف، عدل، أو احذف الضيوف، وأرسل الدعوات والتذاكر عبر
+                    البريد الإلكتروني أو تطبيق واتساب، وتابع إحصاءات الحضور.
+                    يحصل الضيوف على رموز QR فريدة للدخول، كما تُسهم
+                    التذكيرات والرسائل الآلية لجمع الملاحظات في تحسين التجربة.
+                </>
+            ),
+        },
+        ticketSystem: {
+            title: (
+                <>
+                   نظام <span className="text-[#4F2396]">التذاكر</span> 
+                </>
+            ),
+            description: (
+                <>
+                    استمتع بتجربة سوق تذاكر حياك، حيث يمكنك بيع تذاكر الفعاليات عبر الإنترنت بكل سلاسة، وإدارة تفاصيل التذاكر، وتحديد أيام الفعالية، وإنشاء أنواع مختلفة من التذاكر (مثل VIP أو العامة وغيرها) مع تحديد السعة المسموح بها والمناطق المخصصة لكل نوع. يمكنك كذلك إدارة أسعار التذاكر والخصومات وتوفرها بسهولة، مع إرسال التذاكر تلقائيًا عبر البريد الإلكتروني أو واتساب لتوفير أقصى درجات الراحة.
+                </>
+            ),
+        },
+        printingStations: {
+            title: (
+                <>
+                    <span className="text-[#4F2396]">محطات</span> الطباعة
+                </>
+            ),
+            description: (
+                <>
+                    بسط عملية تسجيل حضور الضيوف من خلال محطات الطباعة السريعة والفعّالة. اطبع بطاقات الضيوف أو الدعوات أو تصاريح الدخول فورًا بضغطة زر واحدة. احرص على انسيابية دخول الضيوف إلى فعاليتك من خلال تقليل فترات الانتظار والحفاظ على تنظيم منطقة الاستقبال.
+                </>
+            ),
+        },
+        prePrintedBadges: {
+            title: (
+                <>
+                    <span className="text-[#4F2396]">البطاقات والأساور والحبال</span> المسبقة الطباعة
+                </>
+            ),
+            description: (
+                <>
+                    استعد لفعاليتك مسبقًا من خلال بطاقات، وأساور، وحبال تعليق مطبوعة مسبقًا ومخصصة حسب رغبتك. وفّر الوقت عند الاستقبال بتسليم الضيوف تصاريحهم الجاهزة للاستخدام، والمصممة بهوية علامتك التجارية ومستويات الدخول المناسبة لهم. احرص على تقديم تجربة دخول احترافية وسلسة وخالية من أي متاعب للجميع.
+                </>
+            ),
+        },
+        guestJourneyPlanning: {
+            title: (
+                <>
+                    <span className="text-[#4F2396]">تخطيط</span> رحلة الضيوف
+                </>
+            ),
+            description: (
+                <>
+                    خطط وأدر تدفق ضيوف فعاليتك بسهولة من خلال إعداد مناطق دخول مخصصة، وبطاقات مُصممة مسبقًا، وخيارات تسجيل دخول ذكية . امنح كل ضيف تجربة دخول سلسة واحترافية منذ لحظة وصوله.
+                </>
+            ),
+        },
+    },
+};
 
-    // Guest Management section inView states
-    const guestMgmtLeftInView = useInView(guestMgmtLeftRef, { once: true, margin: "-100px" });
-    const guestMgmtRightInView = useInView(guestMgmtRightRef, { once: true, margin: "-100px" });
-    
-    // Ticket System section inView states
-    const ticketSystemLeftInView = useInView(ticketSystemLeftRef, { once: true, margin: "-100px" });
-    const ticketSystemRightInView = useInView(ticketSystemRightRef, { once: true, margin: "-100px" });
-    
-    // Printing Stations section inView states
-    const printingStationsLeftInView = useInView(printingStationsLeftRef, { once: true, margin: "-100px" });
-    const printingStationsRightInView = useInView(printingStationsRightRef, { once: true, margin: "-100px" });
-    
-    // Pre-printed Badges section inView states
-    const prePrintedBadgesLeftInView = useInView(prePrintedBadgesLeftRef, { once: true, margin: "-100px" });
-    const prePrintedBadgesRightInView = useInView(prePrintedBadgesRightRef, { once: true, margin: "-100px" });
-    
-    // Guest Journey Planning section inView states
-    const guestJourneyLeftInView = useInView(guestJourneyLeftRef, { once: true, margin: "-100px" });
-    const guestJourneyRightInView = useInView(guestJourneyRightRef, { once: true, margin: "-100px" });
+interface HayakServiceProps {
+    locale: 'en' | 'ar';
+}
+
+const HayakService = ({ locale = 'en' }: HayakServiceProps) => {
+    const t = translations[locale];
+    const isRTL = locale === 'ar';
 
     return (
         <div id="services" className="w-full flex flex-col items-center py-16 xl:py-32 px-4 xl:px-60 mx-auto gap-6 xl:gap-10
         bg-[url('/hollow-bg.svg')] bg-cover bg-center bg-no-repeat
         ">
-            <h1 className="text-2xl xl:text-4xl font-bold text-center">
-                Hayak <span className="text-[#4F2396]">Service</span>
-            </h1>
+            <h2 className="text-2xl xl:text-4xl font-bold text-center">
+                {t.title}
+            </h2>
             <div className="flex flex-col items-center w-full">
-                <div className="w-full h-full flex flex-col xl:flex-row gap-8 xl:gap-20 items-center mt-8 xl:mt-[50px]">
-                    <motion.div
-                        ref={guestMgmtLeftRef}
-                        initial={{ opacity: 0, x: -100 }}
-                        animate={
-                            guestMgmtLeftInView
-                                ? { opacity: 1, x: 0 }
-                                : { opacity: 0, x: -100 }
-                        }
-                        transition={{ duration: 0.8, ease: "easeOut" }}
-                        className="flex flex-col gap-3 xl:gap-5 w-full xl:w-1/2"
+                {/* Guest Management Section - Server-rendered for SEO */}
+                <div 
+                    data-server-guest-mgmt
+                    className="w-full h-full flex flex-col xl:flex-row gap-8 xl:gap-20 items-center mt-8 xl:mt-[50px]"
+                >
+                    <div
+                        className={`flex flex-col gap-3 xl:gap-5 w-full xl:w-1/2 ${
+                            isRTL ? "text-center xl:text-right" : "text-center xl:text-left"
+                        }`}
                     >
-                        <h1 className="text-2xl xl:text-4xl font-bold text-center xl:text-left">
-                            Guest{" "}
-                            <span className="text-[#4F2396]">Management</span>
-                        </h1>
-                        <p className="text-base xl:text-lg text-center xl:text-left">
-                            Effortlessly manage guest lists and guest
-                            information with Hayak. Add, edit, and delete
-                            guests, send invitations and tickets via email or
-                            WhatsApp, and monitor guest statistics. Guests
-                            receive unique QR codes for entry, and automated
-                            reminders and feedback messages enhance the
-                            experience.
+                        <h2 className={`text-2xl xl:text-4xl font-bold ${
+                            isRTL ? "text-center xl:text-right" : "text-center xl:text-left"
+                        }`}>
+                            {t.guestManagement.title}
+                        </h2>
+                        <p className={`text-base xl:text-lg ${
+                            isRTL ? "text-center xl:text-right" : "text-center xl:text-left"
+                        }`}>
+                            {t.guestManagement.description}
                         </p>
-                    </motion.div>
-                    <motion.div
-                        ref={guestMgmtRightRef}
-                        initial={{ opacity: 0, x: 100 }}
-                        animate={
-                            guestMgmtRightInView
-                                ? { opacity: 1, x: 0 }
-                                : { opacity: 0, x: 100 }
-                        }
-                        transition={{ duration: 0.8, ease: "easeOut" }}
-                        className="relative w-full xl:w-1/2 flex justify-center"
-                    >
+                    </div>
+                    <div className="relative w-full xl:w-1/2 flex justify-center">
                         <Image
-                            src="/guest_management.svg"
-                            alt="guest_management"
+                            src={isRTL ? '/ar/guest_management.svg' : '/en/guest_management.svg'}
+                            alt={isRTL ? "بطاقة عرض إدارة الضيوف" : "Guest management feature card"}
                             width={1200}
                             height={1200}
                             className="w-full max-w-md xl:max-w-none h-auto"
                         />
-                        <motion.div
-                            animate={{ y: [-5, 5, -5] }}
-                            transition={{
-                                duration: 3,
-                                repeat: Infinity,
-                                ease: "easeInOut",
-                            }}
-                            className="absolute -bottom-20 xl:-bottom-50 -left-8 xl:-left-16 hidden xl:block"
-                        >
-                            <Image
-                                src="/gs_card_1.svg"
-                                alt="gs_card_1"
-                                width={400}
-                                height={400}
-                                className="w-[200px] xl:w-[400px] h-auto"
-                            />
-                        </motion.div>
-                        <motion.div
-                            animate={{ y: [-5, 5, -5] }}
-                            transition={{
-                                duration: 3,
-                                repeat: Infinity,
-                                ease: "easeInOut",
-                            }}
-                            className="absolute -bottom-15 xl:-bottom-30 -right-9 xl:-right-18 hidden xl:block"
-                        >
-                            <Image
-                                src="/gs_card_2.svg"
-                                alt="gs_card_2"
-                                width={400}
-                                height={400}
-                                className="w-[200px] xl:w-[400px] h-auto"
-                            />
-                        </motion.div>
-                    </motion.div>
+                    </div>
                 </div>
-                <div className="w-full h-full flex flex-col xl:flex-row items-center gap-8 xl:gap-20 mt-16 xl:mt-[200px]">
-                    <motion.div
-                        ref={ticketSystemLeftRef}
-                        initial={{ opacity: 0, x: -100 }}
-                        animate={
-                            ticketSystemLeftInView
-                                ? { opacity: 1, x: 0 }
-                                : { opacity: 0, x: -100 }
-                        }
-                        transition={{ duration: 0.8, ease: "easeOut" }}
-                        className="relative w-full xl:w-1/2 flex justify-center order-2 xl:order-1"
-                    >
+
+                {/* Tickets System Section - Server-rendered for SEO */}
+                <div 
+                    data-server-ticket-system
+                    className="w-full h-full flex flex-col xl:flex-row items-center gap-8 xl:gap-20 mt-16 xl:mt-[200px]"
+                >
+                    <div className="relative w-full xl:w-1/2 flex justify-center order-2 xl:order-1">
                         <Image
-                            src="/ts_card.svg"
-                            alt="ts_card"
+                            src={isRTL ? '/ar/ts_card.svg' : '/en/ts_card.svg'}
+                            alt={isRTL ? "بطاقة عرض نظام التذاكر" : "Ticket system feature card"}
                             width={1200}
                             height={1200}
                             className="w-full max-w-md xl:max-w-none h-auto"
                         />
-                        <motion.div
-                            animate={{ y: [-5, 5, -5] }}
-                            transition={{
-                                duration: 3,
-                                repeat: Infinity,
-                                ease: "easeInOut",
-                            }}
-                            className="absolute -bottom-15 xl:-bottom-30 -left-6 xl:-left-12 hidden xl:block"
-                        >
-                            <Image
-                                src="/ts_card_2.svg"
-                                alt="ts_card_2"
-                                width={300}
-                                height={300}
-                                className="w-[150px] xl:w-[300px] h-auto"
-                            />
-                        </motion.div>
-                        <motion.div
-                            animate={{ y: [-5, 5, -5] }}
-                            transition={{
-                                duration: 3,
-                                repeat: Infinity,
-                                ease: "easeInOut",
-                            }}
-                            className="absolute -bottom-20 xl:-bottom-40 -right-7 xl:-right-14 hidden xl:block"
-                        >
-                            <Image
-                                src="/ts_card_1.svg"
-                                alt="ts_card_1"
-                                width={300}
-                                height={300}
-                                className="w-[150px] xl:w-[300px] h-auto"
-                            />
-                        </motion.div>
-                    </motion.div>
-                    <motion.div
-                        ref={ticketSystemRightRef}
-                        initial={{ opacity: 0, x: 100 }}
-                        animate={
-                            ticketSystemRightInView
-                                ? { opacity: 1, x: 0 }
-                                : { opacity: 0, x: 100 }
-                        }
-                        transition={{ duration: 0.8, ease: "easeOut" }}
-                        className="flex flex-col gap-3 xl:gap-5 w-full xl:w-1/2 order-1 xl:order-2"
+                    </div>
+                    <div
+                        className={`flex flex-col gap-3 xl:gap-5 w-full xl:w-1/2 order-1 xl:order-2 ${
+                            isRTL ? "text-center xl:text-right" : "text-center xl:text-left"
+                        }`}
                     >
-                        <h1 className="text-2xl xl:text-4xl font-bold text-center xl:text-left">
-                            Tickets{" "}
-                            <span className="text-[#4F2396]">System</span>
-                        </h1>
-                        <p className="text-base xl:text-lg text-center xl:text-left">
-                            Experience the Hayak Ticket Marketplace, where you
-                            can seamlessly sell event tickets online, manage
-                            ticket details, set event days, and define various
-                            ticket types (VIP, General, etc.) with specified
-                            capacities and allowed zones for each ticket type.
-                            Easily manage ticket prices, discounts, and
-                            availability, with tickets automatically delivered
-                            via email or WhatsApp for convenience.
+                        <h2 className={`text-2xl xl:text-4xl font-bold ${
+                            isRTL ? "text-center xl:text-right" : "text-center xl:text-left"
+                        }`}>
+                            {t.ticketSystem.title}
+                        </h2>
+                        <p className={`text-base xl:text-lg ${
+                            isRTL ? "text-center xl:text-right" : "text-center xl:text-left"
+                        }`}>
+                            {t.ticketSystem.description}
                         </p>
-                    </motion.div>
+                    </div>
                 </div>
-                <div className="w-full h-full flex flex-col xl:flex-row gap-8 xl:gap-20 items-center mt-16 xl:mt-[200px]">
-                    <motion.div
-                        ref={printingStationsLeftRef}
-                        initial={{ opacity: 0, x: -100 }}
-                        animate={
-                            printingStationsLeftInView
-                                ? { opacity: 1, x: 0 }
-                                : { opacity: 0, x: -100 }
-                        }
-                        transition={{ duration: 0.8, ease: "easeOut" }}
-                        className="flex flex-col gap-3 xl:gap-5 w-full xl:w-1/2"
+
+                {/* Printing Stations Section - Server-rendered for SEO */}
+                <div 
+                    data-server-printing-stations
+                    className="w-full h-full flex flex-col xl:flex-row gap-8 xl:gap-20 items-center mt-16 xl:mt-[200px]"
+                >
+                    <div
+                        className={`flex flex-col gap-3 xl:gap-5 w-full xl:w-1/2 ${
+                            isRTL ? "text-center xl:text-right" : "text-center xl:text-left"
+                        }`}
                     >
-                        <h1 className="text-2xl xl:text-4xl font-bold text-center xl:text-left">
-                            Printing{" "}
-                            <span className="text-[#4F2396]">Stations</span>
-                        </h1>
-                        <p className="text-base xl:text-lg text-center xl:text-left">
-                            Simplify guest check-ins with quick and efficient
-                            printing stations. Instantly print guest badges,
-                            invitations, or access passes with just one click.
-                            Ensure smooth entry at your event by reducing wait
-                            times and keeping the reception organized.
+                        <h2 className={`text-2xl xl:text-4xl font-bold ${
+                            isRTL ? "text-center xl:text-right" : "text-center xl:text-left"
+                        }`}>
+                            {t.printingStations.title}
+                        </h2>
+                        <p className={`text-base xl:text-lg ${
+                            isRTL ? "text-center xl:text-right" : "text-center xl:text-left"
+                        }`}>
+                            {t.printingStations.description}
                         </p>
-                    </motion.div>
-                    <motion.div
-                        ref={printingStationsRightRef}
-                        initial={{ opacity: 0, x: 100 }}
-                        animate={
-                            printingStationsRightInView
-                                ? { opacity: 1, x: 0 }
-                                : { opacity: 0, x: 100 }
-                        }
-                        transition={{ duration: 0.8, ease: "easeOut" }}
-                        className="relative w-full xl:w-1/2 flex justify-center"
-                    >
+                    </div>
+                    <div className="relative w-full xl:w-1/2 flex justify-center">
                         <Image
-                            src="/ps_card.svg"
-                            alt="ps_card"
+                            src={isRTL ? '/ar/ps_card.svg' : '/en/ps_card.svg'}
+                            alt={isRTL ? "بطاقة عرض محطات الطباعة" : "Printing stations feature card"}
                             width={1200}
                             height={1200}
                             className="w-full max-w-md xl:max-w-none h-auto"
                         />
-                        <motion.div
-                            animate={{ y: [-5, 5, -5] }}
-                            transition={{
-                                duration: 3,
-                                repeat: Infinity,
-                                ease: "easeInOut",
-                            }}
-                            className="absolute -bottom-20 xl:-bottom-40 left-16 xl:left-32 hidden xl:block"
-                        >
-                            <Image
-                                src="/ps_card_1.svg"
-                                alt="ps_card_1"
-                                width={500}
-                                height={500}
-                                className="w-[250px] xl:w-[500px] h-auto"
-                            />
-                        </motion.div>
-                    </motion.div>
+                    </div>
                 </div>
-                <div className="w-full h-full flex flex-col xl:flex-row items-center gap-8 xl:gap-20 mt-16 xl:mt-[200px]">
-                    <motion.div
-                        ref={prePrintedBadgesLeftRef}
-                        initial={{ opacity: 0, x: -100 }}
-                        animate={
-                            prePrintedBadgesLeftInView
-                                ? { opacity: 1, x: 0 }
-                                : { opacity: 0, x: -100 }
-                        }
-                        transition={{ duration: 0.8, ease: "easeOut" }}
-                        className="relative w-full xl:w-1/2 flex justify-center order-2 xl:order-1"
-                    >
+
+                {/* Pre-printed Badges Section - Server-rendered for SEO */}
+                <div 
+                    data-server-pre-printed-badges
+                    className="w-full h-full flex flex-col xl:flex-row items-center gap-8 xl:gap-20 mt-16 xl:mt-[200px]"
+                >
+                    <div className="relative w-full xl:w-1/2 flex justify-center order-2 xl:order-1">
                         <Image
-                            src="/ppb_card.svg"
-                            alt="ppb_card"
+                            src={isRTL ? '/ar/ppb_card.svg' : '/en/ppb_card.svg'}
+                            alt={isRTL ? "بطاقة عرض الشارات المطبوعة مسبقاً" : "Pre-printed badges feature card"}
                             width={1200}
                             height={1200}
                             className="w-full max-w-md xl:max-w-none h-auto"
                         />
-                    </motion.div>
-                    <motion.div
-                        ref={prePrintedBadgesRightRef}
-                        initial={{ opacity: 0, x: 100 }}
-                        animate={
-                            prePrintedBadgesRightInView
-                                ? { opacity: 1, x: 0 }
-                                : { opacity: 0, x: 100 }
-                        }
-                        transition={{ duration: 0.8, ease: "easeOut" }}
-                        className="flex flex-col gap-3 xl:gap-5 w-full xl:w-1/2 order-1 xl:order-2"
+                    </div>
+                    <div
+                        className={`flex flex-col gap-3 xl:gap-5 w-full xl:w-1/2 order-1 xl:order-2 ${
+                            isRTL ? "text-center xl:text-right" : "text-center xl:text-left"
+                        }`}
                     >
-                        <h1 className="text-2xl xl:text-4xl font-bold text-center xl:text-left">
-                            Pre-printed Badges, <br />
-                            <span className="text-[#4F2396]">
-                                Bracelets & Lanyards
-                            </span>
-                        </h1>
-                        <p className="text-base xl:text-lg text-center xl:text-left">
-                            Prepare your event in advance with custom
-                            pre-printed badges, bracelets, and lanyards. Save
-                            time at the reception by handing guests their
-                            ready-to-use passes, designed with your branding and
-                            tailored access levels. Ensure a professional,
-                            seamless, and hassle-free entry experience for
-                            everyone.
+                        <h2 className={`text-2xl xl:text-4xl font-bold ${
+                            isRTL ? "text-center xl:text-right" : "text-center xl:text-left"
+                        }`}>
+                            {t.prePrintedBadges.title}
+                        </h2>
+                        <p className={`text-base xl:text-lg ${
+                            isRTL ? "text-center xl:text-right" : "text-center xl:text-left"
+                        }`}>
+                            {t.prePrintedBadges.description}
                         </p>
-                    </motion.div>
+                    </div>
                 </div>
-                <div className="w-full h-full flex flex-col xl:flex-row gap-8 xl:gap-20 items-center mt-16 xl:mt-[200px]">
-                    <motion.div
-                        ref={guestJourneyLeftRef}
-                        initial={{ opacity: 0, x: -100 }}
-                        animate={
-                            guestJourneyLeftInView
-                                ? { opacity: 1, x: 0 }
-                                : { opacity: 0, x: -100 }
-                        }
-                        transition={{ duration: 0.8, ease: "easeOut" }}
-                        className="flex flex-col gap-3 xl:gap-5 w-full xl:w-1/2"
+
+                {/* Guest Journey Planning Section - Server-rendered for SEO */}
+                <div 
+                    data-server-guest-journey
+                    className="w-full h-full flex flex-col xl:flex-row gap-8 xl:gap-20 items-center mt-16 xl:mt-[200px]"
+                >
+                    <div
+                        className={`flex flex-col gap-3 xl:gap-5 w-full xl:w-1/2 ${
+                            isRTL ? "text-center xl:text-right" : "text-center xl:text-left"
+                        }`}
                     >
-                        <h1 className="text-2xl xl:text-4xl font-bold text-center xl:text-left">
-                            Guest{" "}
-                            <span className="text-[#4F2396]">
-                                Journey Planning
-                            </span>
-                        </h1>
-                        <p className="text-base xl:text-lg text-center xl:text-left">
-                            Easily plan and manage your event's guest flow by
-                            setting up custom access zones, pre-designed badges,
-                            and smart check-in options. Give every guest a
-                            smooth, professional entry experience from the
-                            moment they arrive.
+                        <h2 className={`text-2xl xl:text-4xl font-bold ${
+                            isRTL ? "text-center xl:text-right" : "text-center xl:text-left"
+                        }`}>
+                            {t.guestJourneyPlanning.title}
+                        </h2>
+                        <p className={`text-base xl:text-lg ${
+                            isRTL ? "text-center xl:text-right" : "text-center xl:text-left"
+                        }`}>
+                            {t.guestJourneyPlanning.description}
                         </p>
-                    </motion.div>
-                    <motion.div
-                        ref={guestJourneyRightRef}
-                        initial={{ opacity: 0, x: 100 }}
-                        animate={
-                            guestJourneyRightInView
-                                ? { opacity: 1, x: 0 }
-                                : { opacity: 0, x: 100 }
-                        }
-                        transition={{ duration: 0.8, ease: "easeOut" }}
-                        className="relative w-full xl:w-1/2 flex justify-center"
-                    >
+                    </div>
+                    <div className="relative w-full xl:w-1/2 flex justify-center">
                         <Image
-                            src="/jn_card.svg"
-                            alt="jn_card"
+                            src={isRTL ? '/ar/jn_card.svg' : '/en/jn_card.svg'}
+                            alt={isRTL ? "بطاقة عرض تخطيط رحلة الضيف" : "Guest journey planning feature card"}
                             width={1200}
                             height={1200}
                             className="w-full max-w-md xl:max-w-none h-auto"
                         />
-                    </motion.div>
+                    </div>
                 </div>
+
+                {/* Client component for animations */}
+                <HayakServiceClient 
+                    locale={locale} 
+                    guestManagementTranslations={{
+                        title: t.guestManagement.title,
+                        description: t.guestManagement.description,
+                    }}
+                    ticketSystemTranslations={{
+                        title: t.ticketSystem.title,
+                        description: t.ticketSystem.description,
+                    }}
+                    printingStationsTranslations={{
+                        title: t.printingStations.title,
+                        description: t.printingStations.description,
+                    }}
+                    prePrintedBadgesTranslations={{
+                        title: t.prePrintedBadges.title,
+                        description: t.prePrintedBadges.description,
+                    }}
+                    guestJourneyPlanningTranslations={{
+                        title: t.guestJourneyPlanning.title,
+                        description: t.guestJourneyPlanning.description,
+                    }}
+                />
             </div>
         </div>
     );

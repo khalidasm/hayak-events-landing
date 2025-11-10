@@ -1,159 +1,320 @@
-import React, { useRef } from "react";
-import { motion, useInView } from "framer-motion";
-import PackageCard from "../components/PackageCard";
+import React from "react";
+import HayakPackagesClient from "./HayakPackagesClient";
 
-const HayakPackages = () => {
-    // Refs for scroll-triggered animations
-    const containerRef = useRef(null);
-    const titleRef = useRef(null);
-    const packagesRef = useRef(null);
+const translations = {
+    en: {
+        title: (
+            <>
+                Hayak <span className="text-[#4F2396]">Packages</span>
+            </>
+        ),
+        bestDeal: "Best Deal",
+        buttonText: "Get Started",
+        packages: {
+            basic: {
+                title: "Basic",
+                items: [
+                    "Up to 100 guests",
+                    "Invitation with QR Code",
+                    "Confirmation",
+                    "Customizable Text in Design",
+                    "Thank-You Note After Event",
+                    "Guest Support (WhatsApp)",
+                    "1 Scanner on Event Day",
+                    "30 Replacement Invites",
+                ],
+            },
+            essential: {
+                title: "Essential",
+                items: [
+                    "Up to 200 guests",
+                    "Invitation with QR Code",
+                    "Confirmation",
+                    "Customizable Text in Design",
+                    "RSVP 1 Reminder",
+                    "Thank-You Note After Event",
+                    "Guest Support (WhatsApp)",
+                    "1 Scanner on Event Day",
+                    "100 Replacement Invites",
+                    "Plus-one guest per invitation",
+                ],
+            },
+            deluxe: {
+                title: "Deluxe",
+                items: [
+                    "Up to 250 guests",
+                    "Invitation with QR Code",
+                    "Confirmation",
+                    "Customizable Text in Design",
+                    "Custom Message Text for Invitations",
+                    "RSVP 1 Reminder",
+                    "Thank-You Note After Event",
+                    "Guest Support (WhatsApp)",
+                    "2 Scanner on Event Day",
+                    "150 Replacement Invites",
+                    "Plus-Two guest per invitation",
+                ],
+            },
+            premium: {
+                title: "Premium",
+                items: [
+                    "Up to 350 guests",
+                    "Invitation with QR Code",
+                    "Confirmation",
+                    "Customizable Text in Design",
+                    "Custom Message Text for Invitations",
+                    "RSVP 2 Reminders",
+                    "Thank-You Note After Event",
+                    "Guest Support (WhatsApp)",
+                    "Dedicated Account Manager",
+                    "2 Scanner on Event Day",
+                    "Data Entry Service",
+                    "300 Replacement Invites",
+                    "Plus-Three guest per invitation",
+                ],
+            },
+            elite: {
+                title: "Elite",
+                items: [
+                    "Up to 500 guests",
+                    "Invitation with QR Code",
+                    "Confirmation",
+                    "Customizable Text in Design",
+                    "Custom Message Text for Invitations",
+                    "RSVP 2 Reminders",
+                    "Thank-You Note After Event",
+                    "Guest Support (WhatsApp)",
+                    "Dedicated Account Manager",
+                    "2 Scanner on Event Day",
+                    "Data Entry Service",
+                    "Priority Support",
+                    "500 Replacement Invites",
+                    "Plus-Four guest per invitation",
+                ],
+            },
+        },
+    },
+    ar: {
+        title: (
+            <>
+                <span className="text-[#4F2396]">خطط</span> حياك
+            </>
+        ),
+        bestDeal: "أفضل صفقة",
+        buttonText: "أبدأ الآن",
+        packages: {
+            basic: {
+                title: "العادية",
+                items: [
+                    "حتى 100 ضيف",
+                    "دعوة مع رمز الاستجابة السريعة",
+                    "تأكيد",
+                    "نص قابل للتخصيص في التصميم",
+                    "رسالة شكر بعد الحدث",
+                    "دعم الضيوف (واتساب)",
+                    "1 ماسح ضوئي في يوم الحدث",
+                    "30 دعوة بديلة",
+                ],
+            },
+            essential: {
+                title: "الضرورية",
+                items: [
+                    "حتى 200 ضيف",
+                    "دعوة مع رمز الاستجابة السريعة",
+                    "تأكيد",
+                    "نص قابل للتخصيص في التصميم",
+                    "تذكير 1 RSVP",
+                    "ملاحظة شكر بعد الحدث",
+                    "دعم الضيوف (واتساب)",
+                    "ماسح ضوئي واحد في يوم الحدث",
+                    "100 دعوة بديلة",
+                    "ضيف إضافي واحد لكل دعوة",
+                ],
+            },
+            deluxe: {
+                title: "الديلوكس",
+                items: [
+                    "حتى 250 ضيف",
+                    "دعوة مع رمز الاستجابة السريعة",
+                    "تأكيد",
+                    "نص قابل للتخصيص في التصميم",
+                    "نص رسالة مخصص للدعوات",
+                    "تذكير 1 للرد",
+                    "رسالة شكر بعد الحدث",
+                    "دعم الضيوف (واتساب)",
+                    "2 ماسح ضوئي في يوم الحدث",
+                    "150 دعوة بديلة",
+                    "ضيفان إضافيان لكل دعوة",
+                ],
+            },
+            premium: {
+                title: "المميزة",
+                items: [
+                    "حتى 350 ضيفًا",
+                    "دعوة مع رمز الاستجابة السريعة",
+                    "تأكيد",
+                    "نص قابل للتخصيص في التصميم",
+                    "نص رسالة مخصص للدعوات",
+                    "تذكيرين للرد",
+                    "شكرا لك بعد الحدث",
+                    "دعم الضيوف (واتساب)",
+                    "مدير حساب مخصص",
+                    "جهازان ماسحان في يوم الحدث",
+                    "خدمة إدخال البيانات",
+                    "300 دعوة بديلة",
+                    "ثلاثة ضيوف إضافيين لكل دعوة",
+                ],
+            },
+            elite: {
+                title: "النخبة",
+                items: [
+                    "حتى 500 ضيف",
+                    "دعوة مع رمز الاستجابة السريعة",
+                    "تأكيد",
+                    "نص قابل للتخصيص في التصميم",
+                    "نص رسالة مخصص للدعوات",
+                    "تذكيرين للرد على الدعوة",
+                    "رسالة شكر بعد الحدث",
+                    "دعم الضيوف (واتساب)",
+                    "مدير حساب مخصص",
+                    "2 ماسح ضوئي في يوم الحدث",
+                    "خدمة إدخال البيانات",
+                    "دعم ذو أولوية",
+                    "500 دعوة بديلة",
+                    "أربعة ضيوف إضافيين لكل دعوة",
+                ],
+            },
+        },
+    },
+};
 
-    // InView states for scroll-triggered animations
-    const containerInView = useInView(containerRef, {
-        once: true,
-        margin: "-100px",
-    });
-    const titleInView = useInView(titleRef, { once: true, margin: "-100px" });
-    const packagesInView = useInView(packagesRef, {
-        once: true,
-        margin: "-100px",
-    });
+interface HayakPackagesProps {
+    locale: 'en' | 'ar';
+}
 
-    const basicPackageItems = [
-        { text: "Up to 100 guests" },
-        { text: "Invitation with QR Code" },
-        { text: "Confirmation" },
-        { text: "Customizable Text in Design" },
-        { text: "Thank-You Note After Event" },
-        { text: "Guest Support (WhatsApp)" },
-        { text: "1 Scanner on Event Day" },
-        { text: "30 Replacement Invites" },
-    ];
-
-    const essentialPackageItems = [
-        { text: "Up to 200 guests" },
-        { text: "Invitation with QR Code" },
-        { text: "Confirmation" },
-        { text: "Customizable Text in Design" },
-        { text: "RSVP 1 Reminder" },
-        { text: "Thank-You Note After Event" },
-        { text: "Guest Support (WhatsApp)" },
-        { text: "1 Scanner on Event Day" },
-        { text: "100 Replacement Invites" },
-        { text: "Plus-one guest per invitation" },
-    ];
-
-    const deluxePackageItems = [
-        { text: "Up to 250 guests" },
-        { text: "Invitation with QR Code" },
-        { text: "Confirmation" },
-        { text: "Customizable Text in Design" },
-        { text: "Custom Message Text for Invitations" },
-        { text: "RSVP 1 Reminder" },
-        { text: "Thank-You Note After Event" },
-        { text: "Guest Support (WhatsApp)" },
-        { text: "2 Scanner on Event Day" },
-        { text: "150 Replacement Invites" },
-        { text: "Plus-Two guest per invitation" },
-    ];
-
-    const premiumPackageItems = [
-        { text: "Up to 350 guests" },
-        { text: "Invitation with QR Code" },
-        { text: "Confirmation" },
-        { text: "Customizable Text in Design" },
-        { text: "Custom Message Text for Invitations" },
-        { text: "RSVP 2 Reminders" },
-        { text: "Thank-You Note After Event" },
-        { text: "Guest Support (WhatsApp)" },
-        { text: "Dedicated Account Manager" },
-        { text: "2 Scanner on Event Day" },
-        { text: "Data Entry Service" },
-        { text: "300 Replacement Invites" },
-        { text: "Plus-Three guest per invitation" },
-    ];
-
-    const elitePackageItems = [
-        { text: "Up to 500 guests" },
-        { text: "Invitation with QR Code" },
-        { text: "Confirmation" },
-        { text: "Customizable Text in Design" },
-        { text: "Custom Message Text for Invitations" },
-        { text: "RSVP 2 Reminders" },
-        { text: "Thank-You Note After Event" },
-        { text: "Guest Support (WhatsApp)" },
-        { text: "Dedicated Account Manager" },
-        { text: "2 Scanner on Event Day" },
-        { text: "Data Entry Service" },
-        { text: "Priority Support" },
-        { text: "500 Replacement Invites" },
-        { text: "Plus-Four guest per invitation" },
-    ];
+const HayakPackages = ({ locale = 'en' }: HayakPackagesProps) => {
+    const t = translations[locale];
 
     return (
-        <motion.div
-            id="plans"
-            ref={containerRef}
-            initial={{ opacity: 0 }}
-            animate={containerInView ? { opacity: 1 } : { opacity: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="w-full relative px-4 xl:px-60 py-16 xl:py-32 flex flex-col gap-10"
-        >
-            <motion.h1
-                ref={titleRef}
-                initial={{ opacity: 0, y: 50 }}
-                animate={
-                    titleInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }
-                }
-                transition={{ duration: 0.8, ease: "easeOut" }}
-                className="text-2xl xl:text-4xl text-center font-bold"
+        <div id="plans" className="w-full relative px-4 xl:px-60 py-16 xl:py-32 flex flex-col gap-10">
+            {/* Server-rendered section for SEO */}
+            <div 
+                data-server-hayak-packages
+                className="w-full relative flex flex-col gap-10"
             >
-                Hayak <span className="text-[#4F2396]">Packages</span>
-            </motion.h1>
-            <motion.div
-                ref={packagesRef}
-                initial={{ opacity: 0, y: 100 }}
-                animate={
-                    packagesInView
-                        ? { opacity: 1, y: 0 }
-                        : { opacity: 0, y: 100 }
-                }
-                transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-                className="flex flex-col items-center justify-center gap-10 p-6 rounded-[20px] xl:py-0 xl:rounded-none xl:gap-0 xl:flex-row xl:items-stretch bg-[#F9F4FF] xl:bg-transparent"
-            >
-                <PackageCard
-                    variant="first"
-                    title="Basic"
-                    price={1200}
-                    items={basicPackageItems}
-                />
-                <PackageCard
-                    variant="middle"
-                    title="Essential"
-                    price={2100}
-                    items={essentialPackageItems}
-                />
-                <PackageCard
-                    variant="middle"
-                    title="Deluxe"
-                    price={2900}
-                    items={deluxePackageItems}
-                    isRecommended={true}
-                />
-                <PackageCard
-                    variant="middle"
-                    title="Premium"
-                    price={3800}
-                    items={premiumPackageItems}
-                />
-                <PackageCard
-                    variant="last"
-                    title="Elite"
-                    price={4300}
-                    items={elitePackageItems}
-                />
-            </motion.div>
-        </motion.div>
+                <h2 className="text-2xl xl:text-4xl text-center font-bold">
+                    {t.title}
+                </h2>
+                <div className="flex flex-col items-center justify-center gap-10 p-6 rounded-[20px] xl:py-0 xl:rounded-none xl:gap-0 xl:flex-row xl:items-stretch bg-[#F9F4FF] xl:bg-transparent">
+                    {/* Basic Package */}
+                    <div className="flex flex-col gap-10 p-5 xl:w-[250px] w-full border-2 border-[#C8BBDE] rounded-[20px] bg-[#FBF6FF] xl:border-r-0 xl:rounded-tr-none xl:rounded-br-none">
+                        <div className="flex flex-col items-center justify-center gap-5">
+                            <h2 className="text-xl font-bold text-[#241044]">{t.packages.basic.title}</h2>
+                            <span className="flex items-center gap-1 text-2xl font-bold text-[#241044]">
+                                1200 <span className="text-[#241044]">إ</span>
+                            </span>
+                        </div>
+                        <ul className="flex flex-col gap-5 flex-1">
+                            {t.packages.basic.items.map((item, index) => (
+                                <li key={index} className="flex items-center gap-2">
+                                    <span className="text-sm text-[#241044]">{item}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                    {/* Essential Package */}
+                    <div className="flex flex-col gap-10 p-5 xl:w-[250px] w-full border-2 border-[#C8BBDE] rounded-[20px] bg-[#FBF6FF] xl:border-x-0 xl:rounded-tr-none xl:rounded-br-none xl:rounded-tl-none xl:rounded-bl-none">
+                        <div className="flex flex-col items-center justify-center gap-5">
+                            <h2 className="text-xl font-bold text-[#241044]">{t.packages.essential.title}</h2>
+                            <span className="flex items-center gap-1 text-2xl font-bold text-[#241044]">
+                                2100 <span className="text-[#241044]">إ</span>
+                            </span>
+                        </div>
+                        <ul className="flex flex-col gap-5 flex-1">
+                            {t.packages.essential.items.map((item, index) => (
+                                <li key={index} className="flex items-center gap-2">
+                                    <span className="text-sm text-[#241044]">{item}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                    {/* Deluxe Package */}
+                    <div className="flex flex-col gap-10 p-5 xl:w-[250px] w-full border-2 border-[#C8BBDE] rounded-[20px] bg-[#E5DEEF] xl:border-x-0 xl:rounded-tr-none xl:rounded-br-none xl:rounded-tl-none xl:rounded-bl-none relative">
+                        <div className="absolute -top-3.5 left-1/2 transform -translate-x-1/2 bg-[#4F2396] text-white px-4 py-1 rounded-full text-sm font-medium">
+                            {t.bestDeal}
+                        </div>
+                        <div className="flex flex-col items-center justify-center gap-5">
+                            <h2 className="text-xl font-bold text-[#241044]">{t.packages.deluxe.title}</h2>
+                            <span className="flex items-center gap-1 text-2xl font-bold text-[#241044]">
+                                2900 <span className="text-[#241044]">إ</span>
+                            </span>
+                        </div>
+                        <ul className="flex flex-col gap-5 flex-1">
+                            {t.packages.deluxe.items.map((item, index) => (
+                                <li key={index} className="flex items-center gap-2">
+                                    <span className="text-sm text-[#241044]">{item}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                    {/* Premium Package */}
+                    <div className="flex flex-col gap-10 p-5 xl:w-[250px] w-full border-2 border-[#C8BBDE] rounded-[20px] bg-[#FBF6FF] xl:border-x-0 xl:rounded-tr-none xl:rounded-br-none xl:rounded-tl-none xl:rounded-bl-none">
+                        <div className="flex flex-col items-center justify-center gap-5">
+                            <h2 className="text-xl font-bold text-[#241044]">{t.packages.premium.title}</h2>
+                            <span className="flex items-center gap-1 text-2xl font-bold text-[#241044]">
+                                3800 <span className="text-[#241044]">إ</span>
+                            </span>
+                        </div>
+                        <ul className="flex flex-col gap-5 flex-1">
+                            {t.packages.premium.items.map((item, index) => (
+                                <li key={index} className="flex items-center gap-2">
+                                    <span className="text-sm text-[#241044]">{item}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                    {/* Elite Package */}
+                    <div className="flex flex-col gap-10 p-5 xl:w-[250px] w-full border-2 border-[#C8BBDE] rounded-[20px] bg-[#FBF6FF] xl:border-l-0 xl:rounded-tl-none xl:rounded-bl-none">
+                        <div className="flex flex-col items-center justify-center gap-5">
+                            <h2 className="text-xl font-bold text-[#241044]">{t.packages.elite.title}</h2>
+                            <span className="flex items-center gap-1 text-2xl font-bold text-[#241044]">
+                                4300 <span className="text-[#241044]">إ</span>
+                            </span>
+                        </div>
+                        <ul className="flex flex-col gap-5 flex-1">
+                            {t.packages.elite.items.map((item, index) => (
+                                <li key={index} className="flex items-center gap-2">
+                                    <span className="text-sm text-[#241044]">{item}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            {/* Client component for animations */}
+            <HayakPackagesClient 
+                locale={locale}
+                translations={t}
+            />
+
+            {/* SEO: Hidden text for search engines */}
+            <div className="sr-only">
+                <h2>{t.title}</h2>
+                <div>
+                    {Object.values(t.packages).map((pkg, idx) => (
+                        <div key={idx}>
+                            <h3>{pkg.title}</h3>
+                            <ul>
+                                {pkg.items.map((item, itemIdx) => (
+                                    <li key={itemIdx}>{item}</li>
+                                ))}
+                            </ul>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </div>
     );
 };
 

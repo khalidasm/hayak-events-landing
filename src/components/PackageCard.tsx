@@ -14,6 +14,8 @@ interface PackageCardProps {
     variant: "first" | "middle" | "last" | "single";
     className?: string;
     isRecommended?: boolean;
+    locale?: 'en' | 'ar';
+    bestDealText?: string;
 }
 
 const PackageCard: React.FC<PackageCardProps> = ({
@@ -24,7 +26,11 @@ const PackageCard: React.FC<PackageCardProps> = ({
     variant,
     className = "",
     isRecommended = false,
+    locale = 'en',
+    bestDealText = "Best Deal",
 }) => {
+    const isRTL = locale === 'ar';
+    
     const getVariantStyles = () => {
         const baseStyles = `flex flex-col gap-10 p-5 xl:w-[250px] w-full border-2 border-[#C8BBDE] rounded-[20px] ${
             isRecommended ? "bg-[#E5DEEF]" : "bg-[#FBF6FF]"
@@ -34,7 +40,7 @@ const PackageCard: React.FC<PackageCardProps> = ({
             case "first":
                 return `${baseStyles} xl:border-r-0 xl:rounded-tr-none xl:rounded-br-none`;
             case "middle":
-                return `${baseStyles} xl:border-x-0 xl:rounded-tl-none xl:rounded-bl-none xl:rounded-tr-none xl:rounded-br-none`;
+                return `${baseStyles} xl:border-x-0 xl:rounded-tr-none xl:rounded-br-none xl:rounded-tl-none xl:rounded-bl-none`;
             case "last":
                 return `${baseStyles} xl:border-l-0 xl:rounded-tl-none xl:rounded-bl-none`;
             case "single":
@@ -49,21 +55,21 @@ const PackageCard: React.FC<PackageCardProps> = ({
             {/* Best Deal Label */}
             {isRecommended && (
                 <div className="absolute -top-3.5 left-1/2 transform -translate-x-1/2 bg-[#4F2396] text-white px-4 py-1 rounded-full text-sm font-medium">
-                    Best Deal
+                    {bestDealText}
                 </div>
             )}
             
             {/* Header Section */}
             <div className="flex flex-col items-center justify-center gap-5">
-                <h1 className="text-xl font-bold text-[#241044]">{title}</h1>
+                <h3 className="text-xl font-bold text-[#241044]">{title}</h3>
                 <span className="flex items-center gap-1 text-2xl font-bold text-[#241044]">
                     {price}{" "}
-                    <Image
-                        src="/saudi_riyal.svg"
-                        alt="saudi_riyal"
-                        width={20}
-                        height={20}
-                    />
+                        <Image
+                            src="/saudi_riyal.svg"
+                            alt={isRTL ? "ريال سعودي" : "Saudi Riyal"}
+                            width={20}
+                            height={20}
+                        />
                 </span>
                 <Button
                     className={`${
@@ -82,7 +88,7 @@ const PackageCard: React.FC<PackageCardProps> = ({
                     <li key={index} className="flex items-center gap-2">
                         <Image
                             src="/package_checkbox.svg"
-                            alt="package_checkbox"
+                            alt={isRTL ? "علامة اختيار" : "checkbox"}
                             width={20}
                             height={20}
                         />

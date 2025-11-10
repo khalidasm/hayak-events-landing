@@ -16,6 +16,7 @@ interface TestimonialCarouselProps {
   cardsToShow?: number;
   autoRotateInterval?: number;
   className?: string;
+  locale?: 'en' | 'ar';
 }
 
 const TestimonialCarousel: React.FC<TestimonialCarouselProps> = ({
@@ -23,6 +24,7 @@ const TestimonialCarousel: React.FC<TestimonialCarouselProps> = ({
   cardsToShow = 2,
   autoRotateInterval = 4000,
   className = "",
+  locale = 'en',
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const totalSlides = Math.ceil(testimonials.length / cardsToShow);
@@ -62,6 +64,7 @@ const TestimonialCarousel: React.FC<TestimonialCarouselProps> = ({
                   title={testimonial.title}
                   avatarSrc={testimonial.avatarSrc}
                   avatarFallback={testimonial.avatarFallback}
+                  locale={locale}
                 />
               </div>
             ))}

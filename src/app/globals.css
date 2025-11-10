@@ -116,6 +116,9 @@
   * {
     @apply border-border outline-ring/50;
   }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     @apply bg-background text-foreground;
   }
@@ -132,6 +135,15 @@
 
   .animate-liquid-shimmer {
     animation: liquid-shimmer 2s ease-in-out infinite;
+  }
+
+  /* RTL-aware utilities */
+  [dir="rtl"] {
+    direction: rtl;
+  }
+
+  [dir="ltr"] {
+    direction: ltr;
   }
 }
 
