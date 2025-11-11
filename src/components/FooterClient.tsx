@@ -2,6 +2,8 @@
 
 import React, { useRef, useLayoutEffect, useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { motion, useInView } from 'framer-motion';
 
 interface FooterClientProps {
@@ -35,26 +37,39 @@ const FooterClient = ({ locale, translations }: FooterClientProps) => {
         if (serverFooter) (serverFooter as HTMLElement).style.display = 'none';
     }, []);
 
-    // Smooth scroll handler for anchor links
+    const pathname = usePathname();
+    
+    // Smooth scroll handler for anchor links on home page
     useEffect(() => {
+        const isHomePage = pathname === `/${locale}` || pathname === `/${locale}/`;
+        
+        if (!isHomePage) {
+            // If not on home page, let Next.js Link handle navigation
+            return;
+        }
+        
         const handleSmoothScroll = (e: MouseEvent) => {
             const target = e.target as HTMLElement;
-            const anchor = target.closest('a[href^="#"]') as HTMLAnchorElement;
+            const anchor = target.closest('a[href*="#"]') as HTMLAnchorElement;
             
             if (anchor && anchor.hash) {
-                e.preventDefault();
-                const targetId = anchor.hash.substring(1);
-                const targetElement = document.getElementById(targetId);
-                
-                if (targetElement) {
-                    const offset = 80; // Offset for fixed headers if any
-                    const elementPosition = targetElement.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - offset;
+                // Only handle if it's an anchor link on the same page
+                const href = anchor.getAttribute('href');
+                if (href && href.startsWith(`/${locale}#`)) {
+                    e.preventDefault();
+                    const targetId = anchor.hash.substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        const offset = 80; // Offset for fixed headers if any
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - offset;
 
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: 'smooth'
-                    });
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
                 }
             }
         };
@@ -70,7 +85,7 @@ const FooterClient = ({ locale, translations }: FooterClientProps) => {
                 footer.removeEventListener('click', handleSmoothScroll);
             }
         };
-    }, []);
+    }, [pathname, locale]);
 
     return (
         <motion.div 
@@ -100,12 +115,14 @@ const FooterClient = ({ locale, translations }: FooterClientProps) => {
                     {/* Logo Column */}
                     <div className='space-y-4 xl:col-span-2 flex flex-col items-center xl:items-start'>
                         <div className='flex items-center justify-center xl:justify-start'>
-                            <Image 
-                                src="/logo_white.svg" 
-                                alt={isRTL ? "شعار حياك" : "Hayak logo"} 
-                                width={100} 
-                                height={100} 
-                            />
+                            <Link href={`/${locale}`}>
+                                <Image 
+                                    src="/logo_white.svg" 
+                                    alt={isRTL ? "شعار حياك" : "Hayak logo"} 
+                                    width={100} 
+                                    height={100} 
+                                />
+                            </Link>
                         </div>
                     </div>
 
@@ -113,10 +130,10 @@ const FooterClient = ({ locale, translations }: FooterClientProps) => {
                     <div className='space-y-4 xl:col-span-2 flex flex-col items-center xl:items-start'>
                         <h3 className="font-bold text-xl">{translations.quickActions}</h3>
                         <ul className="space-y-3">
-                            <li><a href="#plans" className="hover:text-[#241044] transition-colors text-lg">{translations.plans}</a></li>
-                            <li><a href="#features" className="hover:text-[#241044] transition-colors text-lg">{translations.features}</a></li>
-                            <li><a href="#services" className="hover:text-[#241044] transition-colors text-lg">{translations.services}</a></li>
-                            <li><a href="#try" className="hover:text-[#241044] transition-colors text-lg">{translations.tryMe}</a></li>
+                            <li><Link href={`/${locale}#plans`} className="hover:text-[#241044] transition-colors text-lg">{translations.plans}</Link></li>
+                            <li><Link href={`/${locale}#features`} className="hover:text-[#241044] transition-colors text-lg">{translations.features}</Link></li>
+                            <li><Link href={`/${locale}#services`} className="hover:text-[#241044] transition-colors text-lg">{translations.services}</Link></li>
+                            <li><Link href={`/${locale}#try`} className="hover:text-[#241044] transition-colors text-lg">{translations.tryMe}</Link></li>
                         </ul>
                     </div>
 
@@ -124,9 +141,9 @@ const FooterClient = ({ locale, translations }: FooterClientProps) => {
                     <div className='space-y-4 xl:col-span-2 flex flex-col items-center xl:items-start'>
                         <h3 className="font-bold text-xl">{translations.support}</h3>
                         <ul className="space-y-3">
-                            <li><a href="#faqs" className="hover:text-[#241044] transition-colors text-lg">{translations.faqs}</a></li>
-                            <li><a href="#contact-sales" className="hover:text-[#241044] transition-colors text-lg">{translations.contactSales}</a></li>
-                            <li><a href="#contact" className="hover:text-[#241044] transition-colors text-lg">{translations.contactUs}</a></li>
+                            <li><Link href={`/${locale}#faqs`} className="hover:text-[#241044] transition-colors text-lg">{translations.faqs}</Link></li>
+                            <li><Link href={`/${locale}#contact-sales`} className="hover:text-[#241044] transition-colors text-lg">{translations.contactSales}</Link></li>
+                            <li><Link href={`/${locale}#contact`} className="hover:text-[#241044] transition-colors text-lg">{translations.contactUs}</Link></li>
                         </ul>
                     </div>
 
@@ -165,9 +182,9 @@ const FooterClient = ({ locale, translations }: FooterClientProps) => {
                         
                         {/* Policy Links */}
                         <div className='flex flex-col xl:flex-row items-center xl:items-center gap-2 xl:gap-2'>
-                            <a href="#privacy" className="hover:text-[#241044] transition-colors text-sm">{translations.privacyPolicy}</a>
+                            <Link href={`/${locale}/privacy`} className="hover:text-[#241044] transition-colors text-sm">{translations.privacyPolicy}</Link>
                             <a href="#refund" className="hover:text-[#241044] transition-colors text-sm">{translations.refundPolicy}</a>
-                            <a href="#terms" className="hover:text-[#241044] transition-colors text-sm">{translations.termsOfService}</a>
+                            <Link href={`/${locale}/terms`} className="hover:text-[#241044] transition-colors text-sm">{translations.termsOfService}</Link>
                         </div>
                         
                         {/* Copyright */}

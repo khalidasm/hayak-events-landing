@@ -4,6 +4,10 @@ import "../globals.css";
 import { Toaster } from "@/components/ui/sonner";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { notFound } from "next/navigation";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import AnchorScrollHandler from "@/components/AnchorScrollHandler";
+import FloatingWhatsAppButton from "@/components/FloatingWhatsApp";
 
 const ibmPlexSansArabic = IBM_Plex_Sans_Arabic({
   variable: "--font-ibm-plex-sans",
@@ -196,7 +200,15 @@ export default async function LocaleLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteStructuredData) }}
         />
         <LanguageProvider locale={locale}>
-          {children}
+          <AnchorScrollHandler />
+          <div className="w-full min-h-screen bg-white overflow-x-hidden">
+            <Navbar locale={locale as 'en' | 'ar'} />
+            <main>
+              {children}
+            </main>
+            <Footer locale={locale as 'en' | 'ar'} />
+          </div>
+          <FloatingWhatsAppButton locale={locale as 'en' | 'ar'} />
           <Toaster />
         </LanguageProvider>
       </body>

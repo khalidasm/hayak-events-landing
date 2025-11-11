@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import FooterClient from './FooterClient';
 
 const translations = {
@@ -60,12 +61,14 @@ const Footer = ({ locale = 'en' }: FooterProps) => {
                             {/* Logo Column */}
                             <div className='space-y-4 xl:col-span-2 flex flex-col items-center xl:items-start'>
                                 <div className='flex items-center justify-center xl:justify-start'>
-                                    <Image 
-                                        src="/logo_white.svg" 
-                                        alt={isRTL ? "شعار حياك" : "Hayak logo"} 
-                                        width={100} 
-                                        height={100} 
-                                    />
+                                    <Link href={`/${locale}`}>
+                                        <Image 
+                                            src="/logo_white.svg" 
+                                            alt={isRTL ? "شعار حياك" : "Hayak logo"} 
+                                            width={100} 
+                                            height={100} 
+                                        />
+                                    </Link>
                                 </div>
                             </div>
 
@@ -73,10 +76,10 @@ const Footer = ({ locale = 'en' }: FooterProps) => {
                             <div className={`space-y-4 xl:col-span-2 flex flex-col`}>
                                 <h3 className="font-bold text-xl">{t.quickActions}</h3>
                                 <ul className="space-y-3">
-                                    <li><a href="#plans" className="hover:text-[#241044] transition-colors text-lg">{t.plans}</a></li>
-                                    <li><a href="#features" className="hover:text-[#241044] transition-colors text-lg">{t.features}</a></li>
-                                    <li><a href="#services" className="hover:text-[#241044] transition-colors text-lg">{t.services}</a></li>
-                                    <li><a href="#try" className="hover:text-[#241044] transition-colors text-lg">{t.tryMe}</a></li>
+                                    <li><Link href={`/${locale}#plans`} className="hover:text-[#241044] transition-colors text-lg">{t.plans}</Link></li>
+                                    <li><Link href={`/${locale}#features`} className="hover:text-[#241044] transition-colors text-lg">{t.features}</Link></li>
+                                    <li><Link href={`/${locale}#services`} className="hover:text-[#241044] transition-colors text-lg">{t.services}</Link></li>
+                                    <li><Link href={`/${locale}#try`} className="hover:text-[#241044] transition-colors text-lg">{t.tryMe}</Link></li>
                                 </ul>
                             </div>
 
@@ -84,9 +87,9 @@ const Footer = ({ locale = 'en' }: FooterProps) => {
                             <div className='space-y-4 xl:col-span-2 flex flex-col items-center xl:items-start'>
                                 <h3 className="font-bold text-xl">{t.support}</h3>
                                 <ul className="space-y-3">
-                                    <li><a href="#faqs" className="hover:text-[#241044] transition-colors text-lg">{t.faqs}</a></li>
-                                    <li><a href="#contact-sales" className="hover:text-[#241044] transition-colors text-lg">{t.contactSales}</a></li>
-                                    <li><a href="#contact" className="hover:text-[#241044] transition-colors text-lg">{t.contactUs}</a></li>
+                                    <li><Link href={`/${locale}#faqs`} className="hover:text-[#241044] transition-colors text-lg">{t.faqs}</Link></li>
+                                    <li><Link href={`/${locale}#contact-sales`} className="hover:text-[#241044] transition-colors text-lg">{t.contactSales}</Link></li>
+                                    <li><Link href={`/${locale}#contact`} className="hover:text-[#241044] transition-colors text-lg">{t.contactUs}</Link></li>
                                 </ul>
                             </div>
 
@@ -125,9 +128,9 @@ const Footer = ({ locale = 'en' }: FooterProps) => {
                                 
                                 {/* Policy Links */}
                                 <div className='flex flex-col xl:flex-row items-center xl:items-center gap-2 xl:gap-2'>
-                                    <a href="#privacy" className="hover:text-[#241044] transition-colors text-sm">{t.privacyPolicy}</a>
+                                    <Link href={`/${locale}/privacy`} className="hover:text-[#241044] transition-colors text-sm">{t.privacyPolicy}</Link>
                                     <a href="#refund" className="hover:text-[#241044] transition-colors text-sm">{t.refundPolicy}</a>
-                                    <a href="#terms" className="hover:text-[#241044] transition-colors text-sm">{t.termsOfService}</a>
+                                    <Link href={`/${locale}/terms`} className="hover:text-[#241044] transition-colors text-sm">{t.termsOfService}</Link>
                                 </div>
                                 
                                 {/* Copyright */}

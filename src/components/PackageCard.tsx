@@ -31,6 +31,21 @@ const PackageCard: React.FC<PackageCardProps> = ({
 }) => {
     const isRTL = locale === 'ar';
     
+    const handleGetStarted = () => {
+        const phoneNumber = "966543956530";
+        const packageName = title;
+        
+        // Professional messages in both languages
+        const message = isRTL
+            ? `مرحباً، أود التقدم بطلب للحصول على باقة ${packageName}`
+            : `Hello, I would like to request the ${packageName} package.`;
+        
+        const encodedMessage = encodeURIComponent(message);
+        const whatsappUrl = `https://api.whatsapp.com/send/?phone=${phoneNumber}&text=${encodedMessage}`;
+        
+        window.open(whatsappUrl, "_blank");
+    };
+    
     const getVariantStyles = () => {
         const baseStyles = `flex flex-col gap-10 p-5 xl:w-[250px] w-full border-2 border-[#C8BBDE] rounded-[20px] ${
             isRecommended ? "bg-[#E5DEEF]" : "bg-[#FBF6FF]"
@@ -72,6 +87,7 @@ const PackageCard: React.FC<PackageCardProps> = ({
                         />
                 </span>
                 <Button
+                    onClick={handleGetStarted}
                     className={`${
                         isRecommended
                             ? "bg-[#4F2396] text-[#fff] hover:bg-[#4F2396]/70"

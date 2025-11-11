@@ -59,7 +59,7 @@ const NumberTile: React.FC<NumberTileProps> = ({
 
     return (
         <div ref={ref} className={`relative ${className ?? ""}`}>
-            <Image src={imageSrc} alt={alt} width={width} height={height} unoptimized />
+            <Image src={imageSrc} alt={alt} width={width} height={height} unoptimized={true} />
             {showOverlay && (
                 <div className="absolute flex flex-col items-center gap-2 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                     {(prefix !== undefined || value !== undefined) && (

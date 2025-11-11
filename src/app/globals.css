@@ -208,3 +208,48 @@
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
   pointer-events: none;
 }
+
+/* Custom Floating WhatsApp Button Styles */
+.floating-whatsapp-button-custom {
+  box-shadow: 0 4px 12px rgba(79, 35, 150, 0.4) !important;
+}
+
+.floating-whatsapp-button-custom:hover {
+  box-shadow: 0 6px 16px rgba(79, 35, 150, 0.5) !important;
+}
+
+/* Smooth pulsing ring animation */
+@keyframes pulse-ring-smooth {
+  0% {
+    transform: scale(1) translateZ(0);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1.4) translateZ(0);
+    opacity: 0;
+  }
+}
+
+.pulse-ring-smooth {
+  animation: pulse-ring-smooth 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Chat box grow-up animation from button */
+.chat-grow-up {
+  animation: growUp 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes growUp {
+  from {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}

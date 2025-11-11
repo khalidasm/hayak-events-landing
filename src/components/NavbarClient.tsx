@@ -52,9 +52,17 @@ const NavbarClient = ({ locale, translations }: NavbarClientProps) => {
 
     const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
         e.preventDefault();
-        const element = document.querySelector(href);
-        if (element) {
-            element.scrollIntoView({ behavior: "smooth", block: "start" });
+        const isHomePage = pathname === `/${locale}` || pathname === `/${locale}/`;
+        
+        if (isHomePage) {
+            // If on home page, just scroll to the element
+            const element = document.querySelector(href);
+            if (element) {
+                element.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+        } else {
+            // If on another page, navigate to home page with anchor
+            router.push(`/${locale}${href}`);
         }
         setIsSheetOpen(false);
     };

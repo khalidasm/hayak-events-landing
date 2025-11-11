@@ -40,14 +40,16 @@ const NavbarContent = ({
         <div className="flex w-full items-center justify-between min-w-0 gap-2 xl:gap-4">
             {/* Logo */}
             <div className='flex items-center gap-2 xl:gap-3 flex-shrink-0'>
-                <Image 
-                    src="/Logo.svg" 
-                    alt={isRTL ? "شعار حياك" : "Hayak Events logo"} 
-                    width={50} 
-                    height={50} 
-                    className={`flex-shrink-0 ${isRTL ? "mr-2 xl:mr-3" : "ml-2 xl:ml-3"}`}
-                    unoptimized
-                />
+                <Link href={`/${locale}`}>
+                    <Image 
+                        src="/Logo.svg" 
+                        alt={isRTL ? "شعار حياك" : "Hayak Events logo"} 
+                        width={50} 
+                        height={50} 
+                        className={`flex-shrink-0 ${isRTL ? "mr-2 xl:mr-3" : "ml-2 xl:mr-3"}`}
+                        unoptimized={true}
+                    />
+                </Link>
                 
                 {/* Language Button */}
                 <Button
@@ -92,14 +94,16 @@ const NavbarContent = ({
                             {isRTL ? "قائمة التنقل" : "Navigation Menu"}
                         </SheetTitle>
                         <div className="flex items-center justify-center mb-4">
-                            <Image 
-                                src="/Logo.svg" 
-                                alt={isRTL ? "شعار حياك" : "Hayak Events logo"} 
-                                width={100} 
-                                height={100} 
-                                className="flex-shrink-0" 
-                                unoptimized
-                            />
+                            <Link href={`/${locale}`} onClick={() => setIsSheetOpen(false)}>
+                                <Image 
+                                    src="/Logo.svg" 
+                                    alt={isRTL ? "شعار حياك" : "Hayak Events logo"} 
+                                    width={100} 
+                                    height={100} 
+                                    className="flex-shrink-0" 
+                                    unoptimized={true}
+                                />
+                            </Link>
                         </div>
                     </SheetHeader>
                     <div className="flex flex-col gap-2 px-6 py-6">

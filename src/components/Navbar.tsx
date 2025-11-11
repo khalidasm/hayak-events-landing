@@ -61,13 +61,15 @@ const Navbar = ({ locale = 'en' }: NavbarProps) => {
                 <div className="flex w-full items-center justify-between min-w-0 gap-2 xl:gap-4">
                     {/* Logo */}
                     <div className={`flex items-center gap-2 xl:gap-3 flex-shrink-0 ${isRTL ? "flex-row-reverse" : ""}`}>
-                        <Image 
-                            src="/Logo.svg" 
-                            alt={isRTL ? "شعار حياك" : "Hayak Events logo"} 
-                            width={50} 
-                            height={50} 
-                            className={`flex-shrink-0 ${isRTL ? "mr-2 xl:mr-3" : "ml-2 xl:ml-3"}`}
-                        />
+                        <Link href={`/${locale}`}>
+                            <Image 
+                                src="/Logo.svg" 
+                                alt={isRTL ? "شعار حياك" : "Hayak Events logo"} 
+                                width={50} 
+                                height={50} 
+                                className={`flex-shrink-0 ${isRTL ? "mr-2 xl:mr-3" : "ml-2 xl:ml-3"}`}
+                            />
+                        </Link>
                     </div>
 
                     {/* Navigation Links - Server-rendered for SEO */}
