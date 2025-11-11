@@ -86,7 +86,7 @@ const PackageCard: React.FC<PackageCardProps> = ({
                             alt={isRTL ? "ريال سعودي" : "Saudi Riyal"}
                             width={20}
                             height={20}
-                            unoptimized
+                            quality={85}
                         />
                 </span>
                 <Button
@@ -110,7 +110,7 @@ const PackageCard: React.FC<PackageCardProps> = ({
                             alt={isRTL ? "علامة اختيار" : "checkbox"}
                             width={20}
                             height={20}
-                            unoptimized
+                            quality={85}
                         />
                         <span className="text-sm text-[#241044]">{item.text}</span>
                     </li>

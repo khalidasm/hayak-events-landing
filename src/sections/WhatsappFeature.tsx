@@ -74,7 +74,7 @@ const WhatsappFeature = ({ locale = "en" }: WhatsappFeatureProps) => {
                                     style={{
                                         display: isRTL ? "none" : "block",
                                     }}
-                                    unoptimized
+                                    quality={85}
                                 />
                                 <h2
                                     className={`text-2xl xl:text-4xl font-bold w-fit ${
@@ -94,7 +94,7 @@ const WhatsappFeature = ({ locale = "en" }: WhatsappFeatureProps) => {
                                     style={{
                                         display: isRTL ? "block" : "none",
                                     }}
-                                    unoptimized
+                                    quality={85}
                                 />
                             </div>
                             <div className="mt-4">
@@ -117,7 +117,7 @@ const WhatsappFeature = ({ locale = "en" }: WhatsappFeatureProps) => {
                                     width={400}
                                     height={400}
                                     className="w-[250px] xl:w-[400px] h-auto"
-                                    unoptimized
+                                    quality={85}
                                 />
                             </div>
                         </div>

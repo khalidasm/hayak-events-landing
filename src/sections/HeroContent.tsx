@@ -27,7 +27,8 @@ const HeroContent = ({ isRTL }: HeroContentProps) => {
                     width={1000}
                     height={1000}
                     className="w-full h-auto"
-                    loading="lazy"
+                    priority
+                    quality={85}
                 />
             </motion.div>
 
@@ -37,9 +38,12 @@ const HeroContent = ({ isRTL }: HeroContentProps) => {
                 }`}
                 style={{ scale: cardScale }}
                 initial={{ x: isRTL ? 100 : -100, opacity: 0 }}
-                animate={{
+                whileInView={{
                     x: 0,
                     opacity: 1,
+                }}
+                viewport={{ once: true, amount: 0.2 }}
+                animate={{
                     y: [0, -10, 0],
                 }}
                 transition={{
@@ -68,9 +72,12 @@ const HeroContent = ({ isRTL }: HeroContentProps) => {
                 }`}
                 style={{ scale: cardScale }}
                 initial={{ x: isRTL ? -100 : 100, opacity: 0 }}
-                animate={{
+                whileInView={{
                     x: 0,
                     opacity: 1,
+                }}
+                viewport={{ once: true, amount: 0.2 }}
+                animate={{
                     y: [0, -10, 0],
                 }}
                 transition={{

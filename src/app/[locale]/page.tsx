@@ -1,17 +1,38 @@
 import React from "react";
+import dynamic from "next/dynamic";
 import Hero from "@/sections/Hero";
 import FeatureCarousel from "@/sections/FeatureCarousel";
 import HayakService from "@/sections/HayakService";
-import WhatsappFeature from "@/sections/WhatsappFeature";
-import CheckInFeature from "@/sections/CheckInFeature";
 import StatFeature from "@/sections/StatFeature";
-import TryHayak from "@/sections/TryHayak";
-import HayakPackages from "@/sections/HayakPackages";
-import HayakNumbers from "@/sections/HayakNumbers";
-import OurClients from "@/sections/OurClients";
-import Testimonials from "@/sections/Testimonials";
-import ContactUs from "@/sections/ContactUs";
-import FAQ from "@/sections/FAQ";
+
+// Lazy load below-the-fold components to improve initial load
+const WhatsappFeature = dynamic(() => import("@/sections/WhatsappFeature"), {
+  loading: () => <div className="min-h-[400px]" />,
+});
+const CheckInFeature = dynamic(() => import("@/sections/CheckInFeature"), {
+  loading: () => <div className="min-h-[400px]" />,
+});
+const TryHayak = dynamic(() => import("@/sections/TryHayak"), {
+  loading: () => <div className="min-h-[400px]" />,
+});
+const HayakPackages = dynamic(() => import("@/sections/HayakPackages"), {
+  loading: () => <div className="min-h-[400px]" />,
+});
+const HayakNumbers = dynamic(() => import("@/sections/HayakNumbers"), {
+  loading: () => <div className="min-h-[400px]" />,
+});
+const OurClients = dynamic(() => import("@/sections/OurClients"), {
+  loading: () => <div className="min-h-[400px]" />,
+});
+const Testimonials = dynamic(() => import("@/sections/Testimonials"), {
+  loading: () => <div className="min-h-[400px]" />,
+});
+const ContactUs = dynamic(() => import("@/sections/ContactUs"), {
+  loading: () => <div className="min-h-[400px]" />,
+});
+const FAQ = dynamic(() => import("@/sections/FAQ"), {
+  loading: () => <div className="min-h-[400px]" />,
+});
 
 interface HomePageProps {
     params: Promise<{

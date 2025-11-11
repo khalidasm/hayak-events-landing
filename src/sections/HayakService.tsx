@@ -214,7 +214,8 @@ const HayakService = ({ locale = 'en' }: HayakServiceProps) => {
                             width={1200}
                             height={1200}
                             className="w-full max-w-md xl:max-w-none h-auto"
-                            unoptimized
+                            loading="lazy"
+                            quality={85}
                         />
                     </div>
                 </div>
@@ -231,7 +232,8 @@ const HayakService = ({ locale = 'en' }: HayakServiceProps) => {
                             width={1200}
                             height={1200}
                             className="w-full max-w-md xl:max-w-none h-auto"
-                            unoptimized
+                            loading="lazy"
+                            quality={85}
                         />
                     </div>
                     <div
@@ -280,7 +282,8 @@ const HayakService = ({ locale = 'en' }: HayakServiceProps) => {
                             width={1200}
                             height={1200}
                             className="w-full max-w-md xl:max-w-none h-auto"
-                            unoptimized
+                            loading="lazy"
+                            quality={85}
                         />
                     </div>
                 </div>
@@ -297,7 +300,8 @@ const HayakService = ({ locale = 'en' }: HayakServiceProps) => {
                             width={1200}
                             height={1200}
                             className="w-full max-w-md xl:max-w-none h-auto"
-                            unoptimized
+                            loading="lazy"
+                            quality={85}
                         />
                     </div>
                     <div
@@ -346,7 +350,8 @@ const HayakService = ({ locale = 'en' }: HayakServiceProps) => {
                             width={1200}
                             height={1200}
                             className="w-full max-w-md xl:max-w-none h-auto"
-                            unoptimized
+                            loading="lazy"
+                            quality={85}
                         />
                     </div>
                 </div>

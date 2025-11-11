@@ -114,7 +114,7 @@ const WhatsappFeatureClient = ({ locale = "en" }: WhatsappFeatureClientProps) =>
                                 style={{
                                     display: isRTL ? "none" : "block",
                                 }}
-                                unoptimized
+                                quality={85}
                             />
                             <div
                                 className={`text-2xl xl:text-4xl font-bold w-fit ${
@@ -133,7 +133,7 @@ const WhatsappFeatureClient = ({ locale = "en" }: WhatsappFeatureClientProps) =>
                                 style={{
                                     display: isRTL ? "block" : "none",
                                 }}
-                                unoptimized
+                                quality={85}
                             />
                         </div>
                         <div className="mt-4">
@@ -173,7 +173,7 @@ const WhatsappFeatureClient = ({ locale = "en" }: WhatsappFeatureClientProps) =>
                                 width={400}
                                 height={400}
                                 className="w-[250px] xl:w-[400px] h-auto"
-                                unoptimized
+                                quality={85}
                             />
                         </motion.div>
                     </motion.div>

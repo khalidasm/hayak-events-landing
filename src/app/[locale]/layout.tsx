@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { IBM_Plex_Sans_Arabic } from "next/font/google";
 import "../globals.css";
 import { Toaster } from "@/components/ui/sonner";
@@ -13,6 +13,9 @@ const ibmPlexSansArabic = IBM_Plex_Sans_Arabic({
   variable: "--font-ibm-plex-sans",
   subsets: ["arabic", "latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700"],
+  display: 'swap',
+  preload: true,
+  fallback: ['system-ui', 'arial'],
 });
 
 const locales = ['en', 'ar'];
@@ -119,13 +122,18 @@ export async function generateMetadata({
       shortcut: '/favicons/favicon.ico',
     },
     manifest: '/favicons/manifest.json',
-    themeColor: '#4F2396',
     verification: {
       // Add your verification codes here when available
       // google: 'your-google-verification-code',
       // yandex: 'your-yandex-verification-code',
       // yahoo: 'your-yahoo-verification-code',
     },
+  };
+}
+
+export function generateViewport(): Viewport {
+  return {
+    themeColor: '#4F2396',
   };
 }
 
@@ -187,9 +195,20 @@ export default async function LocaleLayout({
     // },
   };
 
+  // Determine hero image path for preload
+  const heroImagePath = locale === 'ar' ? '/ar/hero.png' : '/en/hero.png';
+  const logoPath = '/Logo.png';
+
   return (
     <html lang={locale} dir={dir}>
       <head>
+        {/* Preload critical resources */}
+        <link rel="preload" href={heroImagePath} as="image" />
+        <link rel="preload" href={logoPath} as="image" />
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        
         <link rel="apple-touch-icon" sizes="57x57" href="/favicons/apple-icon-57x57.png" />
         <link rel="apple-touch-icon" sizes="60x60" href="/favicons/apple-icon-60x60.png" />
         <link rel="apple-touch-icon" sizes="72x72" href="/favicons/apple-icon-72x72.png" />

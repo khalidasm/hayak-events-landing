@@ -117,7 +117,7 @@ const OurClientsClient = ({ locale, translations }: OurClientsClientProps) => {
                                         width={144} 
                                         height={144} 
                                         className="object-contain w-full h-full" 
-                                        unoptimized
+                                        quality={85}
                                     />
                                 </div>
                             ))}
@@ -131,7 +131,7 @@ const OurClientsClient = ({ locale, translations }: OurClientsClientProps) => {
                                         width={144} 
                                         height={144} 
                                         className="object-contain w-full h-full" 
-                                        unoptimized
+                                        quality={85}
                                     />
                                 </div>
                             ))}
@@ -155,7 +155,8 @@ const OurClientsClient = ({ locale, translations }: OurClientsClientProps) => {
                                 width={150}
                                 height={150}
                                 className="object-contain w-full h-full"
-                                unoptimized
+                                loading="lazy"
+                                quality={85}
                             />
                         </div>
                     ))}

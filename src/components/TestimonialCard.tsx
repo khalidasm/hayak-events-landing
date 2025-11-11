@@ -42,7 +42,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
                     width={80}
                     height={80}
                     className="object-contain p-2"
-                    unoptimized
+                    quality={85}
                 />
             </div>
             <Image
@@ -51,7 +51,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
                 width={100}
                 height={100}
                 className={`absolute bottom-5 ${isRTL ? "left-5" : "right-5"} hidden xl:block`}
-                unoptimized
+                quality={85}
             />
             <Image
                 src="/qoute.svg"
@@ -59,7 +59,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
                 width={50}
                 height={50}
                 className={`absolute bottom-5 ${isRTL ? "left-5" : "right-5"} block xl:hidden`}
-                unoptimized
+                quality={85}
             />
         </div>
     );

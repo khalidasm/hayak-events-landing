@@ -115,7 +115,8 @@ const HayakNumbersClient = ({ locale, translations }: HayakNumbersClientProps) =
                             alt={isRTL ? "شعار حياك" : "Hayak logo"}
                             width={100}
                             height={100}
-                            unoptimized
+                            loading="lazy"
+                            quality={85}
                         />
                     </motion.div>
                 </motion.div>
