@@ -42,6 +42,7 @@ const Hero = ({ locale = 'en' }: HeroProps) => {
                     height={120}
                     priority
                     quality={90}
+                    fetchPriority="high"
                 />
             </AnimatedLogo>
             <AnimatedTitle>

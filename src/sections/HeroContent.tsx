@@ -24,11 +24,13 @@ const HeroContent = ({ isRTL }: HeroContentProps) => {
                 <Image
                     src={isRTL ? '/ar/hero.png' : '/en/hero.png'}
                     alt={isRTL ? "صورة رئيسية لمنصة حياك لإدارة الفعاليات" : "Hayak Events platform hero illustration"}
-                    width={1000}
-                    height={1000}
+                    width={1200}
+                    height={800}
                     className="w-full h-auto"
                     priority
                     quality={85}
+                    fetchPriority="high"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1200px"
                 />
             </motion.div>
 
