@@ -132,12 +132,12 @@ const HayakServiceClient = ({ locale, guestManagementTranslations, ticketSystemT
                     className="relative w-full xl:w-1/2 flex justify-center"
                 >
                     <Image
-                        src={isRTL ? '/ar/guest_management.svg' : '/en/guest_management.svg'}
+                        src={isRTL ? '/ar/guest_management.png' : '/en/guest_management.png'}
                         alt={isRTL ? "بطاقة عرض إدارة الضيوف" : "Guest management feature card"}
                         width={1200}
                         height={1200}
                         className="w-full max-w-md xl:max-w-none h-auto"
-                        unoptimized
+                        loading="lazy"
                     />
                     <motion.div
                         animate={{ y: [-5, 5, -5] }}
@@ -151,12 +151,12 @@ const HayakServiceClient = ({ locale, guestManagementTranslations, ticketSystemT
                         }`}
                     >
                         <Image
-                            src={isRTL ? '/ar/gs_card_1.svg' : '/en/gs_card_1.svg'}
+                            src={isRTL ? '/ar/gs_card_1.png' : '/en/gs_card_1.png'}
                             alt={isRTL ? "بطاقة عرض إضافية لإدارة الضيوف" : "Additional guest management card"}
                             width={400}
                             height={400}
                             className="w-[200px] xl:w-[400px] h-auto"
-                            unoptimized
+                            loading="lazy"
                         />
                     </motion.div>
                     <motion.div
@@ -171,12 +171,12 @@ const HayakServiceClient = ({ locale, guestManagementTranslations, ticketSystemT
                         }`}
                     >
                         <Image
-                            src={isRTL ? '/ar/gs_card_2.svg' : '/en/gs_card_2.svg'}
+                            src={isRTL ? '/ar/gs_card_2.png' : '/en/gs_card_2.png'}
                             alt={isRTL ? "بطاقة عرض ثانوية لإدارة الضيوف" : "Secondary guest management card"}
                             width={400}
                             height={400}
                             className="w-[200px] xl:w-[400px] h-auto"
-                            unoptimized
+                            loading="lazy"
                         />
                     </motion.div>
                 </motion.div>
@@ -196,12 +196,12 @@ const HayakServiceClient = ({ locale, guestManagementTranslations, ticketSystemT
                     className="relative w-full xl:w-1/2 flex justify-center order-2 xl:order-1"
                 >
                     <Image
-                        src={isRTL ? '/ar/ts_card.svg' : '/en/ts_card.svg'}
+                        src={isRTL ? '/ar/ts_card.png' : '/en/ts_card.png'}
                         alt={isRTL ? "بطاقة عرض نظام التذاكر" : "Ticket system feature card"}
                         width={1200}
                         height={1200}
                         className="w-full max-w-md xl:max-w-none h-auto"
-                        unoptimized
+                        loading="lazy"
                     />
                     <motion.div
                         animate={{ y: [-5, 5, -5] }}
@@ -213,12 +213,12 @@ const HayakServiceClient = ({ locale, guestManagementTranslations, ticketSystemT
                         className='absolute -bottom-15 xl:-bottom-30 hidden xl:block -left-6 xl:-left-12'
                     >
                         <Image
-                            src={isRTL ? '/ar/ts_card_2.svg' : '/en/ts_card_2.svg'}
+                            src={isRTL ? '/ar/ts_card_2.png' : '/en/ts_card_2.png'}
                             alt={isRTL ? "بطاقة عرض إضافية لنظام التذاكر" : "Additional ticket system card"}
                             width={300}
                             height={300}
                             className="w-[150px] xl:w-[300px] h-auto"
-                            unoptimized
+                            loading="lazy"
                         />
                     </motion.div>
                     <motion.div
@@ -231,12 +231,12 @@ const HayakServiceClient = ({ locale, guestManagementTranslations, ticketSystemT
                         className='absolute -bottom-20 xl:-bottom-40 hidden xl:block -right-7 xl:-right-14'
                     >
                         <Image
-                            src='/ts_card_1.svg'
+                            src='/ts_card_1.png'
                             alt={isRTL ? "بطاقة عرض ثانوية لنظام التذاكر" : "Secondary ticket system card"}
                             width={300}
                             height={300}
                             className="w-[150px] xl:w-[300px] h-auto"
-                            unoptimized
+                            loading="lazy"
                         />
                     </motion.div>
                 </motion.div>
@@ -298,12 +298,12 @@ const HayakServiceClient = ({ locale, guestManagementTranslations, ticketSystemT
                     className="relative w-full xl:w-1/2 flex justify-center"
                 >
                     <Image
-                        src={isRTL ? '/ar/ps_card.svg' : '/en/ps_card.svg'}
+                        src={isRTL ? '/ar/ps_card.png' : '/en/ps_card.png'}
                         alt={isRTL ? "بطاقة عرض محطات الطباعة" : "Printing stations feature card"}
                         width={1200}
                         height={1200}
                         className="w-full max-w-md xl:max-w-none h-auto"
-                        unoptimized
+                        loading="lazy"
                     />
                     <motion.div
                         animate={{ y: [-5, 5, -5] }}
@@ -317,12 +317,12 @@ const HayakServiceClient = ({ locale, guestManagementTranslations, ticketSystemT
                         }`}
                     >
                         <Image
-                            src={isRTL ? '/ar/ps_card_1.svg' : '/en/ps_card_1.svg'}
+                            src={isRTL ? '/ar/ps_card_1.png' : '/en/ps_card_1.png'}
                             alt={isRTL ? "بطاقة عرض إضافية لمحطات الطباعة" : "Additional printing stations card"}
                             width={500}
                             height={500}
                             className="w-[250px] xl:w-[500px] h-auto"
-                            unoptimized
+                            loading="lazy"
                         />
                     </motion.div>
                 </motion.div>

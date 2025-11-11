@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 
@@ -23,12 +22,12 @@ const HeroContent = ({ isRTL }: HeroContentProps) => {
                 className="w-full"
             >
                 <Image
-                    src={isRTL ? '/ar/hero.svg' : '/en/hero.svg'}
+                    src={isRTL ? '/ar/hero.png' : '/en/hero.png'}
                     alt={isRTL ? "صورة رئيسية لمنصة حياك لإدارة الفعاليات" : "Hayak Events platform hero illustration"}
                     width={1000}
                     height={1000}
                     className="w-full h-auto"
-                    unoptimized
+                    loading="lazy"
                 />
             </motion.div>
 
@@ -54,12 +53,12 @@ const HeroContent = ({ isRTL }: HeroContentProps) => {
                 }}
             >
                 <Image
-                    src={isRTL ? '/ar/hero-right-card.svg' : '/en/hero-left-card.svg'}
+                    src={isRTL ? '/ar/hero-right-card.png' : '/en/hero-left-card.png'}
                     alt={isRTL ? "بطاقة عرض ميزات حياك" : "Hayak features showcase card"}
                     width={400}
                     height={300}
                     className="w-[200px] xl:w-[400px] h-auto"
-                    unoptimized
+                    loading="lazy"
                 />
             </motion.div>
 
@@ -85,12 +84,12 @@ const HeroContent = ({ isRTL }: HeroContentProps) => {
                 }}
             >
                 <Image
-                    src={isRTL ? '/ar/hero-left-card.svg' : '/en/hero-right-card.svg'}
+                    src={isRTL ? '/ar/hero-left-card.png' : '/en/hero-right-card.png'}
                     alt={isRTL ? "بطاقة عرض خدمات حياك" : "Hayak services showcase card"}
                     width={400}
                     height={300}
                     className="w-[200px] xl:w-[400px] h-auto"
-                    unoptimized
+                    loading="lazy"
                 />
             </motion.div>
         </div>
