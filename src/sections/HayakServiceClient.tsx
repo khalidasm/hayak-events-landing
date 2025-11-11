@@ -137,6 +137,7 @@ const HayakServiceClient = ({ locale, guestManagementTranslations, ticketSystemT
                         width={1200}
                         height={1200}
                         className="w-full max-w-md xl:max-w-none h-auto"
+                        unoptimized
                     />
                     <motion.div
                         animate={{ y: [-5, 5, -5] }}
@@ -155,6 +156,7 @@ const HayakServiceClient = ({ locale, guestManagementTranslations, ticketSystemT
                             width={400}
                             height={400}
                             className="w-[200px] xl:w-[400px] h-auto"
+                            unoptimized
                         />
                     </motion.div>
                     <motion.div
@@ -174,6 +176,7 @@ const HayakServiceClient = ({ locale, guestManagementTranslations, ticketSystemT
                             width={400}
                             height={400}
                             className="w-[200px] xl:w-[400px] h-auto"
+                            unoptimized
                         />
                     </motion.div>
                 </motion.div>
@@ -198,6 +201,7 @@ const HayakServiceClient = ({ locale, guestManagementTranslations, ticketSystemT
                         width={1200}
                         height={1200}
                         className="w-full max-w-md xl:max-w-none h-auto"
+                        unoptimized
                     />
                     <motion.div
                         animate={{ y: [-5, 5, -5] }}
@@ -214,6 +218,7 @@ const HayakServiceClient = ({ locale, guestManagementTranslations, ticketSystemT
                             width={300}
                             height={300}
                             className="w-[150px] xl:w-[300px] h-auto"
+                            unoptimized
                         />
                     </motion.div>
                     <motion.div
@@ -231,6 +236,7 @@ const HayakServiceClient = ({ locale, guestManagementTranslations, ticketSystemT
                             width={300}
                             height={300}
                             className="w-[150px] xl:w-[300px] h-auto"
+                            unoptimized
                         />
                     </motion.div>
                 </motion.div>
@@ -297,6 +303,7 @@ const HayakServiceClient = ({ locale, guestManagementTranslations, ticketSystemT
                         width={1200}
                         height={1200}
                         className="w-full max-w-md xl:max-w-none h-auto"
+                        unoptimized
                     />
                     <motion.div
                         animate={{ y: [-5, 5, -5] }}
@@ -315,6 +322,7 @@ const HayakServiceClient = ({ locale, guestManagementTranslations, ticketSystemT
                             width={500}
                             height={500}
                             className="w-[250px] xl:w-[500px] h-auto"
+                            unoptimized
                         />
                     </motion.div>
                 </motion.div>
@@ -337,6 +345,7 @@ const HayakServiceClient = ({ locale, guestManagementTranslations, ticketSystemT
                         width={1200}
                         height={1200}
                         className="w-full max-w-md xl:max-w-none h-auto"
+                        unoptimized
                     />
                 </motion.div>
                 <motion.div
@@ -402,6 +411,7 @@ const HayakServiceClient = ({ locale, guestManagementTranslations, ticketSystemT
                         width={1200}
                         height={1200}
                         className="w-full max-w-md xl:max-w-none h-auto"
+                        unoptimized
                     />
                 </motion.div>
             </div>

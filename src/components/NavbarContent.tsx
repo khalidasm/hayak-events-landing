@@ -47,7 +47,7 @@ const NavbarContent = ({
                         width={50} 
                         height={50} 
                         className={`flex-shrink-0 ${isRTL ? "mr-2 xl:mr-3" : "ml-2 xl:mr-3"}`}
-                        unoptimized={true}
+                        unoptimized
                     />
                 </Link>
                 
@@ -101,7 +101,7 @@ const NavbarContent = ({
                                     width={100} 
                                     height={100} 
                                     className="flex-shrink-0" 
-                                    unoptimized={true}
+                                    unoptimized
                                 />
                             </Link>
                         </div>

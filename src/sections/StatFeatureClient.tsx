@@ -68,6 +68,7 @@ const StatFeatureClient = ({ locale, translations }: StatFeatureClientProps) => 
                     width={1200}
                     height={1200}
                     className="w-full max-w-md xl:max-w-none h-auto"
+                    unoptimized
                 />
                 <motion.div
                     animate={{ y: [-5, 5, -5] }}
@@ -84,6 +85,7 @@ const StatFeatureClient = ({ locale, translations }: StatFeatureClientProps) => 
                         width={300}
                         height={300}
                         className="w-[150px] xl:w-[300px] h-auto"
+                        unoptimized
                     />
                 </motion.div>
             </motion.div>

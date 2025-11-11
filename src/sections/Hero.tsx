@@ -41,6 +41,7 @@ const Hero = ({ locale = 'en' }: HeroProps) => {
                     width={120} 
                     height={120}
                     priority
+                    unoptimized
                 />
             </AnimatedLogo>
             <AnimatedTitle>

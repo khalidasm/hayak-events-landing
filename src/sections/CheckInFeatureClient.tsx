@@ -43,7 +43,7 @@ const CheckInFeatureClient = ({ locale, translations }: CheckInFeatureClientProp
                 transition={{ duration: 0.8, ease: "easeOut" }}
                 className="w-full xl:w-1/2 h-full flex flex-col gap-52"
             >
-                <Image src="/Logo.svg" alt={isRTL ? "شعار حياك" : "Hayak Events logo"} width={100} height={100} className="hidden xl:block" />
+                <Image src="/Logo.svg" alt={isRTL ? "شعار حياك" : "Hayak Events logo"} width={100} height={100} className="hidden xl:block" unoptimized />
                 <div className="flex flex-col gap-5">
                     <div className={`text-2xl xl:text-5xl font-bold ${
                         isRTL ? "text-center xl:text-right" : "text-center xl:text-left"
@@ -71,6 +71,7 @@ const CheckInFeatureClient = ({ locale, translations }: CheckInFeatureClientProp
                     alt={isRTL ? "بطاقة عرض ميزة تسجيل الوصول" : "Check-in feature showcase card"}
                     width={900}
                     height={900}
+                    unoptimized
                 />
             </motion.div>
             <motion.div 
@@ -99,6 +100,7 @@ const CheckInFeatureClient = ({ locale, translations }: CheckInFeatureClientProp
                         alt={isRTL ? "بطاقة عرض إضافية لتسجيل الوصول" : "Additional check-in feature card"}
                         width={400}
                         height={400}
+                        unoptimized
                     />
                 </motion.div>
             </motion.div>
@@ -108,6 +110,7 @@ const CheckInFeatureClient = ({ locale, translations }: CheckInFeatureClientProp
                     alt={isRTL ? "بطاقة عرض ميزة تسجيل الوصول" : "Check-in feature showcase card"}
                     width={1200}
                     height={1200}
+                    unoptimized
                 />
             </div>
         </>

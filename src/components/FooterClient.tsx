@@ -121,6 +121,7 @@ const FooterClient = ({ locale, translations }: FooterClientProps) => {
                                     alt={isRTL ? "شعار حياك" : "Hayak logo"} 
                                     width={100} 
                                     height={100} 
+                                    unoptimized
                                 />
                             </Link>
                         </div>

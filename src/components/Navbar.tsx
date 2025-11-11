@@ -68,6 +68,7 @@ const Navbar = ({ locale = 'en' }: NavbarProps) => {
                                 width={50} 
                                 height={50} 
                                 className={`flex-shrink-0 ${isRTL ? "mr-2 xl:mr-3" : "ml-2 xl:ml-3"}`}
+                                unoptimized
                             />
                         </Link>
                     </div>

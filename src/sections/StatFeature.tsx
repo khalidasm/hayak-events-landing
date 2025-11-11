@@ -59,7 +59,7 @@ const StatFeature = ({ locale = 'en' }: StatFeatureProps) => {
                         width={1200}
                         height={1200}
                         className="w-full max-w-md xl:max-w-none h-auto"
-                        unoptimized={true}
+                        unoptimized
                     />
                     <div className='absolute -bottom-14 xl:-bottom-28 hidden xl:block -left-6 xl:-left-12'>
                         <Image
@@ -71,7 +71,7 @@ const StatFeature = ({ locale = 'en' }: StatFeatureProps) => {
                             width={300}
                             height={300}
                             className="w-[150px] xl:w-[300px] h-auto"
-                            unoptimized={true}
+                            unoptimized
                         />
                     </div>
                 </div>

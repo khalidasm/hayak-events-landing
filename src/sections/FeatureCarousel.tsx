@@ -29,6 +29,7 @@ const FeatureCarousel = ({ locale = 'en' }: FeatureCarouselProps) => {
           alt={locale === 'ar' ? "شعار حياك" : "Hayak Events logo"} 
           width={100} 
           height={100} 
+          unoptimized
         />
         <span>{t.youCan}</span>
         <FeaturesCarousel locale={locale} />

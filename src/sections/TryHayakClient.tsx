@@ -184,6 +184,7 @@ const TryHayakClient = ({ locale, translations }: TryHayakClientProps) => {
                             width={100}
                             height={100}
                             style={{ width: '100px', height: '100px' }}
+                            unoptimized
                         />
                     </div>
                     <div>

@@ -132,6 +132,7 @@ const FloatingWhatsAppButton = ({
                 width={40}
                 height={40}
                 className="h-10 w-10 object-contain"
+                unoptimized
               />
             </div>
             <div className="flex-1 text-white">
@@ -234,7 +235,7 @@ const FloatingWhatsAppButton = ({
             height={60}
             className="h-full w-full object-contain relative z-10"
             alt="Message"
-            unoptimized={true}
+            unoptimized
           />
         </button>
       </div>

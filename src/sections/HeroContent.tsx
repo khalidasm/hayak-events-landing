@@ -28,7 +28,7 @@ const HeroContent = ({ isRTL }: HeroContentProps) => {
                     width={1000}
                     height={1000}
                     className="w-full h-auto"
-                    unoptimized={true}
+                    unoptimized
                 />
             </motion.div>
 
@@ -59,7 +59,7 @@ const HeroContent = ({ isRTL }: HeroContentProps) => {
                     width={400}
                     height={300}
                     className="w-[200px] xl:w-[400px] h-auto"
-                    unoptimized={true}
+                    unoptimized
                 />
             </motion.div>
 
@@ -90,7 +90,7 @@ const HeroContent = ({ isRTL }: HeroContentProps) => {
                     width={400}
                     height={300}
                     className="w-[200px] xl:w-[400px] h-auto"
-                    unoptimized={true}
+                    unoptimized
                 />
             </motion.div>
         </div>
