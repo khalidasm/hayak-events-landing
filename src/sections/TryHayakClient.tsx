@@ -178,13 +178,11 @@ const TryHayakClient = ({ locale, translations }: TryHayakClientProps) => {
                     <div className="flex justify-center items-center gap-2 xl:gap-3">
                         <div className="text-2xl xl:text-4xl font-bold">{translations.title}</div>
                         <Image
-                            src="/Logo.svg"
-                            className="mb-2 xl:mb-5"
+                            src="/Logo.png"
                             alt={isRTL ? "شعار حياك" : "Hayak logo"}
-                            width={100}
-                            height={100}
-                            style={{ width: '100px', height: '100px' }}
-                            unoptimized
+                            width={85}
+                            height={85}
+                            loading="lazy"
                         />
                     </div>
                     <div>

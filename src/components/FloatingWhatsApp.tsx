@@ -127,7 +127,7 @@ const FloatingWhatsAppButton = ({
           <div className="flex items-center gap-3 rounded-t-2xl bg-[#4F2396] p-4">
             <div className="flex h-12 w-12 items-center justify-center">
               <Image
-                src="/logo_white.svg"
+                src="/logo_white.png"
                 alt="Hayak Events"
                 width={40}
                 height={40}
@@ -234,7 +234,7 @@ const FloatingWhatsAppButton = ({
             width={60}
             height={60}
             className="h-full w-full object-contain relative z-10"
-            alt="Message"
+            alt={locale === "ar" ? "رسالة" : "Message"}
             unoptimized
           />
         </button>

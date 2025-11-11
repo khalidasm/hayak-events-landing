@@ -209,7 +209,7 @@ const HayakService = ({ locale = 'en' }: HayakServiceProps) => {
                     </div>
                     <div className="relative w-full xl:w-1/2 flex justify-center">
                         <Image
-                            src={isRTL ? '/ar/guest_management.svg' : '/en/guest_management.svg'}
+                            src={isRTL ? '/ar/guest_management.png' : '/en/guest_management.png'}
                             alt={isRTL ? "بطاقة عرض إدارة الضيوف" : "Guest management feature card"}
                             width={1200}
                             height={1200}
@@ -226,7 +226,7 @@ const HayakService = ({ locale = 'en' }: HayakServiceProps) => {
                 >
                     <div className="relative w-full xl:w-1/2 flex justify-center order-2 xl:order-1">
                         <Image
-                            src={isRTL ? '/ar/ts_card.svg' : '/en/ts_card.svg'}
+                            src={isRTL ? '/ar/ts_card.png' : '/en/ts_card.png'}
                             alt={isRTL ? "بطاقة عرض نظام التذاكر" : "Ticket system feature card"}
                             width={1200}
                             height={1200}
@@ -275,7 +275,7 @@ const HayakService = ({ locale = 'en' }: HayakServiceProps) => {
                     </div>
                     <div className="relative w-full xl:w-1/2 flex justify-center">
                         <Image
-                            src={isRTL ? '/ar/ps_card.svg' : '/en/ps_card.svg'}
+                            src={isRTL ? '/ar/ps_card.png' : '/en/ps_card.png'}
                             alt={isRTL ? "بطاقة عرض محطات الطباعة" : "Printing stations feature card"}
                             width={1200}
                             height={1200}
@@ -292,7 +292,7 @@ const HayakService = ({ locale = 'en' }: HayakServiceProps) => {
                 >
                     <div className="relative w-full xl:w-1/2 flex justify-center order-2 xl:order-1">
                         <Image
-                            src={isRTL ? '/ar/ppb_card.svg' : '/en/ppb_card.svg'}
+                            src={isRTL ? '/ar/ppb_card.png' : '/en/ppb_card.png'}
                             alt={isRTL ? "بطاقة عرض الشارات المطبوعة مسبقاً" : "Pre-printed badges feature card"}
                             width={1200}
                             height={1200}
@@ -341,7 +341,7 @@ const HayakService = ({ locale = 'en' }: HayakServiceProps) => {
                     </div>
                     <div className="relative w-full xl:w-1/2 flex justify-center">
                         <Image
-                            src={isRTL ? '/ar/jn_card.svg' : '/en/jn_card.svg'}
+                            src={isRTL ? '/ar/jn_card.png' : '/en/jn_card.png'}
                             alt={isRTL ? "بطاقة عرض تخطيط رحلة الضيف" : "Guest journey planning feature card"}
                             width={1200}
                             height={1200}

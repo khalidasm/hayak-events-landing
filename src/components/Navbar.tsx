@@ -63,12 +63,12 @@ const Navbar = ({ locale = 'en' }: NavbarProps) => {
                     <div className={`flex items-center gap-2 xl:gap-3 flex-shrink-0 ${isRTL ? "flex-row-reverse" : ""}`}>
                         <Link href={`/${locale}`}>
                             <Image 
-                                src="/Logo.svg" 
+                                src="/Logo.png" 
                                 alt={isRTL ? "شعار حياك" : "Hayak Events logo"} 
                                 width={50} 
                                 height={50} 
-                                className={`flex-shrink-0 ${isRTL ? "mr-2 xl:mr-3" : "ml-2 xl:ml-3"}`}
-                                unoptimized
+                                className={`flex-shrink-0 ${isRTL ? "mr-2" : "ml-2"}`}
+                                loading="lazy"
                             />
                         </Link>
                     </div>

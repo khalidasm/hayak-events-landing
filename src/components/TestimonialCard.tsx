@@ -37,7 +37,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
             </div>
             <div className={`absolute -top-16 ${isRTL ? "right-10" : "left-10"} w-28 h-28 border-4 border-[#4F2396] bg-[#4F2396] rounded-full flex items-center justify-center`}>
                 <Image
-                    src="/logo_white.svg"
+                    src="/logo_white.png"
                     alt={isRTL ? "شعار حياك" : "Hayak logo"}
                     width={80}
                     height={80}

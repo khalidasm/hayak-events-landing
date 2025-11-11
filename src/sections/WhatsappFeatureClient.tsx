@@ -65,9 +65,8 @@ const WhatsappFeatureClient = ({ locale = "en" }: WhatsappFeatureClientProps) =>
 
     // Determine background images based on RTL and screen size
     const mobileBg = "/whatsapp_pattern_res.svg";
-    const desktopBg = isRTL
-        ? "/ar/whatsapp_feature_pattern.svg"
-        : "/en/whatsapp_feature_pattern.svg";
+    // Use Arabic pattern for both locales since English version doesn't exist
+    const desktopBg = "/ar/whatsapp_feature_pattern.svg";
 
     return (
         <motion.div
@@ -108,8 +107,7 @@ const WhatsappFeatureClient = ({ locale = "en" }: WhatsappFeatureClientProps) =>
                             className={`flex flex-col xl:flex-row items-center gap-3`}
                         >
                             <Image
-                                src="/Logo.svg"
-                                className={`mb-2 xl:mb-5`}
+                                src="/Logo.png"
                                 alt={isRTL ? "شعار حياك" : "Hayak Events logo"}
                                 width={100}
                                 height={100}
@@ -128,8 +126,7 @@ const WhatsappFeatureClient = ({ locale = "en" }: WhatsappFeatureClientProps) =>
                                 {t.title}
                             </div>
                             <Image
-                                src="/Logo.svg"
-                                className={`mb-2 xl:mb-5`}
+                                src="/Logo.png"
                                 alt={isRTL ? "شعار حياك" : "Hayak Events logo"}
                                 width={100}
                                 height={100}
@@ -171,7 +168,7 @@ const WhatsappFeatureClient = ({ locale = "en" }: WhatsappFeatureClientProps) =>
                             }}
                         >
                             <Image
-                                src="/whatsapp_card.svg"
+                                src="/whatsapp_card.png"
                                 alt={isRTL ? "بطاقة عرض ميزة واتساب" : "WhatsApp integration feature card"}
                                 width={400}
                                 height={400}

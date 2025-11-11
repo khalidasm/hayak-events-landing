@@ -43,7 +43,7 @@ const CheckInFeatureClient = ({ locale, translations }: CheckInFeatureClientProp
                 transition={{ duration: 0.8, ease: "easeOut" }}
                 className="w-full xl:w-1/2 h-full flex flex-col gap-52"
             >
-                <Image src="/Logo.svg" alt={isRTL ? "شعار حياك" : "Hayak Events logo"} width={100} height={100} className="hidden xl:block" unoptimized />
+                <Image src="/Logo.png" alt={isRTL ? "شعار حياك" : "Hayak Events logo"} width={100} height={100} className="hidden xl:block" unoptimized />
                 <div className="flex flex-col gap-5">
                     <div className={`text-2xl xl:text-5xl font-bold ${
                         isRTL ? "text-center xl:text-right" : "text-center xl:text-left"
@@ -67,11 +67,11 @@ const CheckInFeatureClient = ({ locale, translations }: CheckInFeatureClientProp
                 }`}
             >
                 <Image
-                    src={isRTL ? '/ar/ch_card.svg' : '/en/ch_card.svg'}
+                    src={isRTL ? '/ar/ch_card.png' : '/en/ch_card.png'}
                     alt={isRTL ? "بطاقة عرض ميزة تسجيل الوصول" : "Check-in feature showcase card"}
                     width={900}
                     height={900}
-                    unoptimized
+                    loading="lazy"
                 />
             </motion.div>
             <motion.div 
@@ -96,21 +96,22 @@ const CheckInFeatureClient = ({ locale, translations }: CheckInFeatureClientProp
                     }}
                 >
                     <Image
-                        src={isRTL ? '/ar/ch_card_1.svg' : '/en/ch_card_1.svg'}
+                        src={isRTL ? '/ar/ch_card_1.png' : '/en/ch_card_1.png'}
                         alt={isRTL ? "بطاقة عرض إضافية لتسجيل الوصول" : "Additional check-in feature card"}
                         width={400}
                         height={400}
-                        unoptimized
+                        loading="lazy"
                     />
                 </motion.div>
             </motion.div>
             <div className="block xl:hidden">
                 <Image
-                    src={isRTL ? '/ar/ch_card.svg' : '/en/chr_card.svg'}
+                    src={isRTL ? '/ar/ch_card.png' : '/en/chr_card.png'}
                     alt={isRTL ? "بطاقة عرض ميزة تسجيل الوصول" : "Check-in feature showcase card"}
                     width={1200}
                     height={1200}
-                    unoptimized
+                    loading="lazy"
+                    className={isRTL ? "" : "ml-[15px]"}
                 />
             </div>
         </>

@@ -42,12 +42,12 @@ const NavbarContent = ({
             <div className='flex items-center gap-2 xl:gap-3 flex-shrink-0'>
                 <Link href={`/${locale}`}>
                     <Image 
-                        src="/Logo.svg" 
+                        src="/Logo.png" 
                         alt={isRTL ? "شعار حياك" : "Hayak Events logo"} 
                         width={50} 
                         height={50} 
-                        className={`flex-shrink-0 ${isRTL ? "mr-2 xl:mr-3" : "ml-2 xl:mr-3"}`}
-                        unoptimized
+                        className={`flex-shrink-0 ${isRTL ? "mr-2" : "ml-2"}`}
+                        loading="lazy"
                     />
                 </Link>
                 
@@ -56,7 +56,7 @@ const NavbarContent = ({
                     variant="outline"
                     size="sm"
                     onClick={toggleLanguage}
-                    className="hidden xl:block h-8 px-3 bg-[#4F2396]/20 text-[#3B1A71] hover:bg-[#4F2396]/30 text-xs xl:text-sm font-medium rounded-full"
+                    className="hidden border-none xl:block h-8 px-3 bg-[#4F2396]/20 text-[#3B1A71] hover:bg-[#4F2396]/30 text-xs xl:text-sm font-medium rounded-full"
                 >
                     {locale === "en" ? "AR" : "EN"}
                 </Button>
@@ -96,12 +96,12 @@ const NavbarContent = ({
                         <div className="flex items-center justify-center mb-4">
                             <Link href={`/${locale}`} onClick={() => setIsSheetOpen(false)}>
                                 <Image 
-                                    src="/Logo.svg" 
+                                    src="/Logo.png" 
                                     alt={isRTL ? "شعار حياك" : "Hayak Events logo"} 
                                     width={100} 
                                     height={100} 
                                     className="flex-shrink-0" 
-                                    unoptimized
+                                    loading="lazy"
                                 />
                             </Link>
                         </div>

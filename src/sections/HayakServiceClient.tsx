@@ -340,12 +340,12 @@ const HayakServiceClient = ({ locale, guestManagementTranslations, ticketSystemT
                     className="relative w-full xl:w-1/2 flex justify-center order-2 xl:order-1"
                 >
                     <Image
-                        src={isRTL ? '/ar/ppb_card.svg' : '/en/ppb_card.svg'}
+                        src={isRTL ? '/ar/ppb_card.png' : '/en/ppb_card.png'}
                         alt={isRTL ? "بطاقة عرض الشارات المطبوعة مسبقاً" : "Pre-printed badges feature card"}
                         width={1200}
                         height={1200}
                         className="w-full max-w-md xl:max-w-none h-auto"
-                        unoptimized
+                        loading="lazy"
                     />
                 </motion.div>
                 <motion.div
@@ -406,12 +406,12 @@ const HayakServiceClient = ({ locale, guestManagementTranslations, ticketSystemT
                     className="relative w-full xl:w-1/2 flex justify-center"
                 >
                     <Image
-                        src='/jn_card.svg'
+                        src='/jn_card.png'
                         alt={isRTL ? "بطاقة عرض تخطيط رحلة الضيف" : "Guest journey planning feature card"}
                         width={1200}
                         height={1200}
                         className="w-full max-w-md xl:max-w-none h-auto"
-                        unoptimized
+                        loading="lazy"
                     />
                 </motion.div>
             </div>

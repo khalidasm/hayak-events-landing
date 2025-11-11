@@ -25,11 +25,10 @@ const FeatureCarousel = ({ locale = 'en' }: FeatureCarouselProps) => {
       <div className="text-lg xl:text-3xl font-bold text-center flex flex-col xl:flex-row items-center justify-center gap-1 xl:gap-2">
         <span>{t.with}</span>
         <Image 
-          src="/Logo.svg" 
+          src="/Logo.png" 
           alt={locale === 'ar' ? "شعار حياك" : "Hayak Events logo"} 
           width={100} 
           height={100} 
-          unoptimized
         />
         <span>{t.youCan}</span>
         <FeaturesCarousel locale={locale} />

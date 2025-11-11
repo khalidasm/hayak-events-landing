@@ -51,7 +51,7 @@ const StatFeature = ({ locale = 'en' }: StatFeatureProps) => {
             >
                 <div className="relative w-full xl:w-1/2 flex justify-center order-2 xl:order-1">
                     <Image
-                        src={isRTL ? '/ar/st_card.svg' : '/en/st_card.svg'}
+                        src={isRTL ? '/ar/st_card.png' : '/en/st_card.png'}
                         alt={isRTL 
                             ? 'بطاقة عرض ميزة الإحصاءات في الوقت الفعلي لمنصة حياك لإدارة الفعاليات' 
                             : 'Hayak Events platform real-time statistics feature showcase card'
@@ -59,11 +59,11 @@ const StatFeature = ({ locale = 'en' }: StatFeatureProps) => {
                         width={1200}
                         height={1200}
                         className="w-full max-w-md xl:max-w-none h-auto"
-                        unoptimized
+                        loading="lazy"
                     />
                     <div className='absolute -bottom-14 xl:-bottom-28 hidden xl:block -left-6 xl:-left-12'>
                         <Image
-                            src={isRTL ? '/ar/st_card_1.svg' : '/en/st_card_1.svg'}
+                            src={isRTL ? '/ar/st_card_1.png' : '/en/st_card_1.png'}
                             alt={isRTL 
                                 ? 'بطاقة عرض إضافية لميزة الإحصاءات في الوقت الفعلي' 
                                 : 'Additional real-time statistics feature showcase card'
@@ -71,7 +71,7 @@ const StatFeature = ({ locale = 'en' }: StatFeatureProps) => {
                             width={300}
                             height={300}
                             className="w-[150px] xl:w-[300px] h-auto"
-                            unoptimized
+                            loading="lazy"
                         />
                     </div>
                 </div>
