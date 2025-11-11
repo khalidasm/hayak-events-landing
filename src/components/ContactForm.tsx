@@ -91,8 +91,8 @@ const ContactForm = ({ locale = 'en' }: ContactFormProps) => {
         try {
             // Format mobile number: remove + from country code and combine with phone number
             const countryCodeDigits = data.countryCode.replace(/\D/g, '');
-            const phoneDigits = data.phoneNumber ? data.phoneNumber.replace(/\D/g, '') : '';
-            const formattedMobile = phoneDigits ? `${countryCodeDigits}${phoneDigits}` : '';
+            const phoneDigits = data.phoneNumber.replace(/\D/g, '');
+            const formattedMobile = `${countryCodeDigits}${phoneDigits}`;
 
             // Prepare payload
             const payload = {
@@ -174,7 +174,7 @@ const ContactForm = ({ locale = 'en' }: ContactFormProps) => {
                         <label htmlFor="phoneNumber" className={`block text-sm font-medium text-[#241044] mb-1 ${
                             isRTL ? "text-right" : "text-left"
                         }`}>
-                            {t.phoneNumber}
+                            {t.phoneNumber} *
                         </label>
                         <div className={`flex gap-2`}>
                             <Select
@@ -184,6 +184,7 @@ const ContactForm = ({ locale = 'en' }: ContactFormProps) => {
                                     // Trigger validation for phone number when country code changes
                                     trigger("phoneNumber");
                                 }}
+                                disabled={true}
                             >
                                 <SelectTrigger className="w-20 px-[10px] py-[20px] rounded-[10px]">
                                     <SelectValue />
