@@ -104,7 +104,7 @@ const CheckInFeatureClient = ({ locale, translations }: CheckInFeatureClientProp
             </motion.div>
             <div className="block xl:hidden">
                 <Image
-                    src={isRTL ? '/ar/ch_card.svg' : '/en/ch_card.svg'}
+                    src={isRTL ? '/ar/ch_card.svg' : '/en/chr_card.svg'}
                     alt={isRTL ? "بطاقة عرض ميزة تسجيل الوصول" : "Check-in feature showcase card"}
                     width={1200}
                     height={1200}
