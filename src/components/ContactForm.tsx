@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { toast } from "sonner"
 
 const translations = {
     en: {
@@ -78,6 +79,7 @@ const ContactForm = ({ locale = 'en' }: ContactFormProps) => {
         reset,
         setValue,
         watch,
+        trigger,
     } = useForm<ContactFormData>({
         resolver: zodResolver(localizedSchema),
         defaultValues: {
@@ -87,18 +89,58 @@ const ContactForm = ({ locale = 'en' }: ContactFormProps) => {
 
     const onSubmit = async (data: ContactFormData) => {
         try {
-            // Here you would typically send the data to your API
-            console.log("Form data:", data)
-            
-            // Simulate API call
-            await new Promise(resolve => setTimeout(resolve, 1000))
-            
+            // Format mobile number: remove + from country code and combine with phone number
+            const countryCodeDigits = data.countryCode.replace(/\D/g, '');
+            const phoneDigits = data.phoneNumber ? data.phoneNumber.replace(/\D/g, '') : '';
+            const formattedMobile = phoneDigits ? `${countryCodeDigits}${phoneDigits}` : '';
+
+            // Prepare payload
+            const payload = {
+                name: data.fullName,
+                email: data.email,
+                mobile: formattedMobile,
+                subject: data.subject,
+                message: data.message,
+            };
+
+            // Make API call
+            const response = await fetch('https://api.hayaksa.com/api/event/new/message/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(payload),
+            });
+
+            if (!response.ok) {
+                // Try to parse the error response to get the detail message
+                let errorMessage = t.error;
+                try {
+                    const errorData = await response.json();
+                    if (errorData.detail) {
+                        errorMessage = errorData.detail;
+                    } else if (errorData.message) {
+                        errorMessage = errorData.message;
+                    }
+                } catch {
+                    // If parsing fails, use the default error message
+                }
+                throw new Error(errorMessage);
+            }
+
             // Reset form after successful submission
-            reset()
-            alert(t.success)
+            reset({
+                fullName: '',
+                phoneNumber: '',
+                countryCode: '+966',
+                email: '',
+                subject: '',
+                message: '',
+            })
+            toast.success(t.success)
         } catch (error) {
             console.error("Error submitting form:", error)
-            alert(t.error)
+            toast.error(error instanceof Error ? error.message : t.error)
         }
     }
 
@@ -134,10 +176,14 @@ const ContactForm = ({ locale = 'en' }: ContactFormProps) => {
                         }`}>
                             {t.phoneNumber}
                         </label>
-                        <div className={`flex gap-2 ${isRTL ? "flex-row-reverse" : ""}`}>
+                        <div className={`flex gap-2`}>
                             <Select
                                 value={watch("countryCode")}
-                                onValueChange={(value) => setValue("countryCode", value)}
+                                onValueChange={(value) => {
+                                    setValue("countryCode", value);
+                                    // Trigger validation for phone number when country code changes
+                                    trigger("phoneNumber");
+                                }}
                             >
                                 <SelectTrigger className="w-20 px-[10px] py-[20px] rounded-[10px]">
                                     <SelectValue />
@@ -151,12 +197,21 @@ const ContactForm = ({ locale = 'en' }: ContactFormProps) => {
                             </Select>
                             <Input
                                 id="phoneNumber"
-                                placeholder={t.placeholders.phoneNumber}
+                                placeholder={
+                                    watch("countryCode") === "+966" 
+                                        ? (locale === 'ar' ? "501234567" : "501234567")
+                                        : t.placeholders.phoneNumber
+                                }
                                 {...register("phoneNumber")}
-                                className="flex-1 px-[10px] py-[20px] rounded-[10px]"
+                                className={`flex-1 px-[10px] py-[20px] rounded-[10px] ${errors.phoneNumber ? "border-red-500" : ""}`}
                                 dir={isRTL ? "rtl" : "ltr"}
                             />
                         </div>
+                        {errors.phoneNumber && (
+                            <p className={`text-red-500 text-xs mt-1 ${
+                                isRTL ? "text-right" : "text-left"
+                            }`}>{errors.phoneNumber.message}</p>
+                        )}
                     </div>
 
                     {/* Email */}

@@ -13,12 +13,13 @@ const translations = {
             </>
         ),
         namePlaceholder: "Enter your name",
-        phonePlaceholder: "Enter your WhatsApp number",
+        phonePlaceholder: "501234567",
         buttonText: "Try Now!",
         buttonLoading: "Sending...",
         errors: {
             nameRequired: "Please enter your name",
             phoneRequired: "Please enter your WhatsApp number",
+            phoneInvalid: "Saudi mobile number must be 9 digits starting with 5 (e.g., 501234567)",
             submitFailed: "Failed to submit. Please try again.",
             genericError: "An error occurred. Please try again.",
         },
@@ -32,12 +33,13 @@ const translations = {
             </>
         ),
         namePlaceholder: "أدخل اسمك",
-        phonePlaceholder: "أدخل رقم واتسابك",
+        phonePlaceholder: "501234567",
         buttonText: "جرّب الأن!",
         buttonLoading: "جاري الإرسال...",
         errors: {
             nameRequired: "الرجاء إدخال اسمك",
             phoneRequired: "الرجاء إدخال رقم واتسابك",
+            phoneInvalid: "رقم الجوال السعودي يجب أن يكون 9 أرقام يبدأ بـ 5 (مثال: 501234567)",
             submitFailed: "فشل الإرسال. الرجاء المحاولة مرة أخرى.",
             genericError: "حدث خطأ. الرجاء المحاولة مرة أخرى.",
         },

@@ -19,6 +19,7 @@ interface TryHayakClientProps {
         errors: {
             nameRequired: string;
             phoneRequired: string;
+            phoneInvalid: string;
             submitFailed: string;
             genericError: string;
         };
@@ -37,6 +38,7 @@ const TryHayakClient = ({ locale, translations }: TryHayakClientProps) => {
     const [name, setName] = useState("");
     const [phoneNumber, setPhoneNumber] = useState("");
     const [isLoading, setIsLoading] = useState(false);
+    const [phoneError, setPhoneError] = useState("");
 
     // Hide server-rendered section synchronously before browser paint
     useLayoutEffect(() => {
@@ -57,6 +59,42 @@ const TryHayakClient = ({ locale, translations }: TryHayakClientProps) => {
         margin: "-100px",
     });
 
+    // Validate phone number
+    const validatePhoneNumber = (phone: string): string | null => {
+        if (!phone.trim()) {
+            return translations.errors.phoneRequired;
+        }
+
+        // Remove any non-digit characters
+        const digitsOnly = phone.replace(/\D/g, '');
+        
+        // Saudi Arabia: must be 9 digits starting with 5
+        if (digitsOnly.length !== 9 || !/^5[0-9]{8}$/.test(digitsOnly)) {
+            return translations.errors.phoneInvalid;
+        }
+
+        return null;
+    };
+
+    // Handle phone number change
+    const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const value = e.target.value;
+        setPhoneNumber(value);
+        // Validate and clear error if phone becomes valid
+        if (phoneError) {
+            const error = validatePhoneNumber(value);
+            setPhoneError(error || "");
+        }
+    };
+
+    // Handle phone number blur (validate on blur)
+    const handlePhoneBlur = () => {
+        if (phoneNumber.trim()) {
+            const error = validatePhoneNumber(phoneNumber);
+            setPhoneError(error || "");
+        }
+    };
+
     // Handle form submission
     const handleSubmit = async () => {
         if (!name.trim()) {
@@ -64,8 +102,10 @@ const TryHayakClient = ({ locale, translations }: TryHayakClientProps) => {
             return;
         }
 
-        if (!phoneNumber.trim()) {
-            toast.error(translations.errors.phoneRequired);
+        const phoneValidationError = validatePhoneNumber(phoneNumber);
+        if (phoneValidationError) {
+            setPhoneError(phoneValidationError);
+            toast.error(phoneValidationError);
             return;
         }
 
@@ -107,6 +147,7 @@ const TryHayakClient = ({ locale, translations }: TryHayakClientProps) => {
             toast.success(translations.success);
             setName('');
             setPhoneNumber('');
+            setPhoneError('');
         } catch (err) {
             toast.error(err instanceof Error ? err.message : translations.errors.genericError);
         } finally {
@@ -161,24 +202,32 @@ const TryHayakClient = ({ locale, translations }: TryHayakClientProps) => {
                                 disabled={isLoading}
                                 dir={isRTL ? "rtl" : "ltr"}
                             />
-                            <div className={`flex items-center gap-2 w-full max-w-sm xl:max-w-md`}>
-                                <div className="flex items-center border rounded-md px-2 xl:px-3 py-2">
-                                    <span className="text-xs xl:text-sm text-[#241044]">+966</span>
+                            <div className="w-full max-w-sm xl:max-w-md">
+                                <div className={`flex items-center gap-2`}>
+                                    <div className="flex items-center border rounded-md px-2 xl:px-3 py-2">
+                                        <span className="text-xs xl:text-sm text-[#241044]">+966</span>
+                                    </div>
+                                    <Input
+                                        type="tel"
+                                        placeholder={translations.phonePlaceholder}
+                                        value={phoneNumber}
+                                        onChange={handlePhoneChange}
+                                        onBlur={handlePhoneBlur}
+                                        className={`flex-1 text-sm xl:text-base ${phoneError ? "border-red-500" : ""}`}
+                                        disabled={isLoading}
+                                        dir={isRTL ? "rtl" : "ltr"}
+                                    />
                                 </div>
-                                <Input
-                                    type="tel"
-                                    placeholder={translations.phonePlaceholder}
-                                    value={phoneNumber}
-                                    onChange={(e) => setPhoneNumber(e.target.value)}
-                                    className="flex-1 text-sm xl:text-base"
-                                    disabled={isLoading}
-                                    dir={isRTL ? "rtl" : "ltr"}
-                                />
+                                {phoneError && (
+                                    <p className={`text-red-500 text-xs mt-1 ${
+                                        isRTL ? "text-right" : "text-left"
+                                    }`}>{phoneError}</p>
+                                )}
                             </div>
                             <Button 
                                 className="w-full max-w-sm xl:max-w-md bg-[#4F2396] hover:bg-[#4F2396] text-white text-sm xl:text-base disabled:opacity-50"
                                 onClick={handleSubmit}
-                                disabled={!name.trim() || !phoneNumber.trim() || isLoading}
+                                disabled={!name.trim() || !phoneNumber.trim() || !!phoneError || isLoading}
                             >
                                 {isLoading ? translations.buttonLoading : translations.buttonText}
                             </Button>
