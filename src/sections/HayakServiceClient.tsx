@@ -97,7 +97,7 @@ const HayakServiceClient = ({ locale, guestManagementTranslations, ticketSystemT
     return (
         <div className="flex flex-col items-center w-full">
             {/* Guest Management Section - Client Animated */}
-            <div className="w-full h-full flex flex-col xl:flex-row gap-8 xl:gap-20 items-center mt-8 xl:mt-[50px]">
+            <div className="w-full h-full flex flex-col xl:flex-row gap-8 xl:gap-20 items-center mt-12 xl:mt-12">
                     <motion.div
                         ref={guestMgmtLeftRef}
                         initial={{ opacity: 0, x: isRTL ? 100 : -100 }}
@@ -180,7 +180,7 @@ const HayakServiceClient = ({ locale, guestManagementTranslations, ticketSystemT
             </div>
 
             {/* Tickets System Section - Client Animated */}
-            <div className="w-full h-full flex flex-col xl:flex-row items-center gap-8 xl:gap-20 mt-16 xl:mt-[200px]">
+            <div className="w-full h-full flex flex-col xl:flex-row items-center gap-8 xl:gap-20 mt-24 xl:mt-48">
                 <motion.div
                     ref={ticketSystemLeftRef}
                     initial={{ opacity: 0, x: isRTL ? 100 : -100 }}
@@ -257,7 +257,7 @@ const HayakServiceClient = ({ locale, guestManagementTranslations, ticketSystemT
                     </p>
                 </motion.div>
             </div>
-            <div className="w-full h-full flex flex-col xl:flex-row gap-8 xl:gap-20 items-center mt-16 xl:mt-[200px]">
+            <div className="w-full h-full flex flex-col xl:flex-row gap-8 xl:gap-20 items-center mt-24 xl:mt-48">
                 <motion.div
                     ref={printingStationsLeftRef}
                     initial={{ opacity: 0, x: isRTL ? 100 : -100 }}
@@ -319,7 +319,7 @@ const HayakServiceClient = ({ locale, guestManagementTranslations, ticketSystemT
                     </motion.div>
                 </motion.div>
             </div>
-            <div className="w-full h-full flex flex-col xl:flex-row items-center gap-8 xl:gap-20 mt-16 xl:mt-[200px]">
+            <div className="w-full h-full flex flex-col xl:flex-row items-center gap-8 xl:gap-20 mt-24 xl:mt-48">
                 <motion.div
                     ref={prePrintedBadgesLeftRef}
                     initial={{ opacity: 0, x: isRTL ? 100 : -100 }}
@@ -362,7 +362,7 @@ const HayakServiceClient = ({ locale, guestManagementTranslations, ticketSystemT
                     </p>
                 </motion.div>
             </div>
-            <div className="w-full h-full flex flex-col xl:flex-row gap-8 xl:gap-20 items-center mt-16 xl:mt-[200px]">
+            <div className="w-full h-full flex flex-col xl:flex-row gap-8 xl:gap-20 items-center mt-24 xl:mt-48">
                 <motion.div
                     ref={guestJourneyLeftRef}
                     initial={{ opacity: 0, x: isRTL ? 100 : -100 }}

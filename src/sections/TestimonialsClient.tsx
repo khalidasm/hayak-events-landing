@@ -7,7 +7,7 @@ import TestimonialCarousel from "@/components/TestimonialCarousel";
 interface TestimonialsClientProps {
     locale: 'en' | 'ar';
     translations: {
-        title: string;
+        title: string | React.ReactNode;
         testimonials: Array<{
             id: string;
             testimonial: string;

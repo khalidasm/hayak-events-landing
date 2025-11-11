@@ -38,7 +38,7 @@ const translations = {
     ar: {
         title: (
             <>
-                <span className="text-[#4F2396]">الأسئلة</span> الشائعة
+                الأسئلة <span className="text-[#4F2396]">الشائعة</span> 
             </>
         ),
         faqs: [
@@ -94,7 +94,7 @@ const FAQ = ({ locale = 'en' }: FAQProps) => {
     };
 
     return (
-        <section id="faqs" className="w-full relative px-4 xl:px-60 py-16 xl:py-32 flex flex-col gap-5">
+        <section id="faqs" className="w-full relative px-4 xl:px-60 py-24 xl:py-48 flex flex-col gap-5">
             {/* FAQPage structured data */}
             <script
                 type="application/ld+json"

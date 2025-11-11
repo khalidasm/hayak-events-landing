@@ -33,7 +33,7 @@ const Hero = ({ locale = 'en' }: HeroProps) => {
         : "ادعُ الأشخاص المميزين لديك بكل سلاسة معنا. توفر حياك منصة إدارة فعاليات سلسة لإدارة فعالياتك وضيوفك ودعواتك.";
     
     return (
-        <div className="w-full flex flex-col gap-3 xl:gap-5 items-center justify-center pt-24 xl:pt-32 pb-16 xl:pb-60 px-4 xl:px-60">
+        <div className="w-full flex flex-col gap-3 xl:gap-5 items-center justify-center pt-24 xl:pt-32 pb-24 xl:pb-48 px-4 xl:px-60">
             <AnimatedLogo>
                 <Image 
                     src="/Logo.svg" 

@@ -23,7 +23,7 @@ const translations = {
     ar: {
         title: (
             <>
-                <span className="text-[#4F2396]">ميزة</span> الإحصاءات
+                ميزة <span className="text-[#4F2396]">الإحصاءات</span> 
             </>
         ),
         description: (
@@ -43,11 +43,11 @@ const StatFeature = ({ locale = 'en' }: StatFeatureProps) => {
     const t = translations[locale];
 
     return (
-        <div className="w-full py-16 xl:py-32 px-4 xl:px-60">
+        <div className="w-full py-24 xl:py-48 px-4 xl:px-60">
             {/* Server-rendered section for SEO */}
             <div 
                 data-server-stat-feature
-                className="w-full h-full flex flex-col xl:flex-row items-center gap-8 xl:gap-20 mt-16 xl:mt-[200px]"
+                className="w-full h-full flex flex-col xl:flex-row items-center gap-8 xl:gap-20"
             >
                 <div className="relative w-full xl:w-1/2 flex justify-center order-2 xl:order-1">
                     <Image
@@ -59,6 +59,7 @@ const StatFeature = ({ locale = 'en' }: StatFeatureProps) => {
                         width={1200}
                         height={1200}
                         className="w-full max-w-md xl:max-w-none h-auto"
+                        unoptimized
                     />
                     <div className='absolute -bottom-14 xl:-bottom-28 hidden xl:block -left-6 xl:-left-12'>
                         <Image
@@ -70,6 +71,7 @@ const StatFeature = ({ locale = 'en' }: StatFeatureProps) => {
                             width={300}
                             height={300}
                             className="w-[150px] xl:w-[300px] h-auto"
+                            unoptimized
                         />
                     </div>
                 </div>

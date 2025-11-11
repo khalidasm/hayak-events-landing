@@ -97,7 +97,7 @@ const translations = {
     ar: {
         title: (
             <>
-                <span className="text-[#4F2396]">خطط</span> حياك
+                خطط <span className="text-[#4F2396]">حيّاك</span> 
             </>
         ),
         bestDeal: "أفضل صفقة",
@@ -227,7 +227,7 @@ const HayakPackages = ({ locale = 'en' }: HayakPackagesProps) => {
     };
 
     return (
-        <section id="plans" className="w-full relative px-4 xl:px-60 py-16 xl:py-32 flex flex-col gap-10">
+        <section id="plans" className="w-full relative px-4 xl:px-60 py-24 xl:py-48 flex flex-col gap-10">
             {/* Product/Service structured data */}
             <script
                 type="application/ld+json"

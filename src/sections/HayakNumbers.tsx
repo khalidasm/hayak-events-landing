@@ -86,7 +86,7 @@ const HayakNumbers = ({ locale = 'en' }: HayakNumbersProps) => {
     const t = translations[locale];
 
     return (
-        <div className="w-full relative px-4 xl:px-60 py-16 xl:py-32 flex flex-col gap-10">
+        <div className="w-full relative px-4 xl:px-60 py-24 xl:py-48 flex flex-col gap-10">
             {/* Server-rendered section for SEO */}
             <div 
                 data-server-hayak-numbers
@@ -116,6 +116,7 @@ const HayakNumbers = ({ locale = 'en' }: HayakNumbersProps) => {
                                     } 
                                     width={500} 
                                     height={500} 
+                                    unoptimized
                                 />
                                 <div className="absolute flex flex-col items-center gap-2 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                                     <div className="flex items-center gap-2 font-bold text-2xl text-[#4F2396]">
@@ -134,6 +135,7 @@ const HayakNumbers = ({ locale = 'en' }: HayakNumbersProps) => {
                                     } 
                                     width={500} 
                                     height={500} 
+                                    unoptimized
                                 />
                                 <div className="absolute flex flex-col items-center gap-2 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                                     <div className="flex items-center gap-2 font-bold text-2xl text-[#4F2396]">
@@ -154,6 +156,7 @@ const HayakNumbers = ({ locale = 'en' }: HayakNumbersProps) => {
                                     } 
                                     width={500} 
                                     height={500} 
+                                    unoptimized
                                 />
                                 <div className="absolute flex flex-col items-center gap-2 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                                     <div className="flex items-center gap-2 font-bold text-2xl text-[#4F2396]">
@@ -172,6 +175,7 @@ const HayakNumbers = ({ locale = 'en' }: HayakNumbersProps) => {
                                     } 
                                     width={500} 
                                     height={500} 
+                                    unoptimized
                                 />
                                 <div className="absolute flex flex-col items-center gap-2 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                                     <div className="flex items-center gap-2 font-bold text-2xl text-[#4F2396]">
@@ -189,6 +193,7 @@ const HayakNumbers = ({ locale = 'en' }: HayakNumbersProps) => {
                             alt={isRTL ? "شعار حياك" : "Hayak logo"}
                             width={100}
                             height={100}
+                            unoptimized
                         />
                     </div>
                 </div>

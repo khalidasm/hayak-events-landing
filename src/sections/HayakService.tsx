@@ -135,7 +135,7 @@ const translations = {
         printingStations: {
             title: (
                 <>
-                    <span className="text-[#4F2396]">محطات</span> الطباعة
+                    محطات <span className="text-[#4F2396]">الطباعة</span> 
                 </>
             ),
             description: (
@@ -147,8 +147,7 @@ const translations = {
         prePrintedBadges: {
             title: (
                 <>
-                    <span className="text-[#4F2396]">البطاقات والأساور والحبال</span> المسبقة الطباعة
-                </>
+                   البطاقات <span className="text-[#4F2396]"> والأساور والحبال مسبقة الطباعة</span>                </>
             ),
             description: (
                 <>
@@ -159,7 +158,7 @@ const translations = {
         guestJourneyPlanning: {
             title: (
                 <>
-                    <span className="text-[#4F2396]">تخطيط</span> رحلة الضيوف
+                    تخطيط <span className="text-[#4F2396]">رحلة الضيوف</span> 
                 </>
             ),
             description: (
@@ -180,7 +179,7 @@ const HayakService = ({ locale = 'en' }: HayakServiceProps) => {
     const isRTL = locale === 'ar';
 
     return (
-        <div id="services" className="w-full flex flex-col items-center py-16 xl:py-32 px-4 xl:px-60 mx-auto gap-6 xl:gap-10
+        <div id="services" className="w-full flex flex-col items-center py-24 xl:py-48 px-4 xl:px-60 mx-auto gap-6 xl:gap-10
         bg-[url('/hollow-bg.svg')] bg-cover bg-center bg-no-repeat
         ">
             <h2 className="text-2xl xl:text-4xl font-bold text-center">
@@ -190,7 +189,7 @@ const HayakService = ({ locale = 'en' }: HayakServiceProps) => {
                 {/* Guest Management Section - Server-rendered for SEO */}
                 <div 
                     data-server-guest-mgmt
-                    className="w-full h-full flex flex-col xl:flex-row gap-8 xl:gap-20 items-center mt-8 xl:mt-[50px]"
+                    className="w-full h-full flex flex-col xl:flex-row gap-8 xl:gap-20 items-center mt-12 xl:mt-12"
                 >
                     <div
                         className={`flex flex-col gap-3 xl:gap-5 w-full xl:w-1/2 ${
@@ -222,7 +221,7 @@ const HayakService = ({ locale = 'en' }: HayakServiceProps) => {
                 {/* Tickets System Section - Server-rendered for SEO */}
                 <div 
                     data-server-ticket-system
-                    className="w-full h-full flex flex-col xl:flex-row items-center gap-8 xl:gap-20 mt-16 xl:mt-[200px]"
+                    className="w-full h-full flex flex-col xl:flex-row items-center gap-8 xl:gap-20 mt-24 xl:mt-48"
                 >
                     <div className="relative w-full xl:w-1/2 flex justify-center order-2 xl:order-1">
                         <Image
@@ -254,7 +253,7 @@ const HayakService = ({ locale = 'en' }: HayakServiceProps) => {
                 {/* Printing Stations Section - Server-rendered for SEO */}
                 <div 
                     data-server-printing-stations
-                    className="w-full h-full flex flex-col xl:flex-row gap-8 xl:gap-20 items-center mt-16 xl:mt-[200px]"
+                    className="w-full h-full flex flex-col xl:flex-row gap-8 xl:gap-20 items-center mt-24 xl:mt-48"
                 >
                     <div
                         className={`flex flex-col gap-3 xl:gap-5 w-full xl:w-1/2 ${
@@ -286,7 +285,7 @@ const HayakService = ({ locale = 'en' }: HayakServiceProps) => {
                 {/* Pre-printed Badges Section - Server-rendered for SEO */}
                 <div 
                     data-server-pre-printed-badges
-                    className="w-full h-full flex flex-col xl:flex-row items-center gap-8 xl:gap-20 mt-16 xl:mt-[200px]"
+                    className="w-full h-full flex flex-col xl:flex-row items-center gap-8 xl:gap-20 mt-24 xl:mt-48"
                 >
                     <div className="relative w-full xl:w-1/2 flex justify-center order-2 xl:order-1">
                         <Image
@@ -318,7 +317,7 @@ const HayakService = ({ locale = 'en' }: HayakServiceProps) => {
                 {/* Guest Journey Planning Section - Server-rendered for SEO */}
                 <div 
                     data-server-guest-journey
-                    className="w-full h-full flex flex-col xl:flex-row gap-8 xl:gap-20 items-center mt-16 xl:mt-[200px]"
+                    className="w-full h-full flex flex-col xl:flex-row gap-8 xl:gap-20 items-center mt-24 xl:mt-48"
                 >
                     <div
                         className={`flex flex-col gap-3 xl:gap-5 w-full xl:w-1/2 ${

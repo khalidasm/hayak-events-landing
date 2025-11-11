@@ -181,9 +181,9 @@ const TryHayakClient = ({ locale, translations }: TryHayakClientProps) => {
                             src="/Logo.svg"
                             className="mb-2 xl:mb-5"
                             alt={isRTL ? "شعار حياك" : "Hayak logo"}
-                            width={60}
-                            height={60}
-                            style={{ width: '60px', height: '60px' }}
+                            width={100}
+                            height={100}
+                            style={{ width: '100px', height: '100px' }}
                         />
                     </div>
                     <div>

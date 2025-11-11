@@ -75,7 +75,7 @@ const WhatsappFeatureClient = ({ locale = "en" }: WhatsappFeatureClientProps) =>
             initial={{ opacity: 0 }}
             animate={containerInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="w-full px-4 xl:px-60 py-16 xl:py-32"
+            className="w-full px-4 xl:px-60 py-24 xl:py-48"
         >
             <style
                 dangerouslySetInnerHTML={{

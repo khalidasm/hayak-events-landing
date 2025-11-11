@@ -97,10 +97,18 @@ const OurClientsClient = ({ locale, translations }: OurClientsClientProps) => {
                 >
                     <motion.div
                         className="flex items-center gap-6"
-                        animate={{ x: ["0%", "-100%"] }}
-                        transition={{ duration: 15, ease: "linear", repeat: Infinity }}
+                        animate={{ 
+                            x: isRTL ? ["0%", "50%"] : ["0%", "-50%"]
+                        }}
+                        transition={{ 
+                            duration: 50, 
+                            ease: "linear", 
+                            repeat: Infinity,
+                            repeatType: "loop"
+                        }}
+                        style={{ width: "fit-content" }}
                     >
-                        <div className="flex items-center gap-6">
+                        <div className="flex items-center gap-6 flex-shrink-0">
                             {clientLogos.map((client) => (
                                 <div key={client.key} className="flex-shrink-0 w-36 h-36 flex items-center justify-center">
                                     <Image 
@@ -109,11 +117,12 @@ const OurClientsClient = ({ locale, translations }: OurClientsClientProps) => {
                                         width={144} 
                                         height={144} 
                                         className="object-contain w-full h-full" 
+                                        unoptimized
                                     />
                                 </div>
                             ))}
                         </div>
-                        <div className="flex items-center gap-6">
+                        <div className="flex items-center gap-6 flex-shrink-0">
                             {clientLogos.map((client) => (
                                 <div key={`${client.key}-duplicate`} className="flex-shrink-0 w-36 h-36 flex items-center justify-center">
                                     <Image 
@@ -122,6 +131,7 @@ const OurClientsClient = ({ locale, translations }: OurClientsClientProps) => {
                                         width={144} 
                                         height={144} 
                                         className="object-contain w-full h-full" 
+                                        unoptimized
                                     />
                                 </div>
                             ))}
@@ -145,6 +155,7 @@ const OurClientsClient = ({ locale, translations }: OurClientsClientProps) => {
                                 width={150}
                                 height={150}
                                 className="object-contain w-full h-full"
+                                unoptimized
                             />
                         </div>
                     ))}

@@ -49,7 +49,7 @@ const StatFeatureClient = ({ locale, translations }: StatFeatureClientProps) => 
             initial={{ opacity: 0 }}
             animate={containerInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="w-full h-full flex flex-col xl:flex-row items-center gap-8 xl:gap-20 mt-16 xl:mt-[200px]"
+            className="w-full h-full flex flex-col xl:flex-row items-center gap-8 xl:gap-20"
         >
             <motion.div
                 ref={ticketSystemLeftRef}

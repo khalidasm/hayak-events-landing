@@ -1,7 +1,17 @@
 import React from "react";
 import TestimonialsClient from "./TestimonialsClient";
 
-const translations = {
+type TranslationType = {
+    title: string | React.ReactNode;
+    testimonials: Array<{
+        id: string;
+        testimonial: string;
+        name: string;
+        title: string;
+    }>;
+};
+
+const translations: Record<'en' | 'ar', TranslationType> = {
     en: {
         title: "Testimonials",
         testimonials: [
@@ -32,7 +42,11 @@ const translations = {
         ],
     },
     ar: {
-        title: "آراء العملاء",
+        title: (
+            <>
+                آراء <span className="text-[#4F2396]">العملاء</span> 
+            </>
+        ),
         testimonials: [
             {
                 id: "1",
@@ -96,7 +110,7 @@ const Testimonials = ({ locale = 'en' }: TestimonialsProps) => {
     };
 
     return (
-        <section className="w-full relative px-4 xl:px-60 py-16 xl:py-32 flex flex-col gap-24 xl:gap-40">
+        <section className="w-full relative px-4 xl:px-60 py-24 xl:py-48 flex flex-col gap-24 xl:gap-40">
             {/* Review/Rating structured data */}
             <script
                 type="application/ld+json"
@@ -107,7 +121,7 @@ const Testimonials = ({ locale = 'en' }: TestimonialsProps) => {
                 <h2 className="text-2xl xl:text-4xl font-bold text-center">
                     {t.title}
                 </h2>
-                <div className="flex flex-col xl:flex-row gap-10 mt-10">
+                <div className="flex flex-col xl:flex-row gap-10">
                     {t.testimonials.map((testimonial) => (
                         <div key={testimonial.id} className="flex-1">
                             <div className="bg-[#FBF6FF] rounded-[20px] w-full p-10 pt-16 relative flex flex-col items-start gap-5">

@@ -20,7 +20,7 @@ const translations = {
     ar: {
         title: (
             <>
-                هل تحتاج إلى مزيد من <span className="text-[#4F2396]">المساعدة؟</span>
+                هل تحتاج إلى مزيد <span className="text-[#4F2396]">من المساعدة؟</span>
             </>
         ),
         description: (
@@ -40,7 +40,7 @@ const ContactUs = ({ locale = 'en' }: ContactUsProps) => {
     const t = translations[locale];
 
     return (
-        <div id="contact" className="w-full relative px-4 xl:px-60 py-16 xl:py-32 flex flex-col gap-12">
+        <div id="contact" className="w-full relative px-4 xl:px-60 py-24 xl:py-48 flex flex-col gap-12">
             {/* Server-rendered section for SEO */}
             <div 
                 data-server-contact-us

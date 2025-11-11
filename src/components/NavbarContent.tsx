@@ -8,6 +8,7 @@ import {
     Sheet,
     SheetContent,
     SheetHeader,
+    SheetTitle,
     SheetTrigger,
 } from "./ui/sheet";
 
@@ -45,6 +46,7 @@ const NavbarContent = ({
                     width={50} 
                     height={50} 
                     className={`flex-shrink-0 ${isRTL ? "mr-2 xl:mr-3" : "ml-2 xl:ml-3"}`}
+                    unoptimized
                 />
                 
                 {/* Language Button */}
@@ -86,6 +88,9 @@ const NavbarContent = ({
                 </SheetTrigger>
                 <SheetContent side={isRTL ? "left" : "right"} className="w-[300px] sm:w-[400px] p-0">
                     <SheetHeader className="px-6 pt-6 pb-4 border-b">
+                        <SheetTitle className="sr-only">
+                            {isRTL ? "قائمة التنقل" : "Navigation Menu"}
+                        </SheetTitle>
                         <div className="flex items-center justify-center mb-4">
                             <Image 
                                 src="/Logo.svg" 
@@ -93,6 +98,7 @@ const NavbarContent = ({
                                 width={100} 
                                 height={100} 
                                 className="flex-shrink-0" 
+                                unoptimized
                             />
                         </div>
                     </SheetHeader>

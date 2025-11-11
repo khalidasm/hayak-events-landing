@@ -185,6 +185,7 @@ export default async function LocaleLayout({
       </head>
       <body
         className={`${ibmPlexSansArabic.variable} font-sans antialiased`}
+        suppressHydrationWarning
       >
         <script
           type="application/ld+json"

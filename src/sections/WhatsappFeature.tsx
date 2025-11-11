@@ -44,7 +44,7 @@ const WhatsappFeature = ({ locale = "en" }: WhatsappFeatureProps) => {
             {/* Server-rendered section for SEO */}
             <div 
                 data-server-whatsapp-feature
-                className="w-full px-4 xl:px-60 py-16 xl:py-32"
+                className="w-full px-4 xl:px-60 py-24 xl:py-48"
             >
                 <style
                     dangerouslySetInnerHTML={{

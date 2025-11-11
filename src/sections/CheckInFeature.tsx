@@ -21,7 +21,7 @@ const translations = {
     ar: {
         title: (
             <>
-                <span className="text-[#4F2396]">ميزة</span> تسجيل الوصول
+                ميزة <span className="text-[#4F2396]">تسجيل الوصول</span> 
             </>
         ),
         description: (
@@ -41,7 +41,7 @@ const CheckInFeature = ({ locale = 'en' }: CheckInFeatureProps) => {
     const t = translations[locale];
 
     return (
-        <div className="bg-[#F5F0FF] w-full xl:h-[900px] relative px-4 xl:px-60 py-16 xl:py-32">
+        <div className="bg-[#F5F0FF] w-full xl:h-[900px] relative px-4 xl:px-60 py-24 xl:py-48">
             {/* Server-rendered section for SEO */}
             <div 
                 data-server-check-in-feature

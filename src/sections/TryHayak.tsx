@@ -56,7 +56,7 @@ const TryHayak = ({ locale = 'en' }: TryHayakProps) => {
     const t = translations[locale];
 
     return (
-        <div id="try" className="w-full px-4 xl:px-60 py-16 xl:py-32">
+        <div id="try" className="w-full px-4 xl:px-60 py-24 xl:py-48">
             {/* Server-rendered section for SEO */}
             <div 
                 data-server-try-hayak
@@ -70,9 +70,9 @@ const TryHayak = ({ locale = 'en' }: TryHayakProps) => {
                                 src="/Logo.svg"
                                 className="mb-2 xl:mb-5"
                                 alt={isRTL ? "شعار حياك" : "Hayak logo"}
-                                width={60}
-                                height={60}
-                                style={{ width: '60px', height: '60px' }}
+                                width={100}
+                                height={100}
+                                style={{ width: '100px', height: '100px' }}
                             />
                         </div>
                         <div>
