@@ -72,12 +72,6 @@ const ContactUs = ({ locale = 'en' }: ContactUsProps) => {
                 locale={locale}
                 translations={t}
             />
-
-            {/* SEO: Hidden text for search engines */}
-            <div className="sr-only">
-                <h2>{t.title}</h2>
-                <p>{t.description}</p>
-            </div>
         </div>
     );
 };

@@ -87,12 +87,6 @@ const TryHayak = ({ locale = 'en' }: TryHayakProps) => {
                 locale={locale}
                 translations={t}
             />
-
-            {/* SEO: Hidden text for search engines */}
-            <div className="sr-only">
-                <h2>{t.title} Hayak</h2>
-                <p>{t.description}</p>
-            </div>
         </div>
     );
 };

@@ -26,7 +26,10 @@ const FAQClient = ({ locale, translations }: FAQClientProps) => {
     // Hide server-rendered section synchronously before browser paint
     useLayoutEffect(() => {
         const serverFAQ = document.querySelector('[data-server-faq]');
-        if (serverFAQ) (serverFAQ as HTMLElement).style.display = 'none';
+        if (serverFAQ) {
+            (serverFAQ as HTMLElement).style.display = 'none';
+            (serverFAQ as HTMLElement).setAttribute('aria-hidden', 'true');
+        }
     }, []);
 
     return (
@@ -37,7 +40,7 @@ const FAQClient = ({ locale, translations }: FAQClientProps) => {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
         >
-            <motion.h1 
+            <motion.div 
                 className="text-4xl font-bold mb-4 text-center"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -45,7 +48,7 @@ const FAQClient = ({ locale, translations }: FAQClientProps) => {
                 transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
             >
                 {translations.title}
-            </motion.h1>
+            </motion.div>
             
             <motion.div 
                 className="bg-[#F8F6FA] rounded-2xl"

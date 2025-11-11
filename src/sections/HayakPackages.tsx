@@ -194,9 +194,45 @@ interface HayakPackagesProps {
 
 const HayakPackages = ({ locale = 'en' }: HayakPackagesProps) => {
     const t = translations[locale];
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://hayaksa.com';
+
+    // Product/Service structured data for SEO
+    const packagesStructuredData = {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "Event Management Platform",
+        "provider": {
+            "@type": "Organization",
+            "name": "Hayak Events",
+            "alternateName": locale === 'ar' ? "حياك" : "Hayak",
+            "url": baseUrl,
+        },
+        "areaServed": {
+            "@type": "Country",
+            "name": "Saudi Arabia"
+        },
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": locale === 'ar' ? "خطط حياك" : "Hayak Packages",
+            "itemListElement": Object.entries(t.packages).map(([key, pkg], index) => ({
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": pkg.title,
+                    "description": pkg.items.join(", ")
+                },
+                "position": index + 1
+            }))
+        }
+    };
 
     return (
-        <div id="plans" className="w-full relative px-4 xl:px-60 py-16 xl:py-32 flex flex-col gap-10">
+        <section id="plans" className="w-full relative px-4 xl:px-60 py-16 xl:py-32 flex flex-col gap-10">
+            {/* Product/Service structured data */}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(packagesStructuredData) }}
+            />
             {/* Server-rendered section for SEO */}
             <div 
                 data-server-hayak-packages
@@ -297,24 +333,7 @@ const HayakPackages = ({ locale = 'en' }: HayakPackagesProps) => {
                 locale={locale}
                 translations={t}
             />
-
-            {/* SEO: Hidden text for search engines */}
-            <div className="sr-only">
-                <h2>{t.title}</h2>
-                <div>
-                    {Object.values(t.packages).map((pkg, idx) => (
-                        <div key={idx}>
-                            <h3>{pkg.title}</h3>
-                            <ul>
-                                {pkg.items.map((item, itemIdx) => (
-                                    <li key={itemIdx}>{item}</li>
-                                ))}
-                            </ul>
-                        </div>
-                    ))}
-                </div>
-            </div>
-        </div>
+        </section>
     );
 };
 

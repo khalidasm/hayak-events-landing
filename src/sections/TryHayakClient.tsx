@@ -41,7 +41,10 @@ const TryHayakClient = ({ locale, translations }: TryHayakClientProps) => {
     // Hide server-rendered section synchronously before browser paint
     useLayoutEffect(() => {
         const serverTryHayak = document.querySelector('[data-server-try-hayak]');
-        if (serverTryHayak) (serverTryHayak as HTMLElement).style.display = 'none';
+        if (serverTryHayak) {
+            (serverTryHayak as HTMLElement).style.display = 'none';
+            (serverTryHayak as HTMLElement).setAttribute('aria-hidden', 'true');
+        }
     }, []);
 
     // InView states
@@ -132,7 +135,7 @@ const TryHayakClient = ({ locale, translations }: TryHayakClientProps) => {
                     className="flex flex-col w-full xl:w-1/2"
                 >
                     <div className="flex justify-center items-center gap-2 xl:gap-3">
-                        <h2 className="text-2xl xl:text-4xl font-bold">{translations.title}</h2>
+                        <div className="text-2xl xl:text-4xl font-bold">{translations.title}</div>
                         <Image
                             src="/Logo.svg"
                             className="mb-2 xl:mb-5"

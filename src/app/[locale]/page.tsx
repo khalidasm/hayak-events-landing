@@ -28,19 +28,25 @@ export default async function HomePage({ params }: HomePageProps) {
     return (
         <div className="w-full min-h-screen bg-white overflow-x-hidden">
             <Navbar locale={locale} />
-            <Hero locale={locale} />
-            <FeatureCarousel locale={locale} />
-            <HayakService locale={locale} />
-            <WhatsappFeature locale={locale} />
-            <CheckInFeature locale={locale} />
-            <StatFeature locale={locale} />
-            <TryHayak locale={locale} />
-            <HayakPackages locale={locale} />
-            <HayakNumbers locale={locale} />
-            <OurClients locale={locale} />
-            <Testimonials locale={locale} />
-            <ContactUs locale={locale} />
-            <FAQ locale={locale} />
+            <main>
+                <Hero locale={locale} />
+                <section id="features" aria-label={locale === 'ar' ? 'الميزات' : 'Features'}>
+                    <FeatureCarousel locale={locale} />
+                </section>
+                <section id="services" aria-label={locale === 'ar' ? 'الخدمات' : 'Services'}>
+                    <HayakService locale={locale} />
+                </section>
+                <WhatsappFeature locale={locale} />
+                <CheckInFeature locale={locale} />
+                <StatFeature locale={locale} />
+                <TryHayak locale={locale} />
+                <HayakPackages locale={locale} />
+                <HayakNumbers locale={locale} />
+                <OurClients locale={locale} />
+                <Testimonials locale={locale} />
+                <ContactUs locale={locale} />
+                <FAQ locale={locale} />
+            </main>
             <Footer locale={locale} />  
         </div>
     );

@@ -108,7 +108,15 @@ const HayakNumbers = ({ locale = 'en' }: HayakNumbersProps) => {
                     <div className="flex items-center justify-center gap-5 w-fit">
                         <div className={`flex flex-col items-center justify-center gap-5 ${isRTL ? "order-2" : "order-1"}`}>
                             <div className="relative">
-                                <Image src="/num_br.svg" alt={isRTL ? "إحصائيات" : "statistics"} width={500} height={500} />
+                                <Image 
+                                    src="/num_br.svg" 
+                                    alt={isRTL 
+                                        ? `بطاقة إحصائيات منصة حياك - ${t.stats.events.value} ${t.stats.events.label}` 
+                                        : `Hayak Events platform statistics card - ${t.stats.events.value} ${t.stats.events.label}`
+                                    } 
+                                    width={500} 
+                                    height={500} 
+                                />
                                 <div className="absolute flex flex-col items-center gap-2 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                                     <div className="flex items-center gap-2 font-bold text-2xl text-[#4F2396]">
                                         <p>+</p>
@@ -118,7 +126,15 @@ const HayakNumbers = ({ locale = 'en' }: HayakNumbersProps) => {
                                 </div>
                             </div>
                             <div className="relative">
-                                <Image src="/num_tr.svg" alt={isRTL ? "إحصائيات" : "statistics"} width={500} height={500} />
+                                <Image 
+                                    src="/num_tr.svg" 
+                                    alt={isRTL 
+                                        ? `بطاقة إحصائيات منصة حياك - ${t.stats.checkIn.value}K ${t.stats.checkIn.label}` 
+                                        : `Hayak Events platform statistics card - ${t.stats.checkIn.value}K ${t.stats.checkIn.label}`
+                                    } 
+                                    width={500} 
+                                    height={500} 
+                                />
                                 <div className="absolute flex flex-col items-center gap-2 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                                     <div className="flex items-center gap-2 font-bold text-2xl text-[#4F2396]">
                                         <p>+</p>
@@ -130,7 +146,15 @@ const HayakNumbers = ({ locale = 'en' }: HayakNumbersProps) => {
                         </div>
                         <div className={`flex flex-col items-center justify-center gap-5 ${isRTL ? "order-1" : "order-2"}`}>
                             <div className="relative">
-                                <Image src="/num_bl.svg" alt={isRTL ? "إحصائيات" : "statistics"} width={500} height={500} />
+                                <Image 
+                                    src="/num_bl.svg" 
+                                    alt={isRTL 
+                                        ? `بطاقة إحصائيات منصة حياك - ${t.stats.printedBadges.value}K ${t.stats.printedBadges.label}` 
+                                        : `Hayak Events platform statistics card - ${t.stats.printedBadges.value}K ${t.stats.printedBadges.label}`
+                                    } 
+                                    width={500} 
+                                    height={500} 
+                                />
                                 <div className="absolute flex flex-col items-center gap-2 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                                     <div className="flex items-center gap-2 font-bold text-2xl text-[#4F2396]">
                                         <p>+</p>
@@ -140,7 +164,15 @@ const HayakNumbers = ({ locale = 'en' }: HayakNumbersProps) => {
                                 </div>
                             </div>
                             <div className="relative">
-                                <Image src="/num_tl.svg" alt={isRTL ? "إحصائيات" : "statistics"} width={500} height={500} />
+                                <Image 
+                                    src="/num_tl.svg" 
+                                    alt={isRTL 
+                                        ? `بطاقة إحصائيات منصة حياك - ${t.stats.sentInvitations.value}K ${t.stats.sentInvitations.label}` 
+                                        : `Hayak Events platform statistics card - ${t.stats.sentInvitations.value}K ${t.stats.sentInvitations.label}`
+                                    } 
+                                    width={500} 
+                                    height={500} 
+                                />
                                 <div className="absolute flex flex-col items-center gap-2 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                                     <div className="flex items-center gap-2 font-bold text-2xl text-[#4F2396]">
                                         <p>+</p>
@@ -167,18 +199,6 @@ const HayakNumbers = ({ locale = 'en' }: HayakNumbersProps) => {
                 locale={locale}
                 translations={t}
             />
-
-            {/* SEO: Hidden text for search engines */}
-            <div className="sr-only">
-                <h2>{t.title}</h2>
-                <p>{t.description}</p>
-                <ul>
-                    <li>+{t.stats.events.value} {t.stats.events.label}</li>
-                    <li>+{t.stats.checkIn.value}K {t.stats.checkIn.label}</li>
-                    <li>+{t.stats.printedBadges.value}K {t.stats.printedBadges.label}</li>
-                    <li>+{t.stats.sentInvitations.value}K {t.stats.sentInvitations.label}</li>
-                </ul>
-            </div>
         </div>
     );
 };

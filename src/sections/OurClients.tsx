@@ -131,17 +131,6 @@ const OurClients = ({ locale = 'en' }: OurClientsProps) => {
                 locale={locale}
                 translations={t}
             />
-
-            {/* SEO: Hidden text for search engines */}
-            <div className="sr-only">
-                <h2>{t.title}</h2>
-                <p>{t.description}</p>
-                <ul>
-                    {clientLogos.map((client) => (
-                        <li key={client.key}>{t.clients[client.key as keyof typeof t.clients]}</li>
-                    ))}
-                </ul>
-            </div>
         </div>
     );
 };

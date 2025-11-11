@@ -39,11 +39,19 @@ const HayakServiceClient = ({ locale, guestManagementTranslations, ticketSystemT
         const serverPrintingStations = document.querySelector('[data-server-printing-stations]');
         const serverPrePrintedBadges = document.querySelector('[data-server-pre-printed-badges]');
         const serverGuestJourney = document.querySelector('[data-server-guest-journey]');
-        if (serverGuestMgmt) (serverGuestMgmt as HTMLElement).style.display = 'none';
-        if (serverTicketSystem) (serverTicketSystem as HTMLElement).style.display = 'none';
-        if (serverPrintingStations) (serverPrintingStations as HTMLElement).style.display = 'none';
-        if (serverPrePrintedBadges) (serverPrePrintedBadges as HTMLElement).style.display = 'none';
-        if (serverGuestJourney) (serverGuestJourney as HTMLElement).style.display = 'none';
+        
+        const hideSection = (element: Element | null) => {
+            if (element) {
+                (element as HTMLElement).style.display = 'none';
+                (element as HTMLElement).setAttribute('aria-hidden', 'true');
+            }
+        };
+        
+        hideSection(serverGuestMgmt);
+        hideSection(serverTicketSystem);
+        hideSection(serverPrintingStations);
+        hideSection(serverPrePrintedBadges);
+        hideSection(serverGuestJourney);
     }, []);
     
     // Guest Management section refs
@@ -101,11 +109,11 @@ const HayakServiceClient = ({ locale, guestManagementTranslations, ticketSystemT
                         transition={{ duration: 0.8, ease: "easeOut" }}
                         className="flex flex-col gap-3 xl:gap-5 w-full xl:w-1/2"
                     >
-                        <h2 className={`text-2xl xl:text-4xl font-bold ${
+                        <div className={`text-2xl xl:text-4xl font-bold ${
                             isRTL ? "text-center xl:text-right" : "text-center xl:text-left"
                         }`}>
                             {guestManagementTranslations.title}
-                        </h2>
+                        </div>
                         <p className={`text-base xl:text-lg ${
                             isRTL ? "text-center xl:text-right" : "text-center xl:text-left"
                         }`}>
@@ -237,11 +245,11 @@ const HayakServiceClient = ({ locale, guestManagementTranslations, ticketSystemT
                     transition={{ duration: 0.8, ease: "easeOut" }}
                     className="flex flex-col gap-3 xl:gap-5 w-full xl:w-1/2 order-1 xl:order-2"
                 >
-                    <h2 className={`text-2xl xl:text-4xl font-bold ${
+                    <div className={`text-2xl xl:text-4xl font-bold ${
                         isRTL ? "text-center xl:text-right" : "text-center xl:text-left"
                     }`}>
                         {ticketSystemTranslations.title}
-                    </h2>
+                    </div>
                     <p className={`text-base xl:text-lg ${
                         isRTL ? "text-center xl:text-right" : "text-center xl:text-left"
                     }`}>
@@ -261,11 +269,11 @@ const HayakServiceClient = ({ locale, guestManagementTranslations, ticketSystemT
                     transition={{ duration: 0.8, ease: "easeOut" }}
                     className="flex flex-col gap-3 xl:gap-5 w-full xl:w-1/2"
                 >
-                    <h2 className={`text-2xl xl:text-4xl font-bold ${
+                    <div className={`text-2xl xl:text-4xl font-bold ${
                         isRTL ? "text-center xl:text-right" : "text-center xl:text-left"
                     }`}>
                         {printingStationsTranslations.title}
-                    </h2>
+                    </div>
                     <p className={`text-base xl:text-lg ${
                         isRTL ? "text-center xl:text-right" : "text-center xl:text-left"
                     }`}>
@@ -342,11 +350,11 @@ const HayakServiceClient = ({ locale, guestManagementTranslations, ticketSystemT
                     transition={{ duration: 0.8, ease: "easeOut" }}
                     className="flex flex-col gap-3 xl:gap-5 w-full xl:w-1/2 order-1 xl:order-2"
                 >
-                    <h2 className={`text-2xl xl:text-4xl font-bold ${
+                    <div className={`text-2xl xl:text-4xl font-bold ${
                         isRTL ? "text-center xl:text-right" : "text-center xl:text-left"
                     }`}>
                         {prePrintedBadgesTranslations.title}
-                    </h2>
+                    </div>
                     <p className={`text-base xl:text-lg ${
                         isRTL ? "text-center xl:text-right" : "text-center xl:text-left"
                     }`}>
@@ -366,11 +374,11 @@ const HayakServiceClient = ({ locale, guestManagementTranslations, ticketSystemT
                     transition={{ duration: 0.8, ease: "easeOut" }}
                     className="flex flex-col gap-3 xl:gap-5 w-full xl:w-1/2"
                 >
-                    <h2 className={`text-2xl xl:text-4xl font-bold ${
+                    <div className={`text-2xl xl:text-4xl font-bold ${
                         isRTL ? "text-center xl:text-right" : "text-center xl:text-left"
                     }`}>
                         {guestJourneyPlanningTranslations.title}
-                    </h2>
+                    </div>
                     <p className={`text-base xl:text-lg ${
                         isRTL ? "text-center xl:text-right" : "text-center xl:text-left"
                     }`}>

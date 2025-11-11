@@ -23,7 +23,10 @@ const CheckInFeatureClient = ({ locale, translations }: CheckInFeatureClientProp
     // Hide server-rendered section synchronously before browser paint
     useLayoutEffect(() => {
         const serverCheckInFeature = document.querySelector('[data-server-check-in-feature]');
-        if (serverCheckInFeature) (serverCheckInFeature as HTMLElement).style.display = 'none';
+        if (serverCheckInFeature) {
+            (serverCheckInFeature as HTMLElement).style.display = 'none';
+            (serverCheckInFeature as HTMLElement).setAttribute('aria-hidden', 'true');
+        }
     }, []);
 
     // InView states for scroll-triggered animations
@@ -42,11 +45,11 @@ const CheckInFeatureClient = ({ locale, translations }: CheckInFeatureClientProp
             >
                 <Image src="/Logo.svg" alt={isRTL ? "شعار حياك" : "Hayak Events logo"} width={100} height={100} className="hidden xl:block" />
                 <div className="flex flex-col gap-5">
-                    <h2 className={`text-2xl xl:text-5xl font-bold ${
+                    <div className={`text-2xl xl:text-5xl font-bold ${
                         isRTL ? "text-center xl:text-right" : "text-center xl:text-left"
                     }`}>
                         {translations.title}
-                    </h2>
+                    </div>
                     <p className={`text-base xl:text-2xl w-full xl:w-[90%] ${
                         isRTL ? "text-center xl:text-right" : "text-center xl:text-left"
                     }`}>

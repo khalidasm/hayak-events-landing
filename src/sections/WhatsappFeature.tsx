@@ -125,12 +125,6 @@ const WhatsappFeature = ({ locale = "en" }: WhatsappFeatureProps) => {
 
             {/* Client component for animations */}
             <WhatsappFeatureClient locale={locale} />
-
-            {/* SEO: Hidden text for search engines */}
-            <div className="sr-only">
-                <h2>{t.title}</h2>
-                <p>{t.description}</p>
-            </div>
         </>
     );
 };

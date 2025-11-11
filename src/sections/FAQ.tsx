@@ -77,9 +77,30 @@ interface FAQProps {
 const FAQ = ({ locale = 'en' }: FAQProps) => {
     const isRTL = locale === 'ar';
     const t = translations[locale];
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://hayaksa.com';
+
+    // FAQPage structured data for SEO
+    const faqStructuredData = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": t.faqs.map((faq) => ({
+            "@type": "Question",
+            "name": faq.question,
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": faq.answer
+            }
+        }))
+    };
 
     return (
-        <div id="faqs" className="w-full relative px-4 xl:px-60 py-16 xl:py-32 flex flex-col gap-5">
+        <section id="faqs" className="w-full relative px-4 xl:px-60 py-16 xl:py-32 flex flex-col gap-5">
+            {/* FAQPage structured data */}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }}
+            />
+            
             {/* Server-rendered section for SEO */}
             <div data-server-faq>
                 <h2 className="text-4xl font-bold mb-4 text-center">
@@ -112,18 +133,7 @@ const FAQ = ({ locale = 'en' }: FAQProps) => {
                 locale={locale}
                 translations={t}
             />
-
-            {/* SEO: Hidden text for search engines */}
-            <div className="sr-only">
-                <h2>{t.title}</h2>
-                {t.faqs.map((faq, index) => (
-                    <div key={index}>
-                        <h3>{faq.question}</h3>
-                        <p>{faq.answer}</p>
-                    </div>
-                ))}
-            </div>
-        </div>
+        </section>
     );
 };
 

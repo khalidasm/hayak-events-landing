@@ -18,7 +18,10 @@ const ContactUsClient = ({ locale, translations }: ContactUsClientProps) => {
     // Hide server-rendered section synchronously before browser paint
     useLayoutEffect(() => {
         const serverContactUs = document.querySelector('[data-server-contact-us]');
-        if (serverContactUs) (serverContactUs as HTMLElement).style.display = 'none';
+        if (serverContactUs) {
+            (serverContactUs as HTMLElement).style.display = 'none';
+            (serverContactUs as HTMLElement).setAttribute('aria-hidden', 'true');
+        }
     }, []);
 
     return (
@@ -45,11 +48,11 @@ const ContactUsClient = ({ locale, translations }: ContactUsClientProps) => {
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
                 >
-                    <h2 className={`text-2xl xl:text-4xl font-bold mb-3 xl:mb-4 ${
+                    <div className={`text-2xl xl:text-4xl font-bold mb-3 xl:mb-4 ${
                         isRTL ? "text-center xl:text-right" : "text-center xl:text-left"
                     }`}>
                         {translations.title}
-                    </h2>
+                    </div>
                     <p className={`text-base xl:text-xl text-[#241044] ${
                         isRTL ? "text-center xl:text-right" : "text-center xl:text-left"
                     }`}>

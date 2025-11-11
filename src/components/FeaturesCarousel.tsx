@@ -42,13 +42,6 @@ const FeaturesCarousel = ({ locale = 'en' }: FeaturesCarouselProps) => {
             
             {/* Client component for carousel animation (takes over after hydration) */}
             <FeaturesCarouselClient features={features} />
-            
-            {/* SEO: Hidden list of all features for search engines */}
-            <div className="sr-only">
-                {features.map((feature, index) => (
-                    <span key={index}>{feature}</span>
-                ))}
-            </div>
         </>
     );
 };

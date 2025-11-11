@@ -23,7 +23,10 @@ const TestimonialsClient = ({ locale, translations }: TestimonialsClientProps) =
     // Hide server-rendered section synchronously before browser paint
     useLayoutEffect(() => {
         const serverTestimonials = document.querySelector('[data-server-testimonials]');
-        if (serverTestimonials) (serverTestimonials as HTMLElement).style.display = 'none';
+        if (serverTestimonials) {
+            (serverTestimonials as HTMLElement).style.display = 'none';
+            (serverTestimonials as HTMLElement).setAttribute('aria-hidden', 'true');
+        }
     }, []);
 
     useEffect(() => {

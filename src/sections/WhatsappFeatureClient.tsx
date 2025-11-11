@@ -38,7 +38,10 @@ const WhatsappFeatureClient = ({ locale = "en" }: WhatsappFeatureClientProps) =>
     // Hide server-rendered section synchronously before browser paint
     useLayoutEffect(() => {
         const serverWhatsappFeature = document.querySelector('[data-server-whatsapp-feature]');
-        if (serverWhatsappFeature) (serverWhatsappFeature as HTMLElement).style.display = 'none';
+        if (serverWhatsappFeature) {
+            (serverWhatsappFeature as HTMLElement).style.display = 'none';
+            (serverWhatsappFeature as HTMLElement).setAttribute('aria-hidden', 'true');
+        }
     }, []);
 
     // Container refs
@@ -114,7 +117,7 @@ const WhatsappFeatureClient = ({ locale = "en" }: WhatsappFeatureClientProps) =>
                                     display: isRTL ? "none" : "block",
                                 }}
                             />
-                            <h2
+                            <div
                                 className={`text-2xl xl:text-4xl font-bold w-fit ${
                                     isRTL
                                         ? "text-center xl:text-right"
@@ -122,7 +125,7 @@ const WhatsappFeatureClient = ({ locale = "en" }: WhatsappFeatureClientProps) =>
                                 }`}
                             >
                                 {t.title}
-                            </h2>
+                            </div>
                             <Image
                                 src="/Logo.svg"
                                 className={`mb-2 xl:mb-5`}

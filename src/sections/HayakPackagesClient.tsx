@@ -31,7 +31,10 @@ const HayakPackagesClient = ({ locale, translations }: HayakPackagesClientProps)
     // Hide server-rendered section synchronously before browser paint
     useLayoutEffect(() => {
         const serverHayakPackages = document.querySelector('[data-server-hayak-packages]');
-        if (serverHayakPackages) (serverHayakPackages as HTMLElement).style.display = 'none';
+        if (serverHayakPackages) {
+            (serverHayakPackages as HTMLElement).style.display = 'none';
+            (serverHayakPackages as HTMLElement).setAttribute('aria-hidden', 'true');
+        }
     }, []);
 
     // InView states for scroll-triggered animations

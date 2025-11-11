@@ -47,7 +47,10 @@ const OurClientsClient = ({ locale, translations }: OurClientsClientProps) => {
     // Hide server-rendered section synchronously before browser paint
     useLayoutEffect(() => {
         const serverOurClients = document.querySelector('[data-server-our-clients]');
-        if (serverOurClients) (serverOurClients as HTMLElement).style.display = 'none';
+        if (serverOurClients) {
+            (serverOurClients as HTMLElement).style.display = 'none';
+            (serverOurClients as HTMLElement).setAttribute('aria-hidden', 'true');
+        }
     }, []);
 
     return (

@@ -23,7 +23,10 @@ const StatFeatureClient = ({ locale, translations }: StatFeatureClientProps) => 
     // Hide server-rendered section synchronously before browser paint
     useLayoutEffect(() => {
         const serverStatFeature = document.querySelector('[data-server-stat-feature]');
-        if (serverStatFeature) (serverStatFeature as HTMLElement).style.display = 'none';
+        if (serverStatFeature) {
+            (serverStatFeature as HTMLElement).style.display = 'none';
+            (serverStatFeature as HTMLElement).setAttribute('aria-hidden', 'true');
+        }
     }, []);
 
     // InView states for scroll-triggered animations
@@ -95,11 +98,11 @@ const StatFeatureClient = ({ locale, translations }: StatFeatureClientProps) => 
                 transition={{ duration: 0.8, ease: "easeOut" }}
                 className="flex flex-col gap-3 xl:gap-5 w-full xl:w-1/2 order-1 xl:order-2"
             >
-                <h2 className={`text-2xl xl:text-4xl font-bold ${
+                <div className={`text-2xl xl:text-4xl font-bold ${
                     isRTL ? "text-center xl:text-right" : "text-center xl:text-left"
                 }`}>
                     {translations.title}
-                </h2>
+                </div>
                 <p className={`text-base xl:text-lg ${
                     isRTL ? "text-center xl:text-right" : "text-center xl:text-left"
                 }`}>

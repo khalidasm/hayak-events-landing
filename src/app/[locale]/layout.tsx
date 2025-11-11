@@ -26,14 +26,24 @@ export async function generateMetadata({
   const { locale } = await params;
   
   const title = locale === 'ar' 
-    ? "حياك - إدارة فعاليات سلسة"
-    : "Hayak Events - Seamless Event Management";
+    ? "حياك - منصة إدارة الفعاليات السلسة | إدارة الضيوف والتذاكر"
+    : "Hayak Events - Seamless Event Management Platform | Guest Management & Tickets";
   
   const description = locale === 'ar'
     ? "ادعُ الأشخاص المميزين لديك بكل سلاسة مع حياك. إدارة الفعاليات والضيوف والتذاكر والمزيد."
     : "Invite your special people seamlessly with Hayak. Manage events, guests, tickets, and more.";
   
   const canonicalUrl = `${baseUrl}/${locale}`;
+  
+  // Build languages object with explicit self-referential link
+  const languages: Record<string, string> = {
+    'en': `${baseUrl}/en`,
+    'ar': `${baseUrl}/ar`,
+    'x-default': `${baseUrl}/en`,
+  };
+  
+  // Ensure self-referential link is explicitly included
+  languages[locale] = canonicalUrl;
   
   return {
     title,
@@ -46,11 +56,7 @@ export async function generateMetadata({
     publisher: "Hayak Events",
     alternates: {
       canonical: canonicalUrl,
-      languages: {
-        'en': `${baseUrl}/en`,
-        'ar': `${baseUrl}/ar`,
-        'x-default': `${baseUrl}/en`,
-      },
+      languages,
     },
     openGraph: {
       type: 'website',
@@ -62,7 +68,9 @@ export async function generateMetadata({
       alternateLocale: locale === 'ar' ? 'en_US' : 'ar_SA',
       images: [
         {
-          url: `${baseUrl}/Logo.svg`,
+          // TODO: Replace with actual PNG/JPG image (1200x630px) for better social media preview
+          // Create og-image.png in public folder with dimensions 1200x630px
+          url: `${baseUrl}/og-image.png`,
           width: 1200,
           height: 630,
           alt: title,
@@ -73,7 +81,7 @@ export async function generateMetadata({
       card: 'summary_large_image',
       title,
       description,
-      images: [`${baseUrl}/Logo.svg`],
+      images: [`${baseUrl}/og-image.png`],
       creator: '@hayakevents',
       site: '@hayakevents',
     },
@@ -87,6 +95,21 @@ export async function generateMetadata({
         'max-image-preview': 'large',
         'max-snippet': -1,
       },
+    },
+    icons: {
+      icon: [
+        { url: '/Logo.svg', type: 'image/svg+xml' },
+        { url: '/Logo.svg', sizes: 'any' },
+      ],
+      apple: [
+        { 
+          url: '/Logo.svg', 
+          sizes: '180x180', 
+          type: 'image/svg+xml',
+          rel: 'apple-touch-icon',
+        },
+      ],
+      shortcut: '/Logo.svg',
     },
     verification: {
       // Add your verification codes here when available
@@ -143,18 +166,23 @@ export default async function LocaleLayout({
     "name": "Hayak Events",
     "alternateName": locale === 'ar' ? "حياك" : "Hayak",
     "url": baseUrl,
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": {
-        "@type": "EntryPoint",
-        "urlTemplate": `${baseUrl}/${locale}/search?q={search_term_string}`,
-      },
-      "query-input": "required name=search_term_string",
-    },
+    // Removed SearchAction as search functionality may not be implemented
+    // Uncomment and update if search is available:
+    // "potentialAction": {
+    //   "@type": "SearchAction",
+    //   "target": {
+    //     "@type": "EntryPoint",
+    //     "urlTemplate": `${baseUrl}/${locale}/search?q={search_term_string}`,
+    //   },
+    //   "query-input": "required name=search_term_string",
+    // },
   };
 
   return (
     <html lang={locale} dir={dir}>
+      <head>
+        <link rel="apple-touch-icon" href="/Logo.svg" sizes="180x180" />
+      </head>
       <body
         className={`${ibmPlexSansArabic.variable} font-sans antialiased`}
       >

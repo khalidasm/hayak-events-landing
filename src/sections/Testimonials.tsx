@@ -68,9 +68,40 @@ interface TestimonialsProps {
 
 const Testimonials = ({ locale = 'en' }: TestimonialsProps) => {
     const t = translations[locale];
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://hayaksa.com';
+
+    // Review/Rating structured data for SEO
+    const reviewsStructuredData = {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Hayak Events",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5",
+            "reviewCount": t.testimonials.length.toString()
+        },
+        "review": t.testimonials.map((testimonial) => ({
+            "@type": "Review",
+            "author": {
+                "@type": "Person",
+                "name": testimonial.name,
+                "jobTitle": testimonial.title
+            },
+            "reviewBody": testimonial.testimonial,
+            "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "5"
+            }
+        }))
+    };
 
     return (
-        <div className="w-full relative px-4 xl:px-60 py-16 xl:py-32 flex flex-col gap-24 xl:gap-40">
+        <section className="w-full relative px-4 xl:px-60 py-16 xl:py-32 flex flex-col gap-24 xl:gap-40">
+            {/* Review/Rating structured data */}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewsStructuredData) }}
+            />
             {/* Server-rendered section for SEO */}
             <div data-server-testimonials>
                 <h2 className="text-2xl xl:text-4xl font-bold text-center">
@@ -96,19 +127,7 @@ const Testimonials = ({ locale = 'en' }: TestimonialsProps) => {
                 locale={locale}
                 translations={t}
             />
-
-            {/* SEO: Hidden text for search engines */}
-            <div className="sr-only">
-                <h2>{t.title}</h2>
-                {t.testimonials.map((testimonial) => (
-                    <div key={testimonial.id}>
-                        <h3>{testimonial.name}</h3>
-                        <p>{testimonial.testimonial}</p>
-                        <p>{testimonial.title}</p>
-                    </div>
-                ))}
-            </div>
-        </div>
+        </section>
     );
 };
 

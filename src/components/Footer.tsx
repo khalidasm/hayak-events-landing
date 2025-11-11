@@ -144,27 +144,6 @@ const Footer = ({ locale = 'en' }: FooterProps) => {
                     locale={locale}
                     translations={t}
                 />
-
-                {/* SEO: Hidden text for search engines */}
-                <div className="sr-only">
-                    <nav>
-                        <h2>{t.quickActions}</h2>
-                        <ul>
-                            <li><a href="#plans">{t.plans}</a></li>
-                            <li><a href="#features">{t.features}</a></li>
-                            <li><a href="#services">{t.services}</a></li>
-                            <li><a href="#try">{t.tryMe}</a></li>
-                        </ul>
-                        <h2>{t.support}</h2>
-                        <ul>
-                            <li><a href="#faqs">{t.faqs}</a></li>
-                            <li><a href="#contact-sales">{t.contactSales}</a></li>
-                            <li><a href="#contact">{t.contactUs}</a></li>
-                        </ul>
-                        <h2>{t.followUs}</h2>
-                        <p>{t.copyright}</p>
-                    </nav>
-                </div>
             </div>
         </footer>
     );

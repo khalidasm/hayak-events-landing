@@ -27,7 +27,10 @@ const HayakNumbersClient = ({ locale, translations }: HayakNumbersClientProps) =
     // Hide server-rendered section synchronously before browser paint
     useLayoutEffect(() => {
         const serverHayakNumbers = document.querySelector('[data-server-hayak-numbers]');
-        if (serverHayakNumbers) (serverHayakNumbers as HTMLElement).style.display = 'none';
+        if (serverHayakNumbers) {
+            (serverHayakNumbers as HTMLElement).style.display = 'none';
+            (serverHayakNumbers as HTMLElement).setAttribute('aria-hidden', 'true');
+        }
     }, []);
 
     return (
@@ -46,11 +49,11 @@ const HayakNumbersClient = ({ locale, translations }: HayakNumbersClientProps) =
                     animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: isRTL ? 30 : -30 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
                 >
-                    <h2 className={`text-2xl xl:text-4xl font-bold ${
+                    <div className={`text-2xl xl:text-4xl font-bold ${
                         isRTL ? "text-center xl:text-right" : "text-center xl:text-left"
                     }`}>
                         {translations.title}
-                    </h2>
+                    </div>
                     <p className={`w-full xl:w-[75%] text-xl ${
                         isRTL ? "text-center xl:text-right" : "text-center xl:text-left"
                     }`}>
