@@ -49,7 +49,7 @@ const StatFeatureClient = ({ locale, translations }: StatFeatureClientProps) => 
             initial={{ opacity: 0 }}
             animate={containerInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="w-full h-full flex flex-col xl:flex-row items-center gap-8 xl:gap-20"
+            className="w-full h-full flex flex-col xl:flex-row items-center gap-[var(--spacing-gap-2xl)] xl:gap-[var(--spacing-gap-5xl)]"
         >
             <motion.div
                 ref={ticketSystemLeftRef}
@@ -98,14 +98,14 @@ const StatFeatureClient = ({ locale, translations }: StatFeatureClientProps) => 
                         : { opacity: 0, x: isRTL ? -100 : 100 }
                 }
                 transition={{ duration: 0.8, ease: "easeOut" }}
-                className="flex flex-col gap-3 xl:gap-5 w-full xl:w-1/2 order-1 xl:order-2"
+                className="flex flex-col gap-[var(--spacing-gap-sm)] xl:gap-[var(--spacing-gap-lg)] w-full xl:w-1/2 order-1 xl:order-2"
             >
-                <div className={`text-2xl xl:text-4xl font-bold ${
+                <div className={`text-2xl md:text-3xl lg:text-3xl xl:text-4xl font-bold ${
                     isRTL ? "text-center xl:text-right" : "text-center xl:text-left"
                 }`}>
                     {translations.title}
                 </div>
-                <p className={`text-base xl:text-lg ${
+                <p className={`text-base md:text-lg lg:text-base xl:text-lg ${
                     isRTL ? "text-center xl:text-right" : "text-center xl:text-left"
                 }`}>
                     {translations.description}

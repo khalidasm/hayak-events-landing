@@ -8,6 +8,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
   
   const routes: MetadataRoute.Sitemap = []
   
+  // Add root URL (default locale)
+  routes.push({
+    url: baseUrl,
+    lastModified: new Date(),
+    changeFrequency: 'weekly',
+    priority: 1,
+    alternates: {
+      languages: {
+        en: `${baseUrl}/en`,
+        ar: `${baseUrl}/ar`,
+      },
+    },
+  })
+  
+  // Add all locale-specific pages
   staticPages.forEach((page) => {
     locales.forEach((locale) => {
       routes.push({

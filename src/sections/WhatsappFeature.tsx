@@ -43,7 +43,7 @@ const WhatsappFeature = ({ locale = "en" }: WhatsappFeatureProps) => {
             {/* Server-rendered section for SEO */}
             <div 
                 data-server-whatsapp-feature
-                className="w-full px-4 xl:px-60 py-24 xl:py-48"
+                className="w-full px-[var(--spacing-section-px-mobile)] md:px-[var(--spacing-section-px-tablet)] lg:px-[var(--spacing-section-px-small-laptop)] xl:px-[var(--spacing-section-px-desktop)] py-[var(--spacing-section-py-mobile)] md:py-[var(--spacing-section-py-tablet)] lg:py-[var(--spacing-section-py-small-laptop)] xl:py-[var(--spacing-section-py-desktop)]"
             >
                 <style
                     dangerouslySetInnerHTML={{
@@ -51,19 +51,19 @@ const WhatsappFeature = ({ locale = "en" }: WhatsappFeatureProps) => {
                             .whatsapp-bg-responsive {
                                 background-image: url("${mobileBg}");
                             }
-                            @media (min-width: 1280px) {
-                                .whatsapp-bg-responsive {
-                                    background-image: url("${desktopBg}") !important;
-                                }
+                        @media (min-width: 1280px) {
+                            .whatsapp-bg-responsive {
+                                background-image: url("${desktopBg}") !important;
                             }
+                        }
                         `,
                     }}
                 />
                 <div className="whatsapp-bg-responsive w-full h-full xl:h-[400px] bg-cover xl:bg-contain bg-center bg-no-repeat py-5 flex flex-col items-center justify-center rounded-[20px] xl:rounded-none">
-                    <div className="flex flex-col xl:flex-row items-center gap-5 px-4 xl:px-32 w-full">
+                    <div className="flex flex-col xl:flex-row items-center gap-[var(--spacing-gap-lg)] px-[var(--spacing-section-px-mobile)] md:px-[var(--spacing-section-px-tablet)] lg:px-[var(--spacing-inner-px-small-laptop)] xl:px-[var(--spacing-inner-px-desktop)] w-full">
                         <div className="flex flex-col w-full xl:w-1/2">
                             <div
-                                className={`flex flex-col xl:flex-row items-center gap-3`}
+                                className={`flex flex-col xl:flex-row items-center gap-[var(--spacing-gap-sm)]`}
                             >
                                 <Image
                                     src="/Logo.webp"
@@ -77,7 +77,7 @@ const WhatsappFeature = ({ locale = "en" }: WhatsappFeatureProps) => {
                                     quality={85}
                                 />
                                 <h2
-                                    className={`text-2xl xl:text-4xl font-bold w-fit ${
+                                    className={`text-2xl md:text-3xl lg:text-3xl xl:text-4xl font-bold w-fit ${
                                         isRTL
                                             ? "text-center xl:text-right"
                                             : "text-center xl:text-left"
@@ -99,7 +99,7 @@ const WhatsappFeature = ({ locale = "en" }: WhatsappFeatureProps) => {
                             </div>
                             <div className="mt-4">
                                 <p
-                                    className={`text-base xl:text-lg ${
+                                    className={`text-base md:text-lg lg:text-base xl:text-lg ${
                                         isRTL
                                             ? "text-center xl:text-right"
                                             : "text-center xl:text-left"
@@ -116,7 +116,7 @@ const WhatsappFeature = ({ locale = "en" }: WhatsappFeatureProps) => {
                                     alt={isRTL ? "بطاقة عرض ميزة واتساب" : "WhatsApp integration feature card"}
                                     width={400}
                                     height={400}
-                                    className="w-[250px] xl:w-[400px] h-auto"
+                                    className="w-[250px] md:w-[280px] lg:w-[320px] xl:w-[400px] h-auto"
                                     quality={85}
                                 />
                             </div>

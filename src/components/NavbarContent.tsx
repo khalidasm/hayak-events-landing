@@ -37,9 +37,9 @@ const NavbarContent = ({
     toggleLanguage,
 }: NavbarContentProps) => {
     return (
-        <div className="flex w-full items-center justify-between min-w-0 gap-2 xl:gap-4">
+        <div className="flex w-full items-center justify-between min-w-0 gap-2 md:gap-3 xl:gap-4">
             {/* Logo */}
-            <div className='flex items-center gap-2 xl:gap-3 flex-shrink-0'>
+            <div className='flex items-center gap-2 md:gap-2.5 xl:gap-3 flex-shrink-0'>
                 <Link href={`/${locale}`}>
                     <Image 
                         src="/Logo.webp" 
@@ -56,20 +56,20 @@ const NavbarContent = ({
                     variant="outline"
                     size="sm"
                     onClick={toggleLanguage}
-                    className="hidden border-none xl:block h-8 px-3 bg-[#4F2396]/20 text-[#3B1A71] hover:bg-[#4F2396]/30 text-xs xl:text-sm font-medium rounded-full"
+                    className="hidden border-none md:block h-8 px-3 bg-[#4F2396]/20 text-[#3B1A71] hover:bg-[#4F2396]/30 text-xs lg:text-sm font-medium rounded-full"
                 >
                     {locale === "en" ? "AR" : "EN"}
                 </Button>
             </div>
 
-            {/* Navigation Links - Hidden on mobile, visible on desktop */}
-            <nav className="hidden xl:flex items-center gap-4 xl:gap-6 flex-1 justify-center">
+            {/* Navigation Links - Hidden on mobile, visible on tablet and desktop */}
+            <nav className="hidden md:flex items-center gap-3 lg:gap-4 xl:gap-6 flex-1 justify-center">
                 {navLinks.map((link) => (
                     <Link
                         key={link.href}
                         href={`/${locale}${link.href}`}
                         onClick={(e) => handleNavClick(e, link.href)}
-                        className="text-gray-700 hover:text-[#241044] transition-colors text-sm xl:text-base whitespace-nowrap"
+                        className="text-gray-700 hover:text-[#241044] transition-colors text-sm lg:text-base whitespace-nowrap"
                     >
                         {link.label}
                     </Link>
@@ -82,7 +82,7 @@ const NavbarContent = ({
                     <Button
                         variant="ghost"
                         size="icon"
-                        className={`xl:hidden h-10 w-10 rounded-full ${isRTL ? "ml-2" : "mr-2"}`}
+                        className={`md:hidden h-10 w-10 rounded-full ${isRTL ? "ml-2" : "mr-2"}`}
                     >
                         <Menu className="h-6 w-6 text-gray-700" />
                         <span className="sr-only">{translations.openMenu}</span>
@@ -154,8 +154,8 @@ const NavbarContent = ({
                 onClick={() => {
                     window.open("https://app.hayaksa.com", "_blank");
                 }}
-                className={`bg-[#4F2396] hover:bg-[#241044]/90 text-white rounded-full hidden xl:block px-10 h-8 xl:h-9 text-xs xl:text-sm font-medium flex-shrink-0 ${
-                    isRTL ? "ml-2 xl:ml-3" : "mr-2 xl:mr-3"
+                className={`bg-[#4F2396] hover:bg-[#241044]/90 text-white rounded-full hidden md:block px-8 lg:px-10 h-8 lg:h-9 text-xs lg:text-sm font-medium flex-shrink-0 ${
+                    isRTL ? "ml-2 lg:ml-3" : "mr-2 lg:mr-3"
                 }`}
             >
                 {translations.logIn}

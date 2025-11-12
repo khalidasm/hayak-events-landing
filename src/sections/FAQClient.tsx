@@ -34,21 +34,21 @@ const FAQClient = ({ locale, translations }: FAQClientProps) => {
 
     return (
         <motion.div 
-            className="w-full relative flex flex-col gap-5"
+            className="w-full relative flex flex-col gap-[var(--spacing-gap-lg)]"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
         >
-            <motion.div 
-                className="text-4xl font-bold mb-4 text-center"
+            <motion.h2 
+                className="text-2xl md:text-3xl lg:text-4xl xl:text-4xl font-bold mb-[var(--spacing-gap-md)] text-center"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
             >
                 {translations.title}
-            </motion.div>
+            </motion.h2>
             
             <motion.div 
                 className="bg-[#F8F6FA] rounded-2xl"

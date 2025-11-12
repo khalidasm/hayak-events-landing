@@ -43,11 +43,11 @@ const StatFeature = ({ locale = 'en' }: StatFeatureProps) => {
     const t = translations[locale];
 
     return (
-        <div className="w-full py-24 xl:py-48 px-4 xl:px-60">
+        <div className="w-full py-[var(--spacing-section-py-mobile)] md:py-[var(--spacing-section-py-tablet)] lg:py-[var(--spacing-section-py-small-laptop)] xl:py-[var(--spacing-section-py-desktop)] px-[var(--spacing-section-px-mobile)] md:px-[var(--spacing-section-px-tablet)] lg:px-[var(--spacing-section-px-small-laptop)] xl:px-[var(--spacing-section-px-desktop)]">
             {/* Server-rendered section for SEO */}
             <div 
                 data-server-stat-feature
-                className="w-full h-full flex flex-col xl:flex-row items-center gap-8 xl:gap-20"
+                className="w-full h-full flex flex-col xl:flex-row items-center gap-[var(--spacing-gap-2xl)] xl:gap-[var(--spacing-gap-5xl)]"
             >
                 <div className="relative w-full xl:w-1/2 flex justify-center order-2 xl:order-1">
                     <Image
@@ -75,13 +75,13 @@ const StatFeature = ({ locale = 'en' }: StatFeatureProps) => {
                         />
                     </div>
                 </div>
-                <div className="flex flex-col gap-3 xl:gap-5 w-full xl:w-1/2 order-1 xl:order-2">
-                    <h2 className={`text-2xl xl:text-4xl font-bold ${
+                <div className="flex flex-col gap-[var(--spacing-gap-sm)] xl:gap-[var(--spacing-gap-lg)] w-full xl:w-1/2 order-1 xl:order-2">
+                    <h2 className={`text-2xl md:text-3xl lg:text-3xl xl:text-4xl font-bold ${
                         isRTL ? "text-center xl:text-right" : "text-center xl:text-left"
                     }`}>
                         {t.title}
                     </h2>
-                    <p className={`text-base xl:text-lg ${
+                    <p className={`text-base md:text-lg lg:text-base xl:text-lg ${
                         isRTL ? "text-center xl:text-right" : "text-center xl:text-left"
                     }`}>
                         {t.description}

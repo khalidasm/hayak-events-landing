@@ -161,9 +161,9 @@ const TryHayakClient = ({ locale, translations }: TryHayakClientProps) => {
             initial={{ opacity: 0 }}
             animate={containerInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className='w-full xl:h-[400px] bg-[url("/try_pattern_mob.svg")] xl:bg-[url("/try_bg.svg")] bg-cover xl:bg-contain bg-center bg-no-repeat py-10 xl:py-5 flex flex-col items-center justify-center rounded-[20px] xl:rounded-none'
+            className='w-full lg:h-[400px] xl:h-[400px] bg-[url("/try_pattern_mob.svg")] lg:bg-[url("/try_bg.svg")] bg-cover lg:bg-cover bg-center bg-no-repeat py-10 lg:py-5 xl:py-5 flex flex-col items-center justify-center rounded-[20px]'
         >
-            <div className="flex items-center justify-center gap-5 px-4 xl:px-60 w-full">
+            <div className="flex items-center justify-center gap-[var(--spacing-gap-lg)] px-[var(--spacing-section-px-mobile)] md:px-[var(--spacing-section-px-tablet)] lg:px-[var(--spacing-section-px-small-laptop)] xl:px-[var(--spacing-section-px-desktop)] w-full">
                 <motion.div
                     ref={leftSectionRef}
                     initial={{ opacity: 0, x: isRTL ? 100 : -100 }}
@@ -173,10 +173,10 @@ const TryHayakClient = ({ locale, translations }: TryHayakClientProps) => {
                             : { opacity: 0, x: isRTL ? 100 : -100 }
                     }
                     transition={{ duration: 0.8, ease: "easeOut" }}
-                    className="flex flex-col w-full xl:w-1/2"
+                    className="flex flex-col w-full lg:w-1/2 xl:w-1/2"
                 >
-                    <div className="flex justify-center items-center gap-2 xl:gap-3">
-                        <div className="text-2xl xl:text-4xl font-bold">{translations.title}</div>
+                    <div className="flex justify-center items-center gap-[var(--spacing-gap-xs)] md:gap-2.5 lg:gap-[var(--spacing-gap-sm)]">
+                        <div className="text-2xl md:text-3xl lg:text-3xl xl:text-4xl font-bold">{translations.title}</div>
                         <Image
                             src="/Logo.webp"
                             alt={isRTL ? "شعار حياك" : "Hayak logo"}
@@ -186,25 +186,25 @@ const TryHayakClient = ({ locale, translations }: TryHayakClientProps) => {
                         />
                     </div>
                     <div>
-                        <p className="text-base xl:text-lg text-center mb-6 xl:mb-8">
+                        <p className="text-base md:text-lg lg:text-lg xl:text-lg text-center mb-[var(--spacing-gap-xl)] lg:mb-[var(--spacing-gap-2xl)] xl:mb-[var(--spacing-gap-2xl)]">
                             {translations.description}
                         </p>
                         
                         {/* Form Inputs */}
-                        <div className="flex flex-col items-center gap-3 xl:gap-4">
+                        <div className="flex flex-col items-center gap-[var(--spacing-gap-sm)] md:gap-3.5 lg:gap-[var(--spacing-gap-md)]">
                             <Input
                                 type="text"
                                 placeholder={translations.namePlaceholder}
                                 value={name}
                                 onChange={(e) => setName(e.target.value)}
-                                className="w-full max-w-sm xl:max-w-md text-sm xl:text-base shadow-none"
+                                className="w-full max-w-sm md:max-w-md lg:max-w-md xl:max-w-md text-sm md:text-base lg:text-base xl:text-base shadow-none"
                                 disabled={isLoading}
                                 dir={isRTL ? "rtl" : "ltr"}
                             />
-                            <div className="w-full max-w-sm xl:max-w-md">
-                                <div className={`flex items-center gap-2`}>
-                                    <div className="flex items-center border rounded-md px-2 xl:px-3 py-2">
-                                        <span className="text-xs xl:text-sm text-[#241044]">+966</span>
+                            <div className="w-full max-w-sm md:max-w-md lg:max-w-md xl:max-w-md">
+                                <div className={`flex items-center gap-[var(--spacing-gap-xs)]`}>
+                                    <div className="flex items-center border rounded-md px-2 md:px-2.5 lg:px-3 py-2">
+                                        <span className="text-xs md:text-sm lg:text-sm xl:text-sm text-[#241044]">+966</span>
                                     </div>
                                     <Input
                                         type="tel"
@@ -212,7 +212,7 @@ const TryHayakClient = ({ locale, translations }: TryHayakClientProps) => {
                                         value={phoneNumber}
                                         onChange={handlePhoneChange}
                                         onBlur={handlePhoneBlur}
-                                        className={`flex-1 text-sm xl:text-base ${phoneError ? "border-red-500" : ""}`}
+                                        className={`flex-1 text-sm md:text-base lg:text-base xl:text-base ${phoneError ? "border-red-500" : ""}`}
                                         disabled={isLoading}
                                         dir={isRTL ? "rtl" : "ltr"}
                                     />
@@ -224,7 +224,7 @@ const TryHayakClient = ({ locale, translations }: TryHayakClientProps) => {
                                 )}
                             </div>
                             <Button 
-                                className="w-full max-w-sm xl:max-w-md bg-[#4F2396] hover:bg-[#4F2396] text-white text-sm xl:text-base disabled:opacity-50"
+                                className="w-full max-w-sm md:max-w-md lg:max-w-md xl:max-w-md bg-[#4F2396] hover:bg-[#4F2396] text-white text-sm md:text-base lg:text-base xl:text-base disabled:opacity-50"
                                 onClick={handleSubmit}
                                 disabled={!name.trim() || !phoneNumber.trim() || !!phoneError || isLoading}
                             >

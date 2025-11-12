@@ -86,13 +86,13 @@ const HayakNumbers = ({ locale = 'en' }: HayakNumbersProps) => {
     const t = translations[locale];
 
     return (
-        <div className="w-full relative px-4 xl:px-60 py-24 xl:py-48 flex flex-col gap-10">
+        <div className="w-full relative px-[var(--spacing-section-px-mobile)] md:px-[var(--spacing-section-px-tablet)] lg:px-[var(--spacing-section-px-small-laptop)] xl:px-[var(--spacing-section-px-desktop)] py-[var(--spacing-section-py-mobile)] md:py-[var(--spacing-section-py-tablet)] lg:py-[var(--spacing-section-py-small-laptop)] xl:py-[var(--spacing-section-py-desktop)] flex flex-col gap-[var(--spacing-gap-3xl)]">
             {/* Server-rendered section for SEO */}
             <div 
                 data-server-hayak-numbers
-                className="flex flex-col xl:flex-row items-center justify-center xl:justify-between gap-10"
+                className="flex flex-col xl:flex-row items-center justify-center xl:justify-between gap-[var(--spacing-gap-3xl)]"
             >
-                <div className="flex flex-col items-center xl:items-start gap-5 w-full xl:w-auto">
+                <div className="flex flex-col items-center xl:items-start gap-[var(--spacing-gap-lg)] w-full xl:w-auto">
                     <h2 className={`text-2xl xl:text-4xl font-bold ${
                         isRTL ? "text-center xl:text-right" : "text-center xl:text-left"
                     }`}>
@@ -104,9 +104,9 @@ const HayakNumbers = ({ locale = 'en' }: HayakNumbersProps) => {
                         {t.description}
                     </p>
                 </div>
-                <div className="flex items-center justify-center gap-5 relative w-full">
-                    <div className="flex items-center justify-center gap-5 w-fit">
-                        <div className={`flex flex-col items-center justify-center gap-5 ${isRTL ? "order-2" : "order-1"}`}>
+                <div className="flex items-center justify-center gap-[var(--spacing-gap-lg)] relative w-full">
+                    <div className="flex items-center justify-center gap-[var(--spacing-gap-lg)] w-fit">
+                        <div className={`flex flex-col items-center justify-center gap-[var(--spacing-gap-lg)] ${isRTL ? "order-2" : "order-1"}`}>
                             <div className="relative">
                                 <Image 
                                     src="/num_br.svg" 
@@ -148,7 +148,7 @@ const HayakNumbers = ({ locale = 'en' }: HayakNumbersProps) => {
                                 </div>
                             </div>
                         </div>
-                        <div className={`flex flex-col items-center justify-center gap-5 ${isRTL ? "order-1" : "order-2"}`}>
+                        <div className={`flex flex-col items-center justify-center gap-[var(--spacing-gap-lg)] ${isRTL ? "order-1" : "order-2"}`}>
                             <div className="relative">
                                 <Image 
                                     src="/num_bl.svg" 

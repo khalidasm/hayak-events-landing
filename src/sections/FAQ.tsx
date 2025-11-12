@@ -94,7 +94,7 @@ const FAQ = ({ locale = 'en' }: FAQProps) => {
     };
 
     return (
-        <section id="faqs" className="w-full relative px-4 xl:px-60 py-24 xl:py-48 flex flex-col gap-5">
+        <section id="faqs" className="w-full relative px-[var(--spacing-section-px-mobile)] md:px-[var(--spacing-section-px-tablet)] lg:px-[var(--spacing-section-px-small-laptop)] xl:px-[var(--spacing-section-px-desktop)] py-[var(--spacing-section-py-mobile)] md:py-[var(--spacing-section-py-tablet)] lg:py-[var(--spacing-section-py-small-laptop)] xl:py-[var(--spacing-section-py-desktop)] flex flex-col gap-[var(--spacing-gap-lg)]">
             {/* FAQPage structured data */}
             <script
                 type="application/ld+json"
@@ -103,7 +103,7 @@ const FAQ = ({ locale = 'en' }: FAQProps) => {
             
             {/* Server-rendered section for SEO */}
             <div data-server-faq>
-                <h2 className="text-4xl font-bold mb-4 text-center">
+                <h2 className="text-4xl font-bold mb-[var(--spacing-gap-md)] text-center">
                     {t.title}
                 </h2>
                 
@@ -116,10 +116,10 @@ const FAQ = ({ locale = 'en' }: FAQProps) => {
                                     index === 0 ? 'rounded-t-lg' : index === t.faqs.length - 1 ? 'rounded-b-lg' : ''
                                 }`}
                             >
-                                <div className="px-6 py-4 text-[#4A3A6B] font-semibold">
+                                <div className="px-[var(--spacing-gap-xl)] py-[var(--spacing-gap-md)] text-[#4A3A6B] font-semibold">
                                     {faq.question}
                                 </div>
-                                <div className="px-6 p-4 text-[#241044] bg-[#F8F6FA] rounded-b-lg">
+                                <div className="px-[var(--spacing-gap-xl)] p-[var(--spacing-gap-md)] text-[#241044] bg-[#F8F6FA] rounded-b-lg">
                                     {faq.answer}
                                 </div>
                             </div>

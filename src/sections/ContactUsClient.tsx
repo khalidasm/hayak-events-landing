@@ -48,12 +48,12 @@ const ContactUsClient = ({ locale, translations }: ContactUsClientProps) => {
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
                 >
-                    <div className={`text-2xl xl:text-4xl font-bold mb-3 xl:mb-4 ${
+                    <div className={`text-2xl md:text-3xl lg:text-3xl xl:text-4xl font-bold mb-[var(--spacing-gap-sm)] xl:mb-[var(--spacing-gap-md)] ${
                         isRTL ? "text-center xl:text-right" : "text-center xl:text-left"
                     }`}>
                         {translations.title}
                     </div>
-                    <p className={`text-base xl:text-xl text-[#241044] ${
+                    <p className={`text-base md:text-lg lg:text-lg xl:text-xl text-[#241044] ${
                         isRTL ? "text-center xl:text-right" : "text-center xl:text-left"
                     }`}>
                         {translations.description}

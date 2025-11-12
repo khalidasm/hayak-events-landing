@@ -82,7 +82,7 @@ const OurClients = ({ locale = 'en' }: OurClientsProps) => {
     const t = translations[locale];
 
     return (
-        <div className="w-full relative px-4 xl:px-60 py-24 xl:py-48 flex flex-col gap-10">
+        <div className="w-full relative px-4 md:px-6 lg:px-12 xl:px-60 py-24 md:py-32 lg:py-36 xl:py-48 flex flex-col gap-10">
             {/* Server-rendered section for SEO */}
             <div 
                 data-server-our-clients

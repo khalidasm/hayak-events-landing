@@ -57,19 +57,19 @@ const HayakPackagesClient = ({ locale, translations }: HayakPackagesClientProps)
             initial={{ opacity: 0 }}
             animate={containerInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="w-full relative flex flex-col gap-10"
+            className="w-full relative flex flex-col gap-[var(--spacing-gap-3xl)]"
         >
-            <motion.h1
+            <motion.h2
                 ref={titleRef}
                 initial={{ opacity: 0, y: 50 }}
                 animate={
                     titleInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }
                 }
                 transition={{ duration: 0.8, ease: "easeOut" }}
-                className="text-2xl xl:text-4xl text-center font-bold"
+                className="text-2xl md:text-3xl lg:text-4xl xl:text-4xl text-center font-bold"
             >
                 {translations.title}
-            </motion.h1>
+            </motion.h2>
             <motion.div
                 ref={packagesRef}
                 initial={{ opacity: 0, y: 100 }}
@@ -79,7 +79,7 @@ const HayakPackagesClient = ({ locale, translations }: HayakPackagesClientProps)
                         : { opacity: 0, y: 100 }
                 }
                 transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-                className="flex flex-col items-center justify-center gap-10 p-6 rounded-[20px] xl:py-0 xl:rounded-none xl:gap-0 xl:flex-row xl:items-stretch bg-[#F9F4FF] xl:bg-transparent"
+                className="flex flex-col items-center justify-center gap-10 p-6 rounded-[20px] md:rounded-[20px] xl:py-0 xl:rounded-none xl:gap-0 xl:flex-row xl:items-stretch bg-[#F9F4FF] xl:bg-transparent"
             >
                 <PackageCard
                     variant={isRTL ? "last" : "first"}

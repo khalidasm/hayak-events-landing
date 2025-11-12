@@ -33,7 +33,7 @@ const Hero = ({ locale = 'en' }: HeroProps) => {
         : "ادعُ الأشخاص المميزين لديك بكل سلاسة معنا. توفر حياك منصة إدارة فعاليات سلسة لإدارة فعالياتك وضيوفك ودعواتك.";
     
     return (
-        <div className="w-full flex flex-col gap-3 xl:gap-5 items-center justify-center pt-24 xl:pt-32 pb-24 xl:pb-48 px-4 xl:px-60">
+        <div className="w-full flex flex-col gap-[var(--spacing-gap-sm)] md:gap-[var(--spacing-gap-md)] lg:gap-[var(--spacing-gap-lg)] xl:gap-[var(--spacing-gap-lg)] items-center justify-center pt-[var(--spacing-section-py-mobile)] md:pt-28 lg:pt-30 xl:pt-32 pb-[var(--spacing-section-py-mobile)] md:pb-[var(--spacing-section-py-tablet)] lg:pb-40 xl:pb-[var(--spacing-section-py-desktop)] px-[var(--spacing-section-px-mobile)] md:px-[var(--spacing-section-px-tablet)] lg:px-[var(--spacing-section-px-small-laptop)] xl:px-[var(--spacing-section-px-desktop)]">
             <AnimatedLogo>
                 <Image 
                     src="/Logo.webp" 
@@ -46,13 +46,13 @@ const Hero = ({ locale = 'en' }: HeroProps) => {
                 />
             </AnimatedLogo>
             <AnimatedTitle>
-                <h1 className="font-semibold text-2xl xl:text-[48px] text-center px-4">
+                <h1 className="font-semibold text-2xl md:text-3xl lg:text-4xl xl:text-[48px] text-center px-[var(--spacing-section-px-mobile)]">
                     {translations[locale]}
                 </h1>
             </AnimatedTitle>
             {/* H1 content in visible body text for SEO */}
             <AnimatedDescription>
-                <p className="text-center text-base xl:text-lg text-gray-600 px-4 max-w-2xl">
+                <p className="text-center text-base md:text-lg xl:text-lg text-gray-600 px-[var(--spacing-section-px-mobile)] max-w-2xl">
                     {descriptionText}
                 </p>
             </AnimatedDescription>

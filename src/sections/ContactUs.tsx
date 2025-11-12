@@ -40,16 +40,16 @@ const ContactUs = ({ locale = 'en' }: ContactUsProps) => {
     const t = translations[locale];
 
     return (
-        <div id="contact" className="w-full relative px-4 xl:px-60 py-24 xl:py-48 flex flex-col gap-12">
+        <div id="contact" className="w-full relative px-[var(--spacing-section-px-mobile)] md:px-[var(--spacing-section-px-tablet)] lg:px-[var(--spacing-section-px-small-laptop)] xl:px-[var(--spacing-section-px-desktop)] py-[var(--spacing-section-py-mobile)] md:py-[var(--spacing-section-py-tablet)] lg:py-[var(--spacing-section-py-small-laptop)] xl:py-[var(--spacing-section-py-desktop)] flex flex-col gap-[var(--spacing-gap-4xl)]">
             {/* Server-rendered section for SEO */}
             <div 
                 data-server-contact-us
-                className="flex flex-col xl:flex-row items-center xl:items-center justify-between gap-10 xl:gap-20"
+                className="flex flex-col xl:flex-row items-center xl:items-center justify-between gap-[var(--spacing-gap-3xl)] xl:gap-[var(--spacing-gap-5xl)]"
             >
                 <div className={`flex-1 w-full ${
                     isRTL ? "xl:order-2" : ""
                 }`}>
-                    <h2 className={`text-2xl xl:text-4xl font-bold mb-3 xl:mb-4 ${
+                    <h2 className={`text-2xl xl:text-4xl font-bold mb-[var(--spacing-gap-sm)] xl:mb-[var(--spacing-gap-md)] ${
                         isRTL ? "text-center xl:text-right" : "text-center xl:text-left"
                     }`}>
                         {t.title}

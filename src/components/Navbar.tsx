@@ -44,10 +44,10 @@ const Navbar = ({ locale = 'en' }: NavbarProps) => {
         <>
             {/* Server-rendered navigation for SEO */}
             <nav
-                className={`fixed top-0 z-50 mt-4 xl:mt-7 flex w-auto xl:w-11/12 xl:max-w-7xl flex-col items-center rounded-full p-2 xl:p-3 overflow-hidden ${
+                className={`fixed top-0 z-50 mt-4 md:mt-6 xl:mt-7 flex w-auto md:w-11/12 md:max-w-6xl lg:max-w-7xl xl:max-w-7xl flex-col items-center rounded-full p-2 md:p-2.5 xl:p-3 overflow-hidden ${
                     isRTL 
-                        ? "left-4 right-4 xl:left-1/2 xl:right-auto xl:-translate-x-1/2" 
-                        : "left-4 right-4 xl:left-1/2 xl:right-auto xl:-translate-x-1/2"
+                        ? "left-4 right-4 md:left-1/2 md:right-auto md:-translate-x-1/2 xl:left-1/2 xl:right-auto xl:-translate-x-1/2" 
+                        : "left-4 right-4 md:left-1/2 md:right-auto md:-translate-x-1/2 xl:left-1/2 xl:right-auto xl:-translate-x-1/2"
                 }`}
                 style={{
                     background: "rgba(245, 240, 255, 0.7)",
@@ -58,9 +58,9 @@ const Navbar = ({ locale = 'en' }: NavbarProps) => {
                 }}
                 data-server-navbar
             >
-                <div className="flex w-full items-center justify-between min-w-0 gap-2 xl:gap-4">
+                <div className="flex w-full items-center justify-between min-w-0 gap-2 md:gap-3 xl:gap-4">
                     {/* Logo */}
-                    <div className={`flex items-center gap-2 xl:gap-3 flex-shrink-0 ${isRTL ? "flex-row-reverse" : ""}`}>
+                    <div className={`flex items-center gap-2 md:gap-2.5 xl:gap-3 flex-shrink-0 ${isRTL ? "flex-row-reverse" : ""}`}>
                         <Link href={`/${locale}`}>
                             <Image 
                                 src="/Logo.webp" 
@@ -74,12 +74,12 @@ const Navbar = ({ locale = 'en' }: NavbarProps) => {
                     </div>
 
                     {/* Navigation Links - Server-rendered for SEO */}
-                    <nav className="hidden xl:flex items-center gap-4 xl:gap-6 flex-1 justify-center">
+                    <nav className="hidden md:flex items-center gap-3 lg:gap-4 xl:gap-6 flex-1 justify-center">
                         {navLinks.map((link) => (
                             <Link
                                 key={link.href}
                                 href={`/${locale}${link.href}`}
-                                className="text-gray-700 hover:text-[#241044] transition-colors text-sm xl:text-base whitespace-nowrap"
+                                className="text-gray-700 hover:text-[#241044] transition-colors text-sm lg:text-base whitespace-nowrap"
                             >
                                 {link.label}
                             </Link>
@@ -91,8 +91,8 @@ const Navbar = ({ locale = 'en' }: NavbarProps) => {
                         href="https://app.hayaksa.com"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`bg-[#4F2396] hover:bg-[#241044]/90 text-white rounded-full hidden xl:block px-10 h-8 xl:h-9 text-xs xl:text-sm font-medium flex-shrink-0 text-center ${
-                            isRTL ? "ml-2 xl:ml-3" : "mr-2 xl:mr-3"
+                        className={`bg-[#4F2396] hover:bg-[#241044]/90 text-white rounded-full hidden md:block px-8 lg:px-10 h-8 lg:h-9 text-xs lg:text-sm font-medium flex-shrink-0 text-center ${
+                            isRTL ? "ml-2 lg:ml-3" : "mr-2 lg:mr-3"
                         }`}
                     >
                         {t.logIn}

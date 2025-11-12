@@ -41,17 +41,17 @@ const CheckInFeatureClient = ({ locale, translations }: CheckInFeatureClientProp
                 initial={{ opacity: 0, x: isRTL ? 100 : -100 }}
                 animate={leftContentInView ? { opacity: 1, x: 0 } : { opacity: 0, x: isRTL ? 100 : -100 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
-                className="w-full xl:w-1/2 h-full flex flex-col gap-52"
+                className="w-full lg:w-1/2 xl:w-1/2 h-full flex flex-col gap-[var(--spacing-gap-2xl)] lg:gap-[var(--spacing-gap-4xl)] xl:gap-[var(--spacing-gap-6xl)]"
             >
-                <Image src="/Logo.webp" alt={isRTL ? "شعار حياك" : "Hayak Events logo"} width={100} height={100} className="hidden xl:block" quality={85} />
-                <div className="flex flex-col gap-5">
-                    <div className={`text-2xl xl:text-5xl font-bold ${
-                        isRTL ? "text-center xl:text-right" : "text-center xl:text-left"
+                <Image src="/Logo.webp" alt={isRTL ? "شعار حياك" : "Hayak Events logo"} width={100} height={100} className="hidden lg:block" quality={85} />
+                <div className="flex flex-col gap-[var(--spacing-gap-lg)]">
+                    <div className={`text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold ${
+                        isRTL ? "text-center lg:text-right" : "text-center lg:text-left"
                     }`}>
                         {translations.title}
                     </div>
-                    <p className={`text-base xl:text-2xl w-full xl:w-[90%] ${
-                        isRTL ? "text-center xl:text-right" : "text-center xl:text-left"
+                    <p className={`text-base md:text-lg lg:text-xl xl:text-2xl w-full lg:w-[70%] xl:w-[90%] ${
+                        isRTL ? "text-center lg:text-right" : "text-center lg:text-left"
                     }`}>
                         {translations.description}
                     </p>
@@ -62,8 +62,8 @@ const CheckInFeatureClient = ({ locale, translations }: CheckInFeatureClientProp
                 initial={{ opacity: 0, x: isRTL ? -100 : 100 }}
                 animate={rightCardInView ? { opacity: 1, x: 0 } : { opacity: 0, x: isRTL ? -100 : 100 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
-                className={`hidden xl:block absolute xl:top-8 ${
-                    isRTL ? "xl:-left-16" : "xl:right-0"
+                className={`hidden lg:block absolute lg:top-8 xl:top-8 ${
+                    isRTL ? "lg:-left-8 xl:-left-16" : "lg:right-0 xl:right-0"
                 }`}
             >
                 <Image
@@ -71,6 +71,7 @@ const CheckInFeatureClient = ({ locale, translations }: CheckInFeatureClientProp
                     alt={isRTL ? "بطاقة عرض ميزة تسجيل الوصول" : "Check-in feature showcase card"}
                     width={900}
                     height={900}
+                    className="w-[600px] lg:w-[550px] xl:w-[900px] h-auto"
                     loading="lazy"
                 />
             </motion.div>
@@ -83,8 +84,8 @@ const CheckInFeatureClient = ({ locale, translations }: CheckInFeatureClientProp
                         : { opacity: 0, x: isRTL ? -100 : 100 }
                 }
                 transition={{ duration: 0.8, ease: "easeOut" }}
-                className={`hidden xl:block absolute -bottom-5 ${
-                    isRTL ? "left-[550px]" : "right-[550px]"
+                className={`hidden lg:block absolute lg:-bottom-7 ${
+                    isRTL ? "lg:left-[280px] xl:left-[550px]" : "lg:right-[280px] xl:right-[550px]"
                 }`}
             >
                 <motion.div
@@ -100,11 +101,12 @@ const CheckInFeatureClient = ({ locale, translations }: CheckInFeatureClientProp
                         alt={isRTL ? "بطاقة عرض إضافية لتسجيل الوصول" : "Additional check-in feature card"}
                         width={400}
                         height={400}
+                        className="w-[250px] lg:w-[250px] xl:w-[400px] h-auto"
                         loading="lazy"
                     />
                 </motion.div>
             </motion.div>
-            <div className="block xl:hidden">
+            <div className="block lg:hidden">
                 <Image
                     src={isRTL ? '/ar/ch_card.webp' : '/en/chr_card.webp'}
                     alt={isRTL ? "بطاقة عرض ميزة تسجيل الوصول" : "Check-in feature showcase card"}

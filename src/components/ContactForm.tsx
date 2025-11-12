@@ -186,7 +186,10 @@ const ContactForm = ({ locale = 'en' }: ContactFormProps) => {
                                 }}
                                 disabled={true}
                             >
-                                <SelectTrigger className="w-20 px-[10px] py-[20px] rounded-[10px]">
+                                <SelectTrigger 
+                                    className="w-20 px-[10px] py-[20px] rounded-[10px]"
+                                    aria-label={locale === 'ar' ? "رمز الدولة" : "Country code"}
+                                >
                                     <SelectValue />
                                 </SelectTrigger>
                                 <SelectContent>

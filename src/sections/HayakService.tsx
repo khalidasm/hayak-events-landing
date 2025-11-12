@@ -179,20 +179,20 @@ const HayakService = ({ locale = 'en' }: HayakServiceProps) => {
     const isRTL = locale === 'ar';
 
     return (
-        <div id="services" className="w-full flex flex-col items-center py-24 xl:py-48 px-4 xl:px-60 mx-auto gap-6 xl:gap-10
+        <div id="services" className="w-full flex flex-col items-center py-[var(--spacing-section-py-mobile)] md:py-[var(--spacing-section-py-tablet)] lg:py-[var(--spacing-section-py-small-laptop)] xl:py-[var(--spacing-section-py-desktop)] px-[var(--spacing-section-px-mobile)] md:px-[var(--spacing-section-px-tablet)] lg:px-[var(--spacing-section-px-small-laptop)] xl:px-[var(--spacing-section-px-desktop)] mx-auto gap-[var(--spacing-gap-xl)] lg:gap-[var(--spacing-gap-2xl)] xl:gap-[var(--spacing-gap-3xl)]
         bg-[url('/hollow-bg.svg')] bg-cover bg-center bg-no-repeat
         ">
-            <h2 className="text-2xl xl:text-4xl font-bold text-center">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-4xl font-bold text-center">
                 {t.title}
             </h2>
             <div className="flex flex-col items-center w-full">
                 {/* Guest Management Section - Server-rendered for SEO */}
                 <div 
                     data-server-guest-mgmt
-                    className="w-full h-full flex flex-col xl:flex-row gap-8 xl:gap-20 items-center mt-12 xl:mt-12"
+                    className="w-full h-full flex flex-col xl:flex-row gap-[var(--spacing-gap-2xl)] xl:gap-[var(--spacing-gap-5xl)] items-center mt-[var(--spacing-margin-top-sm)] xl:mt-[var(--spacing-margin-top-sm)]"
                 >
                     <div
-                        className={`flex flex-col gap-3 xl:gap-5 w-full xl:w-1/2 ${
+                        className={`flex flex-col gap-[var(--spacing-gap-sm)] xl:gap-[var(--spacing-gap-lg)] w-full xl:w-1/2 ${
                             isRTL ? "text-center xl:text-right" : "text-center xl:text-left"
                         }`}
                     >
@@ -223,7 +223,7 @@ const HayakService = ({ locale = 'en' }: HayakServiceProps) => {
                 {/* Tickets System Section - Server-rendered for SEO */}
                 <div 
                     data-server-ticket-system
-                    className="w-full h-full flex flex-col xl:flex-row items-center gap-8 xl:gap-20 mt-24 xl:mt-48"
+                    className="w-full h-full flex flex-col xl:flex-row items-center gap-[var(--spacing-gap-2xl)] xl:gap-[var(--spacing-gap-5xl)] mt-[var(--spacing-margin-top-md)] xl:mt-48"
                 >
                     <div className="relative w-full xl:w-1/2 flex justify-center order-2 xl:order-1">
                         <Image
@@ -260,7 +260,7 @@ const HayakService = ({ locale = 'en' }: HayakServiceProps) => {
                     className="w-full h-full flex flex-col xl:flex-row gap-8 xl:gap-20 items-center mt-24 xl:mt-48"
                 >
                     <div
-                        className={`flex flex-col gap-3 xl:gap-5 w-full xl:w-1/2 ${
+                        className={`flex flex-col gap-[var(--spacing-gap-sm)] xl:gap-[var(--spacing-gap-lg)] w-full xl:w-1/2 ${
                             isRTL ? "text-center xl:text-right" : "text-center xl:text-left"
                         }`}
                     >
@@ -291,7 +291,7 @@ const HayakService = ({ locale = 'en' }: HayakServiceProps) => {
                 {/* Pre-printed Badges Section - Server-rendered for SEO */}
                 <div 
                     data-server-pre-printed-badges
-                    className="w-full h-full flex flex-col xl:flex-row items-center gap-8 xl:gap-20 mt-24 xl:mt-48"
+                    className="w-full h-full flex flex-col xl:flex-row items-center gap-[var(--spacing-gap-2xl)] xl:gap-[var(--spacing-gap-5xl)] mt-[var(--spacing-margin-top-md)] xl:mt-48"
                 >
                     <div className="relative w-full xl:w-1/2 flex justify-center order-2 xl:order-1">
                         <Image
@@ -328,7 +328,7 @@ const HayakService = ({ locale = 'en' }: HayakServiceProps) => {
                     className="w-full h-full flex flex-col xl:flex-row gap-8 xl:gap-20 items-center mt-24 xl:mt-48"
                 >
                     <div
-                        className={`flex flex-col gap-3 xl:gap-5 w-full xl:w-1/2 ${
+                        className={`flex flex-col gap-[var(--spacing-gap-sm)] xl:gap-[var(--spacing-gap-lg)] w-full xl:w-1/2 ${
                             isRTL ? "text-center xl:text-right" : "text-center xl:text-left"
                         }`}
                     >

@@ -110,7 +110,7 @@ const Testimonials = ({ locale = 'en' }: TestimonialsProps) => {
     };
 
     return (
-        <section className="w-full relative px-4 xl:px-60 py-24 xl:py-48 flex flex-col gap-24 xl:gap-40">
+        <section className="w-full relative px-4 md:px-6 lg:px-12 xl:px-60 py-24 md:py-32 lg:py-36 xl:py-48 flex flex-col gap-24 lg:gap-32 xl:gap-40">
             {/* Review/Rating structured data */}
             <script
                 type="application/ld+json"

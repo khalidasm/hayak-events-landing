@@ -97,7 +97,7 @@ const HayakServiceClient = ({ locale, guestManagementTranslations, ticketSystemT
     return (
         <div className="flex flex-col items-center w-full">
             {/* Guest Management Section - Client Animated */}
-            <div className="w-full h-full flex flex-col xl:flex-row gap-8 xl:gap-20 items-center mt-12 xl:mt-12">
+            <div className="w-full h-full flex flex-col xl:flex-row gap-[var(--spacing-gap-2xl)] xl:gap-[var(--spacing-gap-5xl)] items-center mt-[var(--spacing-margin-top-sm)] xl:mt-[var(--spacing-margin-top-sm)]">
                     <motion.div
                         ref={guestMgmtLeftRef}
                         initial={{ opacity: 0, x: isRTL ? 100 : -100 }}
@@ -107,14 +107,14 @@ const HayakServiceClient = ({ locale, guestManagementTranslations, ticketSystemT
                                 : { opacity: 0, x: isRTL ? 100 : -100 }
                         }
                         transition={{ duration: 0.8, ease: "easeOut" }}
-                        className="flex flex-col gap-3 xl:gap-5 w-full xl:w-1/2"
+                        className="flex flex-col gap-[var(--spacing-gap-sm)] xl:gap-[var(--spacing-gap-lg)] w-full xl:w-1/2"
                     >
-                        <div className={`text-2xl xl:text-4xl font-bold ${
+                        <div className={`text-2xl md:text-3xl lg:text-3xl xl:text-4xl font-bold ${
                             isRTL ? "text-center xl:text-right" : "text-center xl:text-left"
                         }`}>
                             {guestManagementTranslations.title}
                         </div>
-                        <p className={`text-base xl:text-lg ${
+                        <p className={`text-base md:text-lg lg:text-base xl:text-lg ${
                             isRTL ? "text-center xl:text-right" : "text-center xl:text-left"
                         }`}>
                             {guestManagementTranslations.description}
@@ -183,7 +183,7 @@ const HayakServiceClient = ({ locale, guestManagementTranslations, ticketSystemT
             </div>
 
             {/* Tickets System Section - Client Animated */}
-            <div className="w-full h-full flex flex-col xl:flex-row items-center gap-8 xl:gap-20 mt-24 xl:mt-48">
+            <div className="w-full h-full flex flex-col xl:flex-row items-center gap-[var(--spacing-gap-2xl)] xl:gap-[var(--spacing-gap-5xl)] mt-[var(--spacing-margin-top-md)] xl:mt-48">
                 <motion.div
                     ref={ticketSystemLeftRef}
                     initial={{ opacity: 0, x: isRTL ? 100 : -100 }}
@@ -251,12 +251,12 @@ const HayakServiceClient = ({ locale, guestManagementTranslations, ticketSystemT
                     transition={{ duration: 0.8, ease: "easeOut" }}
                     className="flex flex-col gap-3 xl:gap-5 w-full xl:w-1/2 order-1 xl:order-2"
                 >
-                    <div className={`text-2xl xl:text-4xl font-bold ${
+                    <div className={`text-2xl md:text-3xl lg:text-3xl xl:text-4xl font-bold ${
                         isRTL ? "text-center xl:text-right" : "text-center xl:text-left"
                     }`}>
                         {ticketSystemTranslations.title}
                     </div>
-                    <p className={`text-base xl:text-lg ${
+                    <p className={`text-base md:text-lg lg:text-base xl:text-lg ${
                         isRTL ? "text-center xl:text-right" : "text-center xl:text-left"
                     }`}>
                         {ticketSystemTranslations.description}
@@ -275,12 +275,12 @@ const HayakServiceClient = ({ locale, guestManagementTranslations, ticketSystemT
                     transition={{ duration: 0.8, ease: "easeOut" }}
                     className="flex flex-col gap-3 xl:gap-5 w-full xl:w-1/2"
                 >
-                    <div className={`text-2xl xl:text-4xl font-bold ${
+                    <div className={`text-2xl md:text-3xl lg:text-3xl xl:text-4xl font-bold ${
                         isRTL ? "text-center xl:text-right" : "text-center xl:text-left"
                     }`}>
                         {printingStationsTranslations.title}
                     </div>
-                    <p className={`text-base xl:text-lg ${
+                    <p className={`text-base md:text-lg lg:text-base xl:text-lg ${
                         isRTL ? "text-center xl:text-right" : "text-center xl:text-left"
                     }`}>
                         {printingStationsTranslations.description}
@@ -327,7 +327,7 @@ const HayakServiceClient = ({ locale, guestManagementTranslations, ticketSystemT
                     </motion.div>
                 </motion.div>
             </div>
-            <div className="w-full h-full flex flex-col xl:flex-row items-center gap-8 xl:gap-20 mt-24 xl:mt-48">
+            <div className="w-full h-full flex flex-col xl:flex-row items-center gap-[var(--spacing-gap-2xl)] xl:gap-[var(--spacing-gap-5xl)] mt-[var(--spacing-margin-top-md)] xl:mt-48">
                 <motion.div
                     ref={prePrintedBadgesLeftRef}
                     initial={{ opacity: 0, x: isRTL ? 100 : -100 }}
@@ -359,12 +359,12 @@ const HayakServiceClient = ({ locale, guestManagementTranslations, ticketSystemT
                     transition={{ duration: 0.8, ease: "easeOut" }}
                     className="flex flex-col gap-3 xl:gap-5 w-full xl:w-1/2 order-1 xl:order-2"
                 >
-                    <div className={`text-2xl xl:text-4xl font-bold ${
+                    <div className={`text-2xl md:text-3xl lg:text-3xl xl:text-4xl font-bold ${
                         isRTL ? "text-center xl:text-right" : "text-center xl:text-left"
                     }`}>
                         {prePrintedBadgesTranslations.title}
                     </div>
-                    <p className={`text-base xl:text-lg ${
+                    <p className={`text-base md:text-lg lg:text-base xl:text-lg ${
                         isRTL ? "text-center xl:text-right" : "text-center xl:text-left"
                     }`}>
                         {prePrintedBadgesTranslations.description}
@@ -383,12 +383,12 @@ const HayakServiceClient = ({ locale, guestManagementTranslations, ticketSystemT
                     transition={{ duration: 0.8, ease: "easeOut" }}
                     className="flex flex-col gap-3 xl:gap-5 w-full xl:w-1/2"
                 >
-                    <div className={`text-2xl xl:text-4xl font-bold ${
+                    <div className={`text-2xl md:text-3xl lg:text-3xl xl:text-4xl font-bold ${
                         isRTL ? "text-center xl:text-right" : "text-center xl:text-left"
                     }`}>
                         {guestJourneyPlanningTranslations.title}
                     </div>
-                    <p className={`text-base xl:text-lg ${
+                    <p className={`text-base md:text-lg lg:text-base xl:text-lg ${
                         isRTL ? "text-center xl:text-right" : "text-center xl:text-left"
                     }`}>
                         {guestJourneyPlanningTranslations.description}

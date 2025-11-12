@@ -41,6 +41,43 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  
+  /* Spacing System - Design Tokens (available as Tailwind utilities via arbitrary values) */
+  /* Use: px-[var(--spacing-section-px-mobile)] or define in spacing scale below */
+  
+  /* Section Padding - Horizontal */
+  --spacing-section-px-mobile: 1rem;      /* 16px */
+  --spacing-section-px-tablet: 1.5rem;    /* 24px */
+  --spacing-section-px-small-laptop: 3rem; /* 48px */
+  --spacing-section-px-desktop: 15rem;    /* 240px */
+  
+  /* Section Padding - Vertical */
+  --spacing-section-py-mobile: 6rem;      /* 96px */
+  --spacing-section-py-tablet: 8rem;      /* 128px */
+  --spacing-section-py-small-laptop: 9rem; /* 144px */
+  --spacing-section-py-desktop: 12rem;    /* 192px */
+  
+  /* Gaps */
+  --spacing-gap-xs: 0.5rem;               /* 8px */
+  --spacing-gap-sm: 0.75rem;              /* 12px */
+  --spacing-gap-md: 1rem;                 /* 16px */
+  --spacing-gap-lg: 1.25rem;              /* 20px */
+  --spacing-gap-xl: 1.5rem;               /* 24px */
+  --spacing-gap-2xl: 2rem;                /* 32px */
+  --spacing-gap-3xl: 2.5rem;              /* 40px */
+  --spacing-gap-4xl: 3rem;                /* 48px */
+  --spacing-gap-5xl: 5rem;                /* 80px */
+  --spacing-gap-6xl: 13rem;               /* 208px */
+  
+  /* Inner Padding */
+  --spacing-inner-px-mobile: 1rem;        /* 16px */
+  --spacing-inner-px-tablet: 1.5rem;      /* 24px */
+  --spacing-inner-px-small-laptop: 2rem;  /* 32px */
+  --spacing-inner-px-desktop: 8rem;       /* 128px */
+  
+  /* Margins */
+  --spacing-margin-top-sm: 3rem;          /* 48px */
+  --spacing-margin-top-md: 6rem;          /* 96px */
 }
 
 :root {
