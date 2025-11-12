@@ -63,7 +63,7 @@ const Navbar = ({ locale = 'en' }: NavbarProps) => {
                     <div className={`flex items-center gap-2 xl:gap-3 flex-shrink-0 ${isRTL ? "flex-row-reverse" : ""}`}>
                         <Link href={`/${locale}`}>
                             <Image 
-                                src="/Logo.png" 
+                                src="/Logo.webp" 
                                 alt={isRTL ? "شعار حياك" : "Hayak Events logo"} 
                                 width={50} 
                                 height={50} 

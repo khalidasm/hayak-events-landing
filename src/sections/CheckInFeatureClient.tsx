@@ -43,7 +43,7 @@ const CheckInFeatureClient = ({ locale, translations }: CheckInFeatureClientProp
                 transition={{ duration: 0.8, ease: "easeOut" }}
                 className="w-full xl:w-1/2 h-full flex flex-col gap-52"
             >
-                <Image src="/Logo.png" alt={isRTL ? "شعار حياك" : "Hayak Events logo"} width={100} height={100} className="hidden xl:block" quality={85} />
+                <Image src="/Logo.webp" alt={isRTL ? "شعار حياك" : "Hayak Events logo"} width={100} height={100} className="hidden xl:block" quality={85} />
                 <div className="flex flex-col gap-5">
                     <div className={`text-2xl xl:text-5xl font-bold ${
                         isRTL ? "text-center xl:text-right" : "text-center xl:text-left"
@@ -67,7 +67,7 @@ const CheckInFeatureClient = ({ locale, translations }: CheckInFeatureClientProp
                 }`}
             >
                 <Image
-                    src={isRTL ? '/ar/ch_card.png' : '/en/ch_card.png'}
+                    src={isRTL ? '/ar/ch_card.webp' : '/en/ch_card.webp'}
                     alt={isRTL ? "بطاقة عرض ميزة تسجيل الوصول" : "Check-in feature showcase card"}
                     width={900}
                     height={900}
@@ -96,7 +96,7 @@ const CheckInFeatureClient = ({ locale, translations }: CheckInFeatureClientProp
                     }}
                 >
                     <Image
-                        src={isRTL ? '/ar/ch_card_1.png' : '/en/ch_card_1.png'}
+                        src={isRTL ? '/ar/ch_card_1.webp' : '/en/ch_card_1.webp'}
                         alt={isRTL ? "بطاقة عرض إضافية لتسجيل الوصول" : "Additional check-in feature card"}
                         width={400}
                         height={400}
@@ -106,7 +106,7 @@ const CheckInFeatureClient = ({ locale, translations }: CheckInFeatureClientProp
             </motion.div>
             <div className="block xl:hidden">
                 <Image
-                    src={isRTL ? '/ar/ch_card.png' : '/en/chr_card.png'}
+                    src={isRTL ? '/ar/ch_card.webp' : '/en/chr_card.webp'}
                     alt={isRTL ? "بطاقة عرض ميزة تسجيل الوصول" : "Check-in feature showcase card"}
                     width={1200}
                     height={1200}

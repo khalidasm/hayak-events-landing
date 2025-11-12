@@ -117,7 +117,7 @@ const FooterClient = ({ locale, translations }: FooterClientProps) => {
                         <div className='flex items-center justify-center xl:justify-start'>
                             <Link href={`/${locale}`}>
                                 <Image 
-                                    src="/logo_white.png" 
+                                    src="/logo_white.webp" 
                                     alt={isRTL ? "شعار حياك" : "Hayak logo"} 
                                     width={100} 
                                     height={100} 

@@ -127,7 +127,7 @@ const FloatingWhatsAppButton = ({
           <div className="flex items-center gap-3 rounded-t-2xl bg-[#4F2396] p-4">
             <div className="flex h-12 w-12 items-center justify-center">
               <Image
-                src="/logo_white.png"
+                src="/logo_white.webp"
                 alt="Hayak Events"
                 width={40}
                 height={40}

@@ -67,7 +67,7 @@ const TryHayak = ({ locale = 'en' }: TryHayakProps) => {
                         <div className="flex justify-center items-center gap-2 xl:gap-3">
                             <h2 className="text-2xl xl:text-4xl font-bold">{t.title}</h2>
                             <Image
-                                src="/Logo.png"
+                                src="/Logo.webp"
                                 className="mb-2"
                                 alt={isRTL ? "شعار حياك" : "Hayak logo"}
                                 width={100}

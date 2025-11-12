@@ -36,7 +36,7 @@ const Hero = ({ locale = 'en' }: HeroProps) => {
         <div className="w-full flex flex-col gap-3 xl:gap-5 items-center justify-center pt-24 xl:pt-32 pb-24 xl:pb-48 px-4 xl:px-60">
             <AnimatedLogo>
                 <Image 
-                    src="/Logo.png" 
+                    src="/Logo.webp" 
                     alt={isRTL ? "شعار حياك - منصة إدارة الفعاليات" : "Hayak Events logo - Event management platform"} 
                     width={120} 
                     height={120}

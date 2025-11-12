@@ -22,7 +22,7 @@ const HeroContent = ({ isRTL }: HeroContentProps) => {
                 className="w-full"
             >
                 <Image
-                    src={isRTL ? '/ar/hero.png' : '/en/hero.png'}
+                    src={isRTL ? '/ar/hero.webp' : '/en/hero.webp'}
                     alt={isRTL ? "صورة رئيسية لمنصة حياك لإدارة الفعاليات" : "Hayak Events platform hero illustration"}
                     width={1200}
                     height={800}
@@ -59,7 +59,7 @@ const HeroContent = ({ isRTL }: HeroContentProps) => {
                 }}
             >
                 <Image
-                    src={isRTL ? '/ar/hero-right-card.png' : '/en/hero-left-card.png'}
+                    src={isRTL ? '/ar/hero-right-card.webp' : '/en/hero-left-card.webp'}
                     alt={isRTL ? "بطاقة عرض ميزات حياك" : "Hayak features showcase card"}
                     width={400}
                     height={300}
@@ -93,7 +93,7 @@ const HeroContent = ({ isRTL }: HeroContentProps) => {
                 }}
             >
                 <Image
-                    src={isRTL ? '/ar/hero-left-card.png' : '/en/hero-right-card.png'}
+                    src={isRTL ? '/ar/hero-left-card.webp' : '/en/hero-right-card.webp'}
                     alt={isRTL ? "بطاقة عرض خدمات حياك" : "Hayak services showcase card"}
                     width={400}
                     height={300}

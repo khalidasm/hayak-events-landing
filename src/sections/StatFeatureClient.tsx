@@ -63,7 +63,7 @@ const StatFeatureClient = ({ locale, translations }: StatFeatureClientProps) => 
                 className="relative w-full xl:w-1/2 flex justify-center order-2 xl:order-1"
             >
                 <Image
-                    src={isRTL ? '/ar/st_card.png' : '/en/st_card.png'}
+                    src={isRTL ? '/ar/st_card.webp' : '/en/st_card.webp'}
                     alt={isRTL ? 'بطاقة الإحصاءات' : 'Statistics card'}
                     width={1200}
                     height={1200}
@@ -80,7 +80,7 @@ const StatFeatureClient = ({ locale, translations }: StatFeatureClientProps) => 
                     className='absolute -bottom-14 xl:-bottom-28 hidden xl:block -left-6 xl:-left-12'
                 >
                     <Image
-                        src={isRTL ? '/ar/st_card_1.png' : '/en/st_card_1.png'}
+                        src={isRTL ? '/ar/st_card_1.webp' : '/en/st_card_1.webp'}
                         alt={isRTL ? 'بطاقة إحصاءات إضافية' : 'Additional statistics card'}
                         width={300}
                         height={300}

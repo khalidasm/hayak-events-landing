@@ -47,7 +47,7 @@ const CheckInFeature = ({ locale = 'en' }: CheckInFeatureProps) => {
                 data-server-check-in-feature
                 className="w-full xl:w-1/2 h-full flex flex-col gap-52"
             >
-                <Image src="/Logo.png" alt={isRTL ? "شعار حياك" : "Hayak Events logo"} width={100} height={100} className="hidden xl:block" quality={85} />
+                <Image src="/Logo.webp" alt={isRTL ? "شعار حياك" : "Hayak Events logo"} width={100} height={100} className="hidden xl:block" quality={85} />
                 <div className="flex flex-col gap-5">
                     <h2 className={`text-2xl xl:text-5xl font-bold ${
                         isRTL ? "text-center xl:text-right" : "text-center xl:text-left"

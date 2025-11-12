@@ -66,7 +66,7 @@ const WhatsappFeature = ({ locale = "en" }: WhatsappFeatureProps) => {
                                 className={`flex flex-col xl:flex-row items-center gap-3`}
                             >
                                 <Image
-                                    src="/Logo.png"
+                                    src="/Logo.webp"
                                     className={`mb-2`}
                                     alt={isRTL ? "شعار حياك" : "Hayak Events logo"}
                                     width={100}
@@ -86,7 +86,7 @@ const WhatsappFeature = ({ locale = "en" }: WhatsappFeatureProps) => {
                                     {t.title}
                                 </h2>
                                 <Image
-                                    src="/Logo.png"
+                                    src="/Logo.webp"
                                     className={`mb-2`}
                                     alt={isRTL ? "شعار حياك" : "Hayak Events logo"}
                                     width={100}
@@ -112,7 +112,7 @@ const WhatsappFeature = ({ locale = "en" }: WhatsappFeatureProps) => {
                         <div className="w-full xl:w-1/2 flex items-center justify-center">
                             <div>
                                 <Image
-                                    src="/whatsapp_card.png"
+                                    src="/whatsapp_card.webp"
                                     alt={isRTL ? "بطاقة عرض ميزة واتساب" : "WhatsApp integration feature card"}
                                     width={400}
                                     height={400}

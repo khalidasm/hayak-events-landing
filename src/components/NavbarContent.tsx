@@ -42,7 +42,7 @@ const NavbarContent = ({
             <div className='flex items-center gap-2 xl:gap-3 flex-shrink-0'>
                 <Link href={`/${locale}`}>
                     <Image 
-                        src="/Logo.png" 
+                        src="/Logo.webp" 
                         alt={isRTL ? "شعار حياك" : "Hayak Events logo"} 
                         width={50} 
                         height={50} 
@@ -96,7 +96,7 @@ const NavbarContent = ({
                         <div className="flex items-center justify-center mb-4">
                             <Link href={`/${locale}`} onClick={() => setIsSheetOpen(false)}>
                                 <Image 
-                                    src="/Logo.png" 
+                                    src="/Logo.webp" 
                                     alt={isRTL ? "شعار حياك" : "Hayak Events logo"} 
                                     width={100} 
                                     height={100} 
