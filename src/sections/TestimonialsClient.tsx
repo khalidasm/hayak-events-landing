@@ -58,7 +58,7 @@ const TestimonialsClient = ({ locale, translations }: TestimonialsClientProps) =
             transition={{ duration: 0.8, ease: "easeOut" }}
         >
             <motion.h1 
-                className="text-2xl xl:text-4xl font-bold text-center"
+                className="text-2xl xl:text-4xl font-semibold text-center"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}

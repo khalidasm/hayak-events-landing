@@ -38,7 +38,7 @@ const FeaturesCarouselClient = ({ features }: FeaturesCarouselClientProps) => {
             <AnimatePresence mode="wait">
                 <motion.span
                     key={currentIndex}
-                    className="whitespace-nowrap text-lg xl:text-3xl font-bold text-[#4F2396]"
+                    className="whitespace-nowrap text-lg xl:text-3xl font-semibold text-[#4F2396]"
                     initial={{ opacity: 0, y: 20, scale: 0.8 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: -20, scale: 0.8 }}

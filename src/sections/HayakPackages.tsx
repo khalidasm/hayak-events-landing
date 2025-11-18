@@ -227,7 +227,7 @@ const HayakPackages = ({ locale = 'en' }: HayakPackagesProps) => {
     };
 
     return (
-        <section id="plans" className="w-full relative px-[var(--spacing-section-px-mobile)] md:px-[var(--spacing-section-px-tablet)] lg:px-[var(--spacing-section-px-small-laptop)] xl:px-[var(--spacing-section-px-desktop)] py-[var(--spacing-section-py-mobile)] md:py-[var(--spacing-section-py-tablet)] lg:py-[var(--spacing-section-py-small-laptop)] xl:py-[var(--spacing-section-py-desktop)] flex flex-col gap-[var(--spacing-gap-3xl)]">
+        <section id="plans" className="w-full relative px-[var(--spacing-section-px-mobile)] md:px-[var(--spacing-section-px-tablet)] lg:px-[var(--spacing-section-px-small-laptop)] xl:px-[var(--spacing-section-px-xl)] 2xl:px-[var(--spacing-section-px-2xl)] py-[var(--spacing-section-py-mobile)] md:py-[var(--spacing-section-py-tablet)] lg:py-[var(--spacing-section-py-small-laptop)] xl:py-[var(--spacing-section-py-xl)] 2xl:py-[var(--spacing-section-py-2xl)] flex flex-col gap-[var(--spacing-gap-3xl)]">
             {/* Product/Service structured data */}
             <script
                 type="application/ld+json"
@@ -238,14 +238,14 @@ const HayakPackages = ({ locale = 'en' }: HayakPackagesProps) => {
                 data-server-hayak-packages
                 className="w-full relative flex flex-col gap-[var(--spacing-gap-3xl)]"
             >
-                <h2 className="text-2xl xl:text-4xl text-center font-bold">
+                <h2 className="text-2xl xl:text-4xl text-center font-semibold">
                     {t.title}
                 </h2>
                     <div className="flex flex-col items-center justify-center gap-[var(--spacing-gap-3xl)] p-[var(--spacing-gap-xl)] rounded-[20px] xl:py-0 xl:rounded-none xl:gap-0 xl:flex-row xl:items-stretch bg-[#F9F4FF] xl:bg-transparent">
                     {/* Basic Package */}
                     <div className="flex flex-col gap-[var(--spacing-gap-3xl)] p-[var(--spacing-gap-lg)] xl:w-[250px] w-full border-2 border-[#C8BBDE] rounded-[20px] bg-[#FBF6FF] xl:border-r-0 xl:rounded-tr-none xl:rounded-br-none">
                         <div className="flex flex-col items-center justify-center gap-[var(--spacing-gap-lg)]">
-                            <h2 className="text-xl font-bold text-[#241044]">{t.packages.basic.title}</h2>
+                            <h2 className="text-xl font-semibold text-[#241044]">{t.packages.basic.title}</h2>
                             <span className="flex items-center gap-[var(--spacing-gap-xs)] text-2xl font-bold text-[#241044]">
                                 1200 <span className="text-[#241044]">إ</span>
                             </span>
@@ -261,7 +261,7 @@ const HayakPackages = ({ locale = 'en' }: HayakPackagesProps) => {
                     {/* Essential Package */}
                     <div className="flex flex-col gap-[var(--spacing-gap-3xl)] p-[var(--spacing-gap-lg)] xl:w-[250px] w-full border-2 border-[#C8BBDE] rounded-[20px] bg-[#FBF6FF] xl:border-x-0 xl:rounded-tr-none xl:rounded-br-none xl:rounded-tl-none xl:rounded-bl-none">
                         <div className="flex flex-col items-center justify-center gap-[var(--spacing-gap-lg)]">
-                            <h2 className="text-xl font-bold text-[#241044]">{t.packages.essential.title}</h2>
+                            <h2 className="text-xl font-semibold text-[#241044]">{t.packages.essential.title}</h2>
                             <span className="flex items-center gap-[var(--spacing-gap-xs)] text-2xl font-bold text-[#241044]">
                                 2100 <span className="text-[#241044]">إ</span>
                             </span>
@@ -280,7 +280,7 @@ const HayakPackages = ({ locale = 'en' }: HayakPackagesProps) => {
                             {t.bestDeal}
                         </div>
                         <div className="flex flex-col items-center justify-center gap-[var(--spacing-gap-lg)]">
-                            <h2 className="text-xl font-bold text-[#241044]">{t.packages.deluxe.title}</h2>
+                            <h2 className="text-xl font-semibold text-[#241044]">{t.packages.deluxe.title}</h2>
                             <span className="flex items-center gap-[var(--spacing-gap-xs)] text-2xl font-bold text-[#241044]">
                                 2900 <span className="text-[#241044]">إ</span>
                             </span>
@@ -296,7 +296,7 @@ const HayakPackages = ({ locale = 'en' }: HayakPackagesProps) => {
                     {/* Premium Package */}
                     <div className="flex flex-col gap-[var(--spacing-gap-3xl)] p-[var(--spacing-gap-lg)] xl:w-[250px] w-full border-2 border-[#C8BBDE] rounded-[20px] bg-[#FBF6FF] xl:border-x-0 xl:rounded-tr-none xl:rounded-br-none xl:rounded-tl-none xl:rounded-bl-none">
                         <div className="flex flex-col items-center justify-center gap-[var(--spacing-gap-lg)]">
-                            <h2 className="text-xl font-bold text-[#241044]">{t.packages.premium.title}</h2>
+                            <h2 className="text-xl font-semibold text-[#241044]">{t.packages.premium.title}</h2>
                             <span className="flex items-center gap-[var(--spacing-gap-xs)] text-2xl font-bold text-[#241044]">
                                 3800 <span className="text-[#241044]">إ</span>
                             </span>
@@ -312,7 +312,7 @@ const HayakPackages = ({ locale = 'en' }: HayakPackagesProps) => {
                     {/* Elite Package */}
                     <div className="flex flex-col gap-[var(--spacing-gap-3xl)] p-[var(--spacing-gap-lg)] xl:w-[250px] w-full border-2 border-[#C8BBDE] rounded-[20px] bg-[#FBF6FF] xl:border-l-0 xl:rounded-tl-none xl:rounded-bl-none">
                         <div className="flex flex-col items-center justify-center gap-[var(--spacing-gap-lg)]">
-                            <h2 className="text-xl font-bold text-[#241044]">{t.packages.elite.title}</h2>
+                            <h2 className="text-xl font-semibold text-[#241044]">{t.packages.elite.title}</h2>
                             <span className="flex items-center gap-[var(--spacing-gap-xs)] text-2xl font-bold text-[#241044]">
                                 4300 <span className="text-[#241044]">إ</span>
                             </span>

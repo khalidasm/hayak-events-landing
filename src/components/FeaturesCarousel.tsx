@@ -35,7 +35,7 @@ const FeaturesCarousel = ({ locale = 'en' }: FeaturesCarouselProps) => {
                 data-server-carousel
                 className="relative inline-block h-8 xl:h-12 min-w-[150px] w-auto xl:w-[200px] items-center justify-center mt-2 xl:mt-3 text-center"
             >
-                <span className="whitespace-nowrap text-lg xl:text-3xl font-bold text-[#4F2396]">
+                <span className="whitespace-nowrap text-lg xl:text-3xl font-semibold text-[#4F2396]">
                     {firstFeature}
                 </span>
             </span>

@@ -94,7 +94,7 @@ const FAQ = ({ locale = 'en' }: FAQProps) => {
     };
 
     return (
-        <section id="faqs" className="w-full relative px-[var(--spacing-section-px-mobile)] md:px-[var(--spacing-section-px-tablet)] lg:px-[var(--spacing-section-px-small-laptop)] xl:px-[var(--spacing-section-px-desktop)] py-[var(--spacing-section-py-mobile)] md:py-[var(--spacing-section-py-tablet)] lg:py-[var(--spacing-section-py-small-laptop)] xl:py-[var(--spacing-section-py-desktop)] flex flex-col gap-[var(--spacing-gap-lg)]">
+        <section id="faqs" className="w-full relative px-[var(--spacing-section-px-mobile)] md:px-[var(--spacing-section-px-tablet)] lg:px-[var(--spacing-section-px-small-laptop)] xl:px-[var(--spacing-section-px-xl)] 2xl:px-[var(--spacing-section-px-2xl)] py-[var(--spacing-section-py-mobile)] md:py-[var(--spacing-section-py-tablet)] lg:py-[var(--spacing-section-py-small-laptop)] xl:py-[var(--spacing-section-py-xl)] 2xl:py-[var(--spacing-section-py-2xl)] flex flex-col gap-[var(--spacing-gap-lg)]">
             {/* FAQPage structured data */}
             <script
                 type="application/ld+json"
@@ -103,7 +103,7 @@ const FAQ = ({ locale = 'en' }: FAQProps) => {
             
             {/* Server-rendered section for SEO */}
             <div data-server-faq>
-                <h2 className="text-4xl font-bold mb-[var(--spacing-gap-md)] text-center">
+                <h2 className="text-4xl font-semibold mb-[var(--spacing-gap-md)] text-center">
                     {t.title}
                 </h2>
                 

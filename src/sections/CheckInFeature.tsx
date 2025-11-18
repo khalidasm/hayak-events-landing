@@ -41,7 +41,7 @@ const CheckInFeature = ({ locale = 'en' }: CheckInFeatureProps) => {
     const t = translations[locale];
 
     return (
-        <div className="bg-[#F5F0FF] w-full  relative px-[var(--spacing-section-px-mobile)] md:px-[var(--spacing-section-px-tablet)] lg:px-[var(--spacing-section-px-small-laptop)] xl:px-[var(--spacing-section-px-desktop)] py-[var(--spacing-section-py-mobile)] md:py-[var(--spacing-section-py-tablet)] lg:py-[var(--spacing-section-py-small-laptop)] xl:py-[var(--spacing-section-py-desktop)]">
+        <div className="bg-[#F5F0FF] w-full  relative px-[var(--spacing-section-px-mobile)] md:px-[var(--spacing-section-px-tablet)] lg:px-[var(--spacing-section-px-small-laptop)] xl:px-[var(--spacing-section-px-xl)] 2xl:px-[var(--spacing-section-px-2xl)] py-[var(--spacing-section-py-mobile)] md:py-[var(--spacing-section-py-tablet)] lg:py-[var(--spacing-section-py-small-laptop)] xl:py-[var(--spacing-section-py-xl)] 2xl:py-[var(--spacing-section-py-2xl)]">
             {/* Server-rendered section for SEO */}
             <div 
                 data-server-check-in-feature
@@ -49,7 +49,7 @@ const CheckInFeature = ({ locale = 'en' }: CheckInFeatureProps) => {
             >
                 <Image src="/Logo.webp" alt={isRTL ? "شعار حياك" : "Hayak Events logo"} width={100} height={100} className="hidden lg:block" quality={85} />
                 <div className="flex flex-col gap-[var(--spacing-gap-lg)]">
-                    <h2 className={`text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold ${
+                    <h2 className={`text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold ${
                         isRTL ? "text-center lg:text-right" : "text-center lg:text-left"
                     }`}>
                         {t.title}

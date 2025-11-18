@@ -86,14 +86,14 @@ const HayakNumbers = ({ locale = 'en' }: HayakNumbersProps) => {
     const t = translations[locale];
 
     return (
-        <div className="w-full relative px-[var(--spacing-section-px-mobile)] md:px-[var(--spacing-section-px-tablet)] lg:px-[var(--spacing-section-px-small-laptop)] xl:px-[var(--spacing-section-px-desktop)] py-[var(--spacing-section-py-mobile)] md:py-[var(--spacing-section-py-tablet)] lg:py-[var(--spacing-section-py-small-laptop)] xl:py-[var(--spacing-section-py-desktop)] flex flex-col gap-[var(--spacing-gap-3xl)]">
+        <div className="w-full relative px-[var(--spacing-section-px-mobile)] md:px-[var(--spacing-section-px-tablet)] lg:px-[var(--spacing-section-px-small-laptop)] xl:px-[var(--spacing-section-px-xl)] 2xl:px-[var(--spacing-section-px-2xl)] py-[var(--spacing-section-py-mobile)] md:py-[var(--spacing-section-py-tablet)] lg:py-[var(--spacing-section-py-small-laptop)] xl:py-[var(--spacing-section-py-xl)] 2xl:py-[var(--spacing-section-py-2xl)] flex flex-col gap-[var(--spacing-gap-3xl)]">
             {/* Server-rendered section for SEO */}
             <div 
                 data-server-hayak-numbers
                 className="flex flex-col xl:flex-row items-center justify-center xl:justify-between gap-[var(--spacing-gap-3xl)]"
             >
                 <div className="flex flex-col items-center xl:items-start gap-[var(--spacing-gap-lg)] w-full xl:w-auto">
-                    <h2 className={`text-2xl xl:text-4xl font-bold ${
+                    <h2 className={`text-2xl xl:text-4xl font-semibold ${
                         isRTL ? "text-center xl:text-right" : "text-center xl:text-left"
                     }`}>
                         {t.title}

@@ -163,7 +163,7 @@ const TryHayakClient = ({ locale, translations }: TryHayakClientProps) => {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className='w-full lg:h-[400px] xl:h-[400px] bg-[url("/try_pattern_mob.svg")] lg:bg-[url("/try_bg.svg")] bg-cover lg:bg-cover bg-center bg-no-repeat py-10 lg:py-5 xl:py-5 flex flex-col items-center justify-center rounded-[20px]'
         >
-            <div className="flex items-center justify-center gap-[var(--spacing-gap-lg)] px-[var(--spacing-section-px-mobile)] md:px-[var(--spacing-section-px-tablet)] lg:px-[var(--spacing-section-px-small-laptop)] xl:px-[var(--spacing-section-px-desktop)] w-full">
+            <div className="flex items-center justify-center gap-[var(--spacing-gap-lg)] px-[var(--spacing-section-px-mobile)] md:px-[var(--spacing-section-px-tablet)] lg:px-[var(--spacing-section-px-small-laptop)] xl:px-[var(--spacing-section-px-xl)] 2xl:px-[var(--spacing-section-px-2xl)] w-full">
                 <motion.div
                     ref={leftSectionRef}
                     initial={{ opacity: 0, x: isRTL ? 100 : -100 }}
@@ -176,7 +176,7 @@ const TryHayakClient = ({ locale, translations }: TryHayakClientProps) => {
                     className="flex flex-col w-full lg:w-1/2 xl:w-1/2"
                 >
                     <div className="flex justify-center items-center gap-[var(--spacing-gap-xs)] md:gap-2.5 lg:gap-[var(--spacing-gap-sm)]">
-                        <div className="text-2xl md:text-3xl lg:text-3xl xl:text-4xl font-bold">{translations.title}</div>
+                        <div className="text-2xl md:text-3xl lg:text-3xl xl:text-4xl font-semibold">{translations.title}</div>
                         <Image
                             src="/Logo.webp"
                             alt={isRTL ? "شعار حياك" : "Hayak logo"}

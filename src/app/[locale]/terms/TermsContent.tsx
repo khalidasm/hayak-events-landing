@@ -28,7 +28,7 @@ const TermsContent = ({ locale, translations }: TermsContentProps) => {
                 {/* Page Title */}
                 <motion.h1
                     ref={titleRef}
-                    className="text-3xl xl:text-5xl font-bold text-[#241044] mb-6 xl:mb-8 text-center"
+                    className="text-3xl xl:text-5xl font-semibold text-[#241044] mb-6 xl:mb-8 text-center"
                     initial={{ opacity: 0, y: 20 }}
                     animate={titleInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                     transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
@@ -83,7 +83,7 @@ const SectionItem = ({ num, sectionTitle, sectionContent, delay }: SectionItemPr
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.8, ease: "easeOut", delay }}
         >
-            <h2 className="text-xl xl:text-2xl font-bold text-[#241044]">
+            <h2 className="text-xl xl:text-2xl font-semibold text-[#241044]">
                 {num}. {sectionTitle}
             </h2>
             <p className="text-base xl:text-lg text-gray-600 leading-relaxed">

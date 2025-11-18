@@ -86,10 +86,10 @@ const NavbarClient = ({ locale, translations }: NavbarClientProps) => {
 
     return (
         <motion.nav
-            className={`fixed top-0 z-50 mt-4 xl:mt-7 flex w-auto xl:w-11/12 xl:max-w-7xl flex-col items-center rounded-full p-2 xl:p-3 overflow-hidden ${
+            className={`fixed top-0 z-50 mt-4 md:mt-6 xl:mt-7 flex w-auto flex-col items-center rounded-full p-2 md:p-2.5 xl:p-3 overflow-hidden ${
                 isRTL 
-                    ? "left-4 right-4 xl:left-1/2 xl:right-auto xl:-translate-x-1/2" 
-                    : "left-4 right-4 xl:left-1/2 xl:right-auto xl:-translate-x-1/2"
+                    ? "left-[var(--spacing-section-px-mobile)] right-[var(--spacing-section-px-mobile)] md:left-[var(--spacing-section-px-tablet)] md:right-[var(--spacing-section-px-tablet)] lg:left-[var(--spacing-section-px-small-laptop)] lg:right-[var(--spacing-section-px-small-laptop)] xl:left-[var(--spacing-section-px-xl)] xl:right-[var(--spacing-section-px-xl)] 2xl:left-[var(--spacing-section-px-2xl)] 2xl:right-[var(--spacing-section-px-2xl)]" 
+                    : "left-[var(--spacing-section-px-mobile)] right-[var(--spacing-section-px-mobile)] md:left-[var(--spacing-section-px-tablet)] md:right-[var(--spacing-section-px-tablet)] lg:left-[var(--spacing-section-px-small-laptop)] lg:right-[var(--spacing-section-px-small-laptop)] xl:left-[var(--spacing-section-px-xl)] xl:right-[var(--spacing-section-px-xl)] 2xl:left-[var(--spacing-section-px-2xl)] 2xl:right-[var(--spacing-section-px-2xl)]"
             }`}
             style={{
                 background: "rgba(245, 240, 255, 0.7)",

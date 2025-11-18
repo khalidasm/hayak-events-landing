@@ -43,7 +43,7 @@ const StatFeature = ({ locale = 'en' }: StatFeatureProps) => {
     const t = translations[locale];
 
     return (
-        <div className="w-full py-[var(--spacing-section-py-mobile)] md:py-[var(--spacing-section-py-tablet)] lg:py-[var(--spacing-section-py-small-laptop)] xl:py-[var(--spacing-section-py-desktop)] px-[var(--spacing-section-px-mobile)] md:px-[var(--spacing-section-px-tablet)] lg:px-[var(--spacing-section-px-small-laptop)] xl:px-[var(--spacing-section-px-desktop)]">
+        <div className="w-full py-[var(--spacing-section-py-mobile)] md:py-[var(--spacing-section-py-tablet)] lg:py-[var(--spacing-section-py-small-laptop)] xl:py-[var(--spacing-section-py-xl)] 2xl:py-[var(--spacing-section-py-2xl)] px-[var(--spacing-section-px-mobile)] md:px-[var(--spacing-section-px-tablet)] lg:px-[var(--spacing-section-px-small-laptop)] xl:px-[var(--spacing-section-px-xl)] 2xl:px-[var(--spacing-section-px-2xl)]">
             {/* Server-rendered section for SEO */}
             <div 
                 data-server-stat-feature
@@ -76,7 +76,7 @@ const StatFeature = ({ locale = 'en' }: StatFeatureProps) => {
                     </div>
                 </div>
                 <div className="flex flex-col gap-[var(--spacing-gap-sm)] xl:gap-[var(--spacing-gap-lg)] w-full xl:w-1/2 order-1 xl:order-2">
-                    <h2 className={`text-2xl md:text-3xl lg:text-3xl xl:text-4xl font-bold ${
+                    <h2 className={`text-2xl md:text-3xl lg:text-3xl xl:text-4xl font-semibold ${
                         isRTL ? "text-center xl:text-right" : "text-center xl:text-left"
                     }`}>
                         {t.title}

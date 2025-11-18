@@ -66,7 +66,7 @@ const HayakPackagesClient = ({ locale, translations }: HayakPackagesClientProps)
                     titleInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }
                 }
                 transition={{ duration: 0.8, ease: "easeOut" }}
-                className="text-2xl md:text-3xl lg:text-4xl xl:text-4xl text-center font-bold"
+                className="text-2xl md:text-3xl lg:text-4xl xl:text-4xl text-center font-semibold"
             >
                 {translations.title}
             </motion.h2>

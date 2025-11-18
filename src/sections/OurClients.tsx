@@ -88,7 +88,7 @@ const OurClients = ({ locale = 'en' }: OurClientsProps) => {
                 data-server-our-clients
                 className='bg-[url("/our_client_pattern.svg")] bg-cover bg-center bg-no-repeat rounded-[20px] py-10 px-6 xl:py-20 xl:px-10 flex flex-col items-center gap-10'
             >
-                <h2 className="text-2xl xl:text-4xl font-bold text-center">
+                <h2 className="text-2xl xl:text-4xl font-semibold text-center">
                     {t.title}
                 </h2>
                 <p className="text-base xl:text-xl text-center">

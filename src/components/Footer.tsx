@@ -47,12 +47,12 @@ const Footer = ({ locale = 'en' }: FooterProps) => {
     const t = translations[locale];
 
     return (
-        <footer className="bg-white py-16 px-4 xl:px-60">
+        <footer className="bg-white py-16 px-[var(--spacing-section-px-mobile)] md:px-[var(--spacing-section-px-tablet)] lg:px-[var(--spacing-section-px-small-laptop)] xl:px-[var(--spacing-section-px-xl)] 2xl:px-[var(--spacing-section-px-2xl)]">
             <div className="max-w-7xl mx-auto">
                 {/* Server-rendered section for SEO */}
                 <div 
                     data-server-footer
-                    className="bg-[#4F2396] text-white rounded-[40px] px-6 xl:px-20 py-10"
+                    className="bg-[#4F2396] text-white rounded-[40px] px-[var(--spacing-inner-px-mobile)] md:px-[var(--spacing-inner-px-tablet)] lg:px-[var(--spacing-inner-px-small-laptop)] xl:px-[var(--spacing-inner-px-xl)] 2xl:px-[var(--spacing-inner-px-2xl)] py-10"
                 >
                     <div className="max-w-6xl mx-auto">
                         <div className={`flex flex-col xl:grid xl:grid-cols-9 gap-8 xl:gap-0 ${
@@ -75,7 +75,7 @@ const Footer = ({ locale = 'en' }: FooterProps) => {
 
                             {/* Quick Actions Column */}
                             <div className={`space-y-4 xl:col-span-2 flex flex-col`}>
-                                <h3 className="font-bold text-xl">{t.quickActions}</h3>
+                                <h3 className="font-semibold text-xl">{t.quickActions}</h3>
                                 <ul className="space-y-3">
                                     <li><Link href={`/${locale}#plans`} className="hover:text-[#241044] transition-colors text-lg">{t.plans}</Link></li>
                                     <li><Link href={`/${locale}#features`} className="hover:text-[#241044] transition-colors text-lg">{t.features}</Link></li>
@@ -86,7 +86,7 @@ const Footer = ({ locale = 'en' }: FooterProps) => {
 
                             {/* Support Column */}
                             <div className='space-y-4 xl:col-span-2 flex flex-col items-center xl:items-start'>
-                                <h3 className="font-bold text-xl">{t.support}</h3>
+                                <h3 className="font-semibold text-xl">{t.support}</h3>
                                 <ul className="space-y-3">
                                     <li><Link href={`/${locale}#faqs`} className="hover:text-[#241044] transition-colors text-lg">{t.faqs}</Link></li>
                                     <li><Link href={`/${locale}#contact-sales`} className="hover:text-[#241044] transition-colors text-lg">{t.contactSales}</Link></li>
@@ -96,7 +96,7 @@ const Footer = ({ locale = 'en' }: FooterProps) => {
 
                             {/* Follow us Column */}
                             <div className='space-y-4 xl:col-span-3 flex flex-col items-center xl:items-start'>
-                                <h3 className="font-bold text-xl">{t.followUs}</h3>
+                                <h3 className="font-semibold text-xl">{t.followUs}</h3>
                                 <div className='flex mb-6 space-x-3 justify-center xl:justify-start'>
                                     {/* TikTok */}
                                     <a href="#" className="w-12 h-12 bg-white rounded-lg flex items-center justify-center hover:bg-gray-200 transition-colors" aria-label="TikTok">

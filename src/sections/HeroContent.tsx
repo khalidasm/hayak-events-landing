@@ -63,7 +63,7 @@ const HeroContent = ({ isRTL }: HeroContentProps) => {
                     alt={isRTL ? "بطاقة عرض ميزات حياك" : "Hayak features showcase card"}
                     width={400}
                     height={300}
-                    className="w-[200px] xl:w-[400px] h-auto"
+                    className="w-[200px] xl:w-[375px] 2xl:w-[400px] h-auto"
                     loading="lazy"
                 />
             </motion.div>
@@ -97,7 +97,7 @@ const HeroContent = ({ isRTL }: HeroContentProps) => {
                     alt={isRTL ? "بطاقة عرض خدمات حياك" : "Hayak services showcase card"}
                     width={400}
                     height={300}
-                    className="w-[200px] xl:w-[400px] h-auto"
+                    className="w-[200px] xl:w-[375px] 2xl:w-[400px] h-auto"
                     loading="lazy"
                 />
             </motion.div>

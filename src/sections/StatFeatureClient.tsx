@@ -100,7 +100,7 @@ const StatFeatureClient = ({ locale, translations }: StatFeatureClientProps) => 
                 transition={{ duration: 0.8, ease: "easeOut" }}
                 className="flex flex-col gap-[var(--spacing-gap-sm)] xl:gap-[var(--spacing-gap-lg)] w-full xl:w-1/2 order-1 xl:order-2"
             >
-                <div className={`text-2xl md:text-3xl lg:text-3xl xl:text-4xl font-bold ${
+                <div className={`text-2xl md:text-3xl lg:text-3xl xl:text-4xl font-semibold ${
                     isRTL ? "text-center xl:text-right" : "text-center xl:text-left"
                 }`}>
                     {translations.title}

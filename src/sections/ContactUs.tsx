@@ -40,7 +40,7 @@ const ContactUs = ({ locale = 'en' }: ContactUsProps) => {
     const t = translations[locale];
 
     return (
-        <div id="contact" className="w-full relative px-[var(--spacing-section-px-mobile)] md:px-[var(--spacing-section-px-tablet)] lg:px-[var(--spacing-section-px-small-laptop)] xl:px-[var(--spacing-section-px-desktop)] py-[var(--spacing-section-py-mobile)] md:py-[var(--spacing-section-py-tablet)] lg:py-[var(--spacing-section-py-small-laptop)] xl:py-[var(--spacing-section-py-desktop)] flex flex-col gap-[var(--spacing-gap-4xl)]">
+        <div id="contact" className="w-full relative px-[var(--spacing-section-px-mobile)] md:px-[var(--spacing-section-px-tablet)] lg:px-[var(--spacing-section-px-small-laptop)] xl:px-[var(--spacing-section-px-xl)] 2xl:px-[var(--spacing-section-px-2xl)] py-[var(--spacing-section-py-mobile)] md:py-[var(--spacing-section-py-tablet)] lg:py-[var(--spacing-section-py-small-laptop)] xl:py-[var(--spacing-section-py-xl)] 2xl:py-[var(--spacing-section-py-2xl)] flex flex-col gap-[var(--spacing-gap-4xl)]">
             {/* Server-rendered section for SEO */}
             <div 
                 data-server-contact-us
@@ -49,7 +49,7 @@ const ContactUs = ({ locale = 'en' }: ContactUsProps) => {
                 <div className={`flex-1 w-full ${
                     isRTL ? "xl:order-2" : ""
                 }`}>
-                    <h2 className={`text-2xl xl:text-4xl font-bold mb-[var(--spacing-gap-sm)] xl:mb-[var(--spacing-gap-md)] ${
+                    <h2 className={`text-2xl xl:text-4xl font-semibold mb-[var(--spacing-gap-sm)] xl:mb-[var(--spacing-gap-md)] ${
                         isRTL ? "text-center xl:text-right" : "text-center xl:text-left"
                     }`}>
                         {t.title}

@@ -49,13 +49,15 @@
   --spacing-section-px-mobile: 1rem;      /* 16px */
   --spacing-section-px-tablet: 1.5rem;    /* 24px */
   --spacing-section-px-small-laptop: 3rem; /* 48px */
-  --spacing-section-px-desktop: 15rem;    /* 240px */
+  --spacing-section-px-xl: 10rem;         /* 160px */
+  --spacing-section-px-2xl: 15rem;       /* 240px */
   
   /* Section Padding - Vertical */
   --spacing-section-py-mobile: 6rem;      /* 96px */
   --spacing-section-py-tablet: 8rem;      /* 128px */
   --spacing-section-py-small-laptop: 9rem; /* 144px */
-  --spacing-section-py-desktop: 12rem;    /* 192px */
+  --spacing-section-py-xl: 10rem;        /* 160px */
+  --spacing-section-py-2xl: 12rem;       /* 192px */
   
   /* Gaps */
   --spacing-gap-xs: 0.5rem;               /* 8px */
@@ -73,7 +75,8 @@
   --spacing-inner-px-mobile: 1rem;        /* 16px */
   --spacing-inner-px-tablet: 1.5rem;      /* 24px */
   --spacing-inner-px-small-laptop: 2rem;  /* 32px */
-  --spacing-inner-px-desktop: 8rem;       /* 128px */
+  --spacing-inner-px-xl: 6rem;           /* 96px */
+  --spacing-inner-px-2xl: 8rem;          /* 128px */
   
   /* Margins */
   --spacing-margin-top-sm: 3rem;          /* 48px */
@@ -155,9 +158,15 @@
   }
   html {
     scroll-behavior: smooth;
+    overflow-y: auto;
+    overflow-x: hidden;
   }
   body {
     @apply bg-background text-foreground;
+    overflow-x: hidden;
+    position: relative;
+    margin: 0;
+    padding: 0;
   }
 }
 
@@ -181,6 +190,49 @@
 
   [dir="ltr"] {
     direction: ltr;
+  }
+}
+
+/* Custom Scrollbar Styling */
+@layer base {
+  /* Webkit browsers (Chrome, Safari, Edge) - Only style html scrollbar */
+  html::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+
+  html::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  html::-webkit-scrollbar-thumb {
+    background: #4F2396;
+    border-radius: 6px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+  }
+
+  html::-webkit-scrollbar-thumb:hover {
+    background: #3d1a75;
+    background-clip: padding-box;
+  }
+
+  /* Hide scrollbar on body to prevent double scrollbars */
+  body::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+
+  /* Firefox - Only style html scrollbar */
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: #4F2396 transparent;
+  }
+
+  /* Hide scrollbar on body in Firefox */
+  body {
+    scrollbar-width: none;
   }
 }
 

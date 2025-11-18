@@ -179,10 +179,10 @@ const HayakService = ({ locale = 'en' }: HayakServiceProps) => {
     const isRTL = locale === 'ar';
 
     return (
-        <div id="services" className="w-full flex flex-col items-center py-[var(--spacing-section-py-mobile)] md:py-[var(--spacing-section-py-tablet)] lg:py-[var(--spacing-section-py-small-laptop)] xl:py-[var(--spacing-section-py-desktop)] px-[var(--spacing-section-px-mobile)] md:px-[var(--spacing-section-px-tablet)] lg:px-[var(--spacing-section-px-small-laptop)] xl:px-[var(--spacing-section-px-desktop)] mx-auto gap-[var(--spacing-gap-xl)] lg:gap-[var(--spacing-gap-2xl)] xl:gap-[var(--spacing-gap-3xl)]
+        <div id="services" className="w-full flex flex-col items-center py-[var(--spacing-section-py-mobile)] md:py-[var(--spacing-section-py-tablet)] lg:py-[var(--spacing-section-py-small-laptop)] xl:py-[var(--spacing-section-py-xl)] 2xl:py-[var(--spacing-section-py-2xl)] px-[var(--spacing-section-px-mobile)] md:px-[var(--spacing-section-px-tablet)] lg:px-[var(--spacing-section-px-small-laptop)] xl:px-[var(--spacing-section-px-xl)] 2xl:px-[var(--spacing-section-px-2xl)] mx-auto gap-[var(--spacing-gap-xl)] lg:gap-[var(--spacing-gap-2xl)] xl:gap-[var(--spacing-gap-3xl)]
         bg-[url('/hollow-bg.svg')] bg-cover bg-center bg-no-repeat
         ">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-4xl font-bold text-center">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-4xl font-semibold text-center">
                 {t.title}
             </h2>
             <div className="flex flex-col items-center w-full">
@@ -196,7 +196,7 @@ const HayakService = ({ locale = 'en' }: HayakServiceProps) => {
                             isRTL ? "text-center xl:text-right" : "text-center xl:text-left"
                         }`}
                     >
-                        <h2 className={`text-2xl xl:text-4xl font-bold ${
+                        <h2 className={`text-2xl xl:text-4xl font-semibold ${
                             isRTL ? "text-center xl:text-right" : "text-center xl:text-left"
                         }`}>
                             {t.guestManagement.title}
@@ -241,7 +241,7 @@ const HayakService = ({ locale = 'en' }: HayakServiceProps) => {
                             isRTL ? "text-center xl:text-right" : "text-center xl:text-left"
                         }`}
                     >
-                        <h2 className={`text-2xl xl:text-4xl font-bold ${
+                        <h2 className={`text-2xl xl:text-4xl font-semibold ${
                             isRTL ? "text-center xl:text-right" : "text-center xl:text-left"
                         }`}>
                             {t.ticketSystem.title}
@@ -264,7 +264,7 @@ const HayakService = ({ locale = 'en' }: HayakServiceProps) => {
                             isRTL ? "text-center xl:text-right" : "text-center xl:text-left"
                         }`}
                     >
-                        <h2 className={`text-2xl xl:text-4xl font-bold ${
+                        <h2 className={`text-2xl xl:text-4xl font-semibold ${
                             isRTL ? "text-center xl:text-right" : "text-center xl:text-left"
                         }`}>
                             {t.printingStations.title}
@@ -309,7 +309,7 @@ const HayakService = ({ locale = 'en' }: HayakServiceProps) => {
                             isRTL ? "text-center xl:text-right" : "text-center xl:text-left"
                         }`}
                     >
-                        <h2 className={`text-2xl xl:text-4xl font-bold ${
+                        <h2 className={`text-2xl xl:text-4xl font-semibold ${
                             isRTL ? "text-center xl:text-right" : "text-center xl:text-left"
                         }`}>
                             {t.prePrintedBadges.title}
@@ -332,7 +332,7 @@ const HayakService = ({ locale = 'en' }: HayakServiceProps) => {
                             isRTL ? "text-center xl:text-right" : "text-center xl:text-left"
                         }`}
                     >
-                        <h2 className={`text-2xl xl:text-4xl font-bold ${
+                        <h2 className={`text-2xl xl:text-4xl font-semibold ${
                             isRTL ? "text-center xl:text-right" : "text-center xl:text-left"
                         }`}>
                             {t.guestJourneyPlanning.title}

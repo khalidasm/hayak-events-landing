@@ -41,7 +41,7 @@ const FAQClient = ({ locale, translations }: FAQClientProps) => {
             transition={{ duration: 0.8, ease: "easeOut" }}
         >
             <motion.h2 
-                className="text-2xl md:text-3xl lg:text-4xl xl:text-4xl font-bold mb-[var(--spacing-gap-md)] text-center"
+                className="text-2xl md:text-3xl lg:text-4xl xl:text-4xl font-semibold mb-[var(--spacing-gap-md)] text-center"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}

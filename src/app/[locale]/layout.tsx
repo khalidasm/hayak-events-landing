@@ -230,7 +230,7 @@ export default async function LocaleLayout({
         />
         <LanguageProvider locale={locale}>
           <AnchorScrollHandler />
-          <div className="w-full min-h-screen bg-white overflow-x-hidden">
+          <div className="w-full min-h-screen bg-white">
             <Navbar locale={locale as 'en' | 'ar'} />
             <main>
               {children}

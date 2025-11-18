@@ -45,7 +45,7 @@ const CheckInFeatureClient = ({ locale, translations }: CheckInFeatureClientProp
             >
                 <Image src="/Logo.webp" alt={isRTL ? "شعار حياك" : "Hayak Events logo"} width={100} height={100} className="hidden lg:block" quality={85} />
                 <div className="flex flex-col gap-[var(--spacing-gap-lg)]">
-                    <div className={`text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold ${
+                    <div className={`text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold ${
                         isRTL ? "text-center lg:text-right" : "text-center lg:text-left"
                     }`}>
                         {translations.title}
@@ -62,7 +62,7 @@ const CheckInFeatureClient = ({ locale, translations }: CheckInFeatureClientProp
                 initial={{ opacity: 0, x: isRTL ? -100 : 100 }}
                 animate={rightCardInView ? { opacity: 1, x: 0 } : { opacity: 0, x: isRTL ? -100 : 100 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
-                className={`hidden lg:block absolute lg:top-8 xl:top-8 ${
+                className={`hidden lg:block absolute lg:top-8 xl:top-24 2xl:top-8 ${
                     isRTL ? "lg:-left-8 xl:-left-16" : "lg:right-0 xl:right-0"
                 }`}
             >
@@ -71,7 +71,7 @@ const CheckInFeatureClient = ({ locale, translations }: CheckInFeatureClientProp
                     alt={isRTL ? "بطاقة عرض ميزة تسجيل الوصول" : "Check-in feature showcase card"}
                     width={900}
                     height={900}
-                    className="w-[600px] lg:w-[550px] xl:w-[900px] h-auto"
+                    className="w-[600px] lg:w-[550px] xl:w-[700px] 2xl:w-[900px] h-auto"
                     loading="lazy"
                 />
             </motion.div>
@@ -84,8 +84,8 @@ const CheckInFeatureClient = ({ locale, translations }: CheckInFeatureClientProp
                         : { opacity: 0, x: isRTL ? -100 : 100 }
                 }
                 transition={{ duration: 0.8, ease: "easeOut" }}
-                className={`hidden lg:block absolute lg:-bottom-7 ${
-                    isRTL ? "lg:left-[280px] xl:left-[550px]" : "lg:right-[280px] xl:right-[550px]"
+                className={`hidden lg:block absolute lg:-bottom-7 xl:-bottom-0 2xl:-bottom-7 ${
+                    isRTL ? "lg:left-[280px] xl:left-[400px] 2xl:left-[550px]" : "lg:right-[280px] xl:right-[450px] 2xl:right-[550px]"
                 }`}
             >
                 <motion.div
@@ -101,7 +101,7 @@ const CheckInFeatureClient = ({ locale, translations }: CheckInFeatureClientProp
                         alt={isRTL ? "بطاقة عرض إضافية لتسجيل الوصول" : "Additional check-in feature card"}
                         width={400}
                         height={400}
-                        className="w-[250px] lg:w-[250px] xl:w-[400px] h-auto"
+                        className="w-[250px] lg:w-[250px] xl:w-[325px] 2xl:w-[400px] h-auto"
                         loading="lazy"
                     />
                 </motion.div>

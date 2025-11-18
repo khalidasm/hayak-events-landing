@@ -74,7 +74,7 @@ const WhatsappFeatureClient = ({ locale = "en" }: WhatsappFeatureClientProps) =>
             initial={{ opacity: 0 }}
             animate={containerInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="w-full px-[var(--spacing-section-px-mobile)] md:px-[var(--spacing-section-px-tablet)] lg:px-[var(--spacing-section-px-small-laptop)] xl:px-[var(--spacing-section-px-desktop)] py-[var(--spacing-section-py-mobile)] md:py-[var(--spacing-section-py-tablet)] lg:py-[var(--spacing-section-py-small-laptop)] xl:py-[var(--spacing-section-py-desktop)]"
+            className="w-full px-[var(--spacing-section-px-mobile)] md:px-[var(--spacing-section-px-tablet)] lg:px-[var(--spacing-section-px-small-laptop)] xl:px-[var(--spacing-section-px-xl)] 2xl:px-[var(--spacing-section-px-2xl)] py-[var(--spacing-section-py-mobile)] md:py-[var(--spacing-section-py-tablet)] lg:py-[var(--spacing-section-py-small-laptop)] xl:py-[var(--spacing-section-py-xl)] 2xl:py-[var(--spacing-section-py-2xl)]"
         >
             <style
                 dangerouslySetInnerHTML={{
@@ -91,7 +91,7 @@ const WhatsappFeatureClient = ({ locale = "en" }: WhatsappFeatureClientProps) =>
                 }}
             />
             <div className="whatsapp-bg-responsive w-full h-full xl:h-[400px] bg-cover xl:bg-contain bg-center bg-no-repeat py-5 flex flex-col items-center justify-center rounded-[20px] xl:rounded-none">
-                <div className="flex flex-col xl:flex-row items-center gap-[var(--spacing-gap-lg)] px-[var(--spacing-section-px-mobile)] md:px-[var(--spacing-section-px-tablet)] lg:px-[var(--spacing-inner-px-small-laptop)] xl:px-[var(--spacing-inner-px-desktop)] w-full">
+                <div className="flex flex-col xl:flex-row items-center gap-[var(--spacing-gap-lg)] px-[var(--spacing-section-px-mobile)] md:px-[var(--spacing-section-px-tablet)] lg:px-[var(--spacing-inner-px-small-laptop)] xl:px-[var(--spacing-inner-px-xl)] 2xl:px-[var(--spacing-inner-px-2xl)] w-full">
                     <motion.div
                         ref={leftSectionRef}
                         initial={{ opacity: 0, x: -100 }}
@@ -117,7 +117,7 @@ const WhatsappFeatureClient = ({ locale = "en" }: WhatsappFeatureClientProps) =>
                                 quality={85}
                             />
                             <div
-                                className={`text-2xl md:text-3xl lg:text-3xl xl:text-4xl font-bold w-fit ${
+                                className={`text-2xl md:text-3xl lg:text-3xl xl:text-4xl font-semibold w-fit ${
                                     isRTL
                                         ? "text-center xl:text-right"
                                         : "text-center xl:text-left"

@@ -78,7 +78,7 @@ const PackageCard: React.FC<PackageCardProps> = ({
             
             {/* Header Section */}
             <div className="flex flex-col items-center justify-center gap-5">
-                <h3 className="text-xl font-bold text-[#241044]">{title}</h3>
+                <h3 className="text-xl font-semibold text-[#241044]">{title}</h3>
                 <span className="flex items-center gap-1 text-2xl font-bold text-[#241044]">
                     {price}{" "}
                         <Image

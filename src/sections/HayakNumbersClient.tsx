@@ -49,7 +49,7 @@ const HayakNumbersClient = ({ locale, translations }: HayakNumbersClientProps) =
                     animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: isRTL ? 30 : -30 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
                 >
-                    <div className={`text-2xl xl:text-4xl font-bold ${
+                    <div className={`text-2xl xl:text-4xl font-semibold ${
                         isRTL ? "text-center xl:text-right" : "text-center xl:text-left"
                     }`}>
                         {translations.title}

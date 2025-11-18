@@ -118,7 +118,7 @@ const Testimonials = ({ locale = 'en' }: TestimonialsProps) => {
             />
             {/* Server-rendered section for SEO */}
             <div data-server-testimonials>
-                <h2 className="text-2xl xl:text-4xl font-bold text-center">
+                <h2 className="text-2xl xl:text-4xl font-semibold text-center">
                     {t.title}
                 </h2>
                 <div className="flex flex-col xl:flex-row gap-10">

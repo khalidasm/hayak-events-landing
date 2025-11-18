@@ -33,7 +33,7 @@ const Hero = ({ locale = 'en' }: HeroProps) => {
         : "ادعُ الأشخاص المميزين لديك بكل سلاسة معنا. توفر حياك منصة إدارة فعاليات سلسة لإدارة فعالياتك وضيوفك ودعواتك.";
     
     return (
-        <div className="w-full flex flex-col gap-[var(--spacing-gap-sm)] md:gap-[var(--spacing-gap-md)] lg:gap-[var(--spacing-gap-lg)] xl:gap-[var(--spacing-gap-lg)] items-center justify-center pt-[var(--spacing-section-py-mobile)] md:pt-28 lg:pt-30 xl:pt-32 pb-[var(--spacing-section-py-mobile)] md:pb-[var(--spacing-section-py-tablet)] lg:pb-40 xl:pb-[var(--spacing-section-py-desktop)] px-[var(--spacing-section-px-mobile)] md:px-[var(--spacing-section-px-tablet)] lg:px-[var(--spacing-section-px-small-laptop)] xl:px-[var(--spacing-section-px-desktop)]">
+        <div className="w-full mb-0 xl:mb-20 2xl:mb-10 flex flex-col gap-[var(--spacing-gap-sm)] md:gap-[var(--spacing-gap-md)] lg:gap-[var(--spacing-gap-lg)] xl:gap-[var(--spacing-gap-lg)] items-center justify-center pt-[var(--spacing-section-py-mobile)] md:pt-28 lg:pt-30 xl:pt-32 pb-[var(--spacing-section-py-mobile)] md:pb-[var(--spacing-section-py-tablet)] lg:pb-40 xl:pb-[var(--spacing-section-py-xl)] 2xl:pb-[var(--spacing-section-py-2xl)] px-[var(--spacing-section-px-mobile)] md:px-[var(--spacing-section-px-tablet)] lg:px-[var(--spacing-section-px-small-laptop)] xl:px-[var(--spacing-section-px-xl)] 2xl:px-[var(--spacing-section-px-2xl)]">
             <AnimatedLogo>
                 <Image 
                     src="/Logo.webp" 

@@ -90,7 +90,7 @@ const FooterClient = ({ locale, translations }: FooterClientProps) => {
     return (
         <motion.div 
             ref={ref}
-            className="bg-[#4F2396] text-white rounded-[40px] px-6 xl:px-20 py-10"
+            className="bg-[#4F2396] text-white rounded-[40px] px-[var(--spacing-inner-px-mobile)] md:px-[var(--spacing-inner-px-tablet)] lg:px-[var(--spacing-inner-px-small-laptop)] xl:px-[var(--spacing-inner-px-xl)] 2xl:px-[var(--spacing-inner-px-2xl)] py-10"
             initial={{ 
                 y: 100, 
                 opacity: 0,
@@ -129,7 +129,7 @@ const FooterClient = ({ locale, translations }: FooterClientProps) => {
 
                     {/* Quick Actions Column */}
                     <div className='space-y-4 xl:col-span-2 flex flex-col items-center xl:items-start'>
-                        <h3 className="font-bold text-xl">{translations.quickActions}</h3>
+                        <h3 className="font-semibold text-xl">{translations.quickActions}</h3>
                         <ul className="space-y-3">
                             <li><Link href={`/${locale}#plans`} className="hover:text-[#241044] transition-colors text-lg">{translations.plans}</Link></li>
                             <li><Link href={`/${locale}#features`} className="hover:text-[#241044] transition-colors text-lg">{translations.features}</Link></li>
@@ -140,7 +140,7 @@ const FooterClient = ({ locale, translations }: FooterClientProps) => {
 
                     {/* Support Column */}
                     <div className='space-y-4 xl:col-span-2 flex flex-col items-center xl:items-start'>
-                        <h3 className="font-bold text-xl">{translations.support}</h3>
+                        <h3 className="font-semibold text-xl">{translations.support}</h3>
                         <ul className="space-y-3">
                             <li><Link href={`/${locale}#faqs`} className="hover:text-[#241044] transition-colors text-lg">{translations.faqs}</Link></li>
                             <li><Link href={`/${locale}#contact-sales`} className="hover:text-[#241044] transition-colors text-lg">{translations.contactSales}</Link></li>
@@ -150,7 +150,7 @@ const FooterClient = ({ locale, translations }: FooterClientProps) => {
 
                     {/* Follow us Column */}
                     <div className='space-y-4 xl:col-span-3 flex flex-col items-center xl:items-start'>
-                        <h3 className="font-bold text-xl">{translations.followUs}</h3>
+                        <h3 className="font-semibold text-xl">{translations.followUs}</h3>
                         <div className='flex mb-6 space-x-3 justify-center xl:justify-start'>
                             {/* TikTok */}
                             <a href="#" className="w-12 h-12 bg-white rounded-lg flex items-center justify-center hover:bg-gray-200 transition-colors" aria-label="TikTok">
